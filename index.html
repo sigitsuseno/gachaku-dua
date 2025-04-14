@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
+    <link href="/assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-background text-white">
+    <div id="app">
+      <div class="relative w-full h-full justify-between">
+        <header
+          class="fixed w-full h-20 grid grid-cols-[140px_calc(100%-140px)] lg:grid-cols-[260px_calc(100%-260px)] bg-background content-center z-50"
+        >
+          <div class="p-4 w-full lg:w-48">
+            <img
+              src="/assets/img/gachaku.svg"
+              alt="gachaku"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </header>
+        <div class="w-full h-20">header replace</div>
+        <!-- sidebar -->
+        <aside
+          class="fixed hidden md:block w-64 md:w-20 lg:w-64 h-screen bg-background z-40 md:top-20 md:left-0 py-4"
+        >
+          <!-- sidebar menu -->
+          <div class="p-4 relative w-full h-[calc(100vh-96px)]">
+            <div class="mb-3">
+              <div class="space-y-2">
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row justify-center items-center bg-card-bg2 rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active shadow shadow-cyan-300/10"
+                >
+                  <img src="/assets/img/home.svg" alt="" class="h-6" />
+                  <span class="hidden lg:block">Home</span>
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/games.svg" alt="" class="h-6" />
+                  <span class="hidden lg:block">Top Up Games</span>
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/ticket.svg" alt="" class="h-6" />
+                  <span class="hidden lg:block">Voucher</span>
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/history.svg" alt="" class="h-6" />
+                  <span class="hidden lg:block">Transaction History</span>
+                </a>
+              </div>
+              <!-- live support -->
+              <div class="absolute w-full h-auto bottom-8 left-0 px-6">
+                <div class="mb-3">
+                  <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
+                    <img
+                      src="/assets/img/contact.svg"
+                      alt="hubungi gachaku"
+                      class="w-6 h-6 object-contain"
+                    />
+                    <h3 class="font-bold tracking-wide">Live Support</h3>
+                    <p class="font-light text-[8.5px]">
+                      we will help you with your complaint
+                    </p>
+                  </div>
+                  <button
+                    class="w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
+                  >
+                    Chat now
+                  </button>
+                </div>
+                <!-- media sosial -->
+                <div class="grid grid-cols-5 gap-3">
+                  <a
+                    href="#"
+                    class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                    ><img
+                      src="/assets/img/youtube.svg"
+                      alt="gachaku youtube"
+                      class="h-5"
+                  /></a>
+                  <a
+                    href="#"
+                    class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                    ><img
+                      src="/assets/img/instagram.svg"
+                      alt="gachaku youtube"
+                      class="h-5"
+                  /></a>
+                  <a
+                    href="#"
+                    class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                    ><img
+                      src="/assets/img/facebook.svg"
+                      alt="gachaku youtube"
+                      class="h-5"
+                  /></a>
+                  <a
+                    href="#"
+                    class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                    ><img
+                      src="/assets/img/telegram.svg"
+                      alt="gachaku youtube"
+                      class="h-5"
+                  /></a>
+                  <a
+                    href="#"
+                    class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                    ><img
+                      src="/assets/img/discord.svg"
+                      alt="gachaku youtube"
+                      class="h-5"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <!-- corner -->
+            <div
+              class="hidden md:block corner bg-background absolute -top-4 md:right-[-40px]"
+            ></div>
+          </div>
+        </aside>
+
+        <main class="w-full h-full pl-0 md:pl-20 lg:pl-64">
+          <!-- herro section -->
+          <div class="w-full h-full bg-amber-600 flex flex-col md:flex-row">
+            <!-- information -->
+            <div class="w-full md:w-[256px] bg-pink-300"></div>
+            <!-- image -->
+            <div class="w-full md:w-[calc(100%-256px)]">image</div>
+          </div>
+        </main>
+        <footer class="bg-amber-200 w-full pl-0 lg:pl-64 h-[300px]">
+          footer
+        </footer>
+      </div>
+    </div>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

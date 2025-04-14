@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/font/static/SpaceGrotesk-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/font/static/SpaceGrotesk-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/font/static/SpaceGrotesk-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/font/static/SpaceGrotesk-Bold.ttf") format("truetype");
+}
+
+@theme {
+  --font-*: initial;
+  --font-sans: "Space Grotesk", sans-serif;
+
+  /* Pastikan nama warna sesuai dengan yang digunakan di Tailwind */
+  --color-background: #0e1724;
+  --color-bg-2: #d9d9d933;
+
+  --color-card-bg: #162233;
+  --color-card-bg2: #1d263b;
+  --color-button: #34b5ca;
+  --color-button-hover: #4dd8ee;
+  --color-button-bg: #303348;
+  --color-active: #34b5ca33;
+  --color-border: #1e3148;
+  --color-text-dim: #b9b9b9;
+  --color-star: #ffcb45;
+  --color-trans-bg: #0e172480;
+}
+@layer components {
+  .btn-rounded {
+    border-radius: 50%;
+    background-color: var(--color-button-bg);
+    height: 44px;
+    width: 44px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-button);
+      }
+    }
+  }
+}
+@layer base {
+  strong {
+    color: #dba020;
+    /* letter-spacing: 0.1em; */
+  }
+}
+
+#content_wrap::-webkit-scrollbar {
+  width: 6px;
+}
+
+#content_wrap::-webkit-scrollbar-track {
+  background-color: #34b5ca;
+  box-shadow: inset 0 0 6px #ffffff;
+}
+
+#content_wrap::-webkit-scrollbar-thumb {
+  background-color: #34b5ca;
+}
+
+.modal-transition {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.corner {
+  height: 40px;
+  width: 40px;
+  clip-path: path("M0 0l36.93 0c-20.31,0 -36.93,16.62 -36.93,36.93l0 -36.93z");
+}

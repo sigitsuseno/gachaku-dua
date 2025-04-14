@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
+        <link href="/assets/css/output.css" rel="stylesheet" />
+    </head>
+    <body class="bg-background text-white">
+        <div
+            class="w-full h-20 border-b border-border flex items-center justify-center fixed"
+        >
+            <!-- Search -->
+            <div
+                data-search
+                class="w-full lg:w-[calc(100%-256px-302px)] h-20 lg:h-auto relative flex justify-end lg:justify-start items-center lg:items-start"
+            >
+                <button class="btn-rounded lg:hidden">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <div
+                    data-searchBar
+                    class="hidden absolute bg-background w-full h-screen lg:h-full top-0 px-4 lg:block lg:relative lg:px-0 lg:top-0 lg:bg-background"
+                >
+                    <div class="flex justify-between items-center">
+                        <button
+                            data-back-btn
+                            class="w-10 h-10 flex items-center justify-center rounded-lg bg-bg-2 hover:bg-button mt-6 lg:mt-0 lg:hidden"
+                        >
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <div
+                            class="relative w-[calc(100%-50px)] lg:w-full mt-6 lg:mt-0"
+                        >
+                            <label
+                                for="header-search"
+                                class="absolute top-2 left-4"
+                            >
+                                <i class="fa-solid fa-magnifying-glass"></i
+                            ></label>
+                            <input
+                                type="text"
+                                id="header-search"
+                                class="bg-bg-2 py-2 pl-12 pr-4 rounded-lg w-full lg:w-2/3 focus:outline focus:outline-slate-700 focus:bg-active"
+                                placeholder="Search Game, Voucher, etc.."
+                            />
+                            <button
+                                data-clear-search
+                                class="absolute right-3 top-2 hidden text-gray-400 hover:text-white"
+                            >
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- search result -->
+                    <div
+                        id="search-result"
+                        data-result-search
+                        class="hidden absolute top-[80px] lg:top-[50px] left-0 z-k0 w-full p-4 rounded-lg flex-col items-start justify-start space-y-3 lg:shadow-lg lg:shadow-active overflow-y-auto max-h-[calc(100vh-100px)]"
+                    >
+                        <!-- prosessing -->
+                        <button
+                            type="button"
+                            class="bg-button flex gap-3 p-2 rounded-lg"
+                            disabled
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="animate-spin text-white"
+                            >
+                                <path
+                                    fill="#ffffff"
+                                    d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                                    opacity=".25"
+                                />
+                                <path
+                                    fill="#ffffff"
+                                    d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+                                />
+                            </svg>
+                            Processing…
+                        </button>
+                        <a
+                            href="#"
+                            class="flex space-x-3 p-2 border border-border bg-bg-2 rounded-lg w-full"
+                        >
+                            <div class="w-28 h-auto overflow-hidden rounded-lg">
+                                <img
+                                    src="https://placehold.co/100x50"
+                                    alt=""
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <h3 class="mb-1 text-xl text-button font-bold">
+                                    Mobile Legend
+                                </h3>
+                                <p class="text-sm">
+                                    Nikmati
+                                    <span
+                                        class="bg-pink-300 py-0.5 px-3 rounded-md"
+                                        >Promo Off 20%</span
+                                    >
+                                    <strong>Top Up</strong> sebagai member
+                                    <strong>Gachaku</strong>
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                        <a href="#" class="block w-full">
+                            <div class="h-28 bg bg-active">test</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- panel hasil pencarian -->
+            </div>
+            <!-- end search -->
+        </div>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>
