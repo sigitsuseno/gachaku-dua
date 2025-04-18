@@ -1,7 +1,7 @@
 // search
 const search = document.querySelector("[data-search]");
+const btnSearch = document.querySelector("[data-btn-search]");
 if (search) {
-  const btnSearch = search.querySelector("button");
   const searchTab = search.querySelector("[data-searchBar]");
   const searchInput = searchTab.querySelector("input");
   const backBtn = searchTab.querySelector("[data-back-btn]");
@@ -348,3 +348,65 @@ document.addEventListener("alpine:init", () => {
     },
   }));
 });
+
+const sidebar = document.querySelector("[data-sidebar]");
+if (sidebar) {
+  const toggleSidebar = sidebar.querySelector("[data-sb-button]");
+  const sbMenu = sidebar.querySelector("[data-sb-menu]");
+  const support = sidebar.querySelector("[data-support]");
+  const supMobile = sidebar.querySelector("[data-support-mobile]");
+  const main = document.querySelector("[data-main]");
+
+  if (toggleSidebar && sbMenu) {
+    const sbNames = sbMenu.querySelectorAll("div div a span");
+
+    toggleSidebar.onclick = () => {
+      const isExpanded = sidebar.classList.contains("w-64");
+      const btnPosition = sidebar.querySelector("[data-sb-menu] div");
+
+      // button position
+      toggleSidebar.classList.toggle("justify-end");
+      toggleSidebar.classList.toggle("bg-button");
+      if (isExpanded) {
+        btnPosition.classList.replace("right-4", "right-6");
+      } else {
+        btnPosition.classList.replace("right-6", "right-4");
+      }
+
+      // sidebar wide
+      sidebar.classList.replace(
+        isExpanded ? "w-64" : "w-20",
+        isExpanded ? "w-20" : "w-64"
+      );
+
+      // hide/show menu text
+      sbNames.forEach((sbname) => {
+        if (isExpanded) {
+          sbname.classList.replace("scale-100", "scale-0");
+          sbname.classList.replace("delay-200", "delay-0");
+        } else {
+          sbname.classList.replace("scale-0", "scale-100");
+          sbname.classList.replace("delay-0", "delay-200");
+        }
+      });
+
+      // hide/show support
+      if (isExpanded) {
+        support.classList.replace("scale-100", "scale-0");
+        support.classList.replace("h-auto", "h-0");
+        supMobile.classList.replace("scale-0", "scale-100");
+        support.classList.replace("delay-200", "delay-0");
+      } else {
+        support.classList.replace("scale-0", "scale-100");
+        support.classList.replace("h-0", "h-auto");
+        supMobile.classList.replace("scale-100", "scale-0");
+        support.classList.replace("delay-0", "delay-200");
+      }
+      if (isExpanded) {
+        main.classList.replace("md:pl-64", "md:pl-20");
+      } else {
+        main.classList.replace("md:pl-20", "md:pl-64");
+      }
+    };
+  }
+}

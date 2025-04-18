@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap");
+
 @import "tailwindcss";
 
 @font-face {
@@ -31,10 +33,18 @@
   font-display: swap;
   src: url("/assets/font/static/SpaceGrotesk-Bold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Code 128";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/font/code128.ttf") format("truetype");
+}
 
 @theme {
   --font-*: initial;
   --font-sans: "Space Grotesk", sans-serif;
+  --font-code: "Code 128", sans-serif;
 
   /* Pastikan nama warna sesuai dengan yang digunakan di Tailwind */
   --color-background: #0e1724;
@@ -97,4 +107,39 @@
   height: 40px;
   width: 40px;
   clip-path: path("M0 0l36.93 0c-20.31,0 -36.93,16.62 -36.93,36.93l0 -36.93z");
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tiket {
+  width: 200px;
+  clip-path: path(
+    "M1.34 0l30.05 0c0.73,0 1.34,0.6 1.34,1.34l0 4.91c-1.07,0 -1.94,0.86 -1.94,1.93 0,1.07 0.87,1.94 1.94,1.94l0 4.9c0,0.74 -0.61,1.34 -1.34,1.34l-30.05 0c-0.74,0 -1.34,-0.6 -1.34,-1.34l0 -4.9c1.07,0 1.93,-0.87 1.93,-1.94 0,-1.07 -0.86,-1.93 -1.93,-1.93l0 -4.91c0,-0.74 0.6,-1.34 1.34,-1.34z"
+  );
+}
+.circle-cut {
+  --r: 10px; /* cut size */
+  mask: radial-gradient(var(--r) at var(--r), #0000 calc(100% - 1px), #000)
+    calc(-1 * var(--r));
+}
+
+.libre {
+  font-family: "Libre Barcode 128", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.transf {
+  transform: scaleY(2);
+  transform-origin: left center;
 }
