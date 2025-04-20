@@ -38,15 +38,16 @@
                   data-search
                   class="w-full md:w-[80%] xl:w-[500px] 2xl:w-[600px]"
                 >
-                  <button
-                    class="btn-rounded md:hidden flex justify-center items-center"
+                  <!-- button search in header -->
+                  <!-- <button
+                    class="btn-rounded md:hidden justify-center items-center"
                   >
                     <img src="/assets/img/search.svg" alt="" class="h-5" />
-                  </button>
+                  </button> -->
 
                   <div
                     data-searchBar
-                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-50"
+                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-10"
                   >
                     <div class="flex justify-between items-center">
                       <button
@@ -181,55 +182,113 @@
           </div>
         </header>
         <!-- end header -->
-        <div class="w-full h-20 md:h-24">header replace</div>
+        <!-- menu mobile bottom -->
+        <div class="w-full h-20 md:h-24">
+          <div class="fixed md:hidden bottom-0 left-0 z-20 w-full">
+            <div
+              class="h-14 grid grid-cols-5 bg-background border border-active/30"
+            >
+              <button><i class="fa-solid fa-house"></i></button>
+              <button>
+                <i class="fa-regular fa-flag"></i>
+              </button>
+              <button data-btn-search class="flex items-center justify-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-button flex items-center justify-center"
+                >
+                  <img src="/assets/img/search.svg" alt="" class="h-6" />
+                </div>
+              </button>
+              <button>4</button>
+              <button data-btn-showbar>
+                <div class="">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
         <!-- sidebar -->
         <aside
-          class="fixed hidden md:block w-64 h-screen bg-background z-40 top-24 md:left-0 py-4"
+          data-sidebar
+          class="fixed -translate-x-72 md:-translate-x-0 md:block w-20 h-screen bg-background z-40 top-20 md:top-24 md:left-0 py-4 transition-all duration-300"
         >
           <!-- sidebar menu -->
-          <div class="p-4 relative w-full h-[calc(100vh-102px)]">
-            <div class="mb-3">
-              <div class="space-y-2">
+          <div data-sb-menu class="p-4 relative w-full h-[calc(100vh-102px)]">
+            <div
+              class="absolute -top-1 right-6 transition-all duration-300 z-10"
+            >
+              <button
+                data-sb-button
+                class="w-8 h-4 bg-amber-200/20 rounded-full ring-1 ring-button/50 cursor-pointer hidden"
+              >
+                <div class="w-4 h-4 rounded-full bg-background"></div>
+              </button>
+            </div>
+            <div class="mb-3 re">
+              <div class="space-y-2 pt-4">
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center bg-card-bg2 rounded-lg justify-start px-3 space-x-3 hover:bg-active shadow shadow-cyan-300/10"
                 >
                   <img src="/assets/img/home.svg" alt="" class="h-6" />
-                  <span class="ganti">Home</span>
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Home</span
+                  >
                 </a>
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
                   <img src="/assets/img/games.svg" alt="" class="h-6" />
-                  <span class="ganti">Top Up Games</span>
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Top Up Games</span
+                  >
                 </a>
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
                   <img src="/assets/img/ticket.svg" alt="" class="h-6" />
-                  <span class="ganti">Voucher</span>
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Voucher</span
+                  >
                 </a>
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
                   <img src="/assets/img/wallet.svg" alt="" class="h-6" />
-                  <span class="ganti">My Wallet</span>
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Wallet</span
+                  >
                 </a>
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
                   <img src="/assets/img/history.svg" alt="" class="h-6" />
-                  <span class="ganti">Transaction History</span>
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Transaction History</span
+                  >
                 </a>
               </div>
               <!-- live support -->
-              <div class="absolute w-full h-auto bottom-8 left-0 p-4 lg:px-6">
-                <!-- for screen min-1024 -->
-                <div class="ganti">
+              <div
+                class="absolute w-full h-[200px] bottom-8 left-0 p-4 lg:px-6"
+              >
+                <div
+                  data-support
+                  class="scale-0 h-0 delay-0 transition-all origin-top duration-300"
+                >
                   <div class="mb-3">
                     <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
                       <img
@@ -252,52 +311,57 @@
                   </div>
                   <!-- media sosial -->
 
-                  <div class="grid grid-cols-5 gap-3">
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/youtube.svg"
-                        alt="gachaku youtube"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/instagram.svg"
-                        alt="gachaku instagram"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/facebook.svg"
-                        alt="gachaku facebook"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/telegram.svg"
-                        alt="gachaku telegram"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/discord.svg"
-                        alt="gachaku discord"
-                        class="h-5"
-                    /></a>
+                  <div>
+                    <div data-medsos class="grid grid-cols-5 gap-3">
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/youtube.svg"
+                          alt="gachaku youtube"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/instagram.svg"
+                          alt="gachaku instagram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/facebook.svg"
+                          alt="gachaku facebook"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/telegram.svg"
+                          alt="gachaku telegram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/discord.svg"
+                          alt="gachaku discord"
+                          class="h-5"
+                      /></a>
+                    </div>
                   </div>
                 </div>
 
                 <!-- for mobile -->
-                <div class="hidden space-y-3 relative">
+                <div
+                  data-support-mobile
+                  class="space-y-3 relative scale-100 transition-transform delay-200 duration-300 mt-20"
+                >
                   <button
                     class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
                   >
@@ -319,23 +383,24 @@
             </div>
             <!-- corner -->
             <div
-              class="hidden md:block corner bg-background absolute -top-4 md:right-[-40px]"
+              class="md:block corner bg-background absolute -top-4 md:right-[-40px]"
             ></div>
           </div>
         </aside>
 
         <!-- main -->
-        <!-- <main
-          class="relative w-full h-full pl-0 md:pl-20 lg:pl-64 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%]"
-        > -->
-        <main class="relative w-full h-full pl-0 md:pl-64">
+        <main
+          data-main
+          class="relative w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <!-- <main class="relative w-full h-full pl-0 md:pl-64">
           <div class="absolute top-0 left-0 w-full">
             <img
               src="/assets/img/bg-mask.svg"
               alt=""
               class="w-full object-top-left"
             />
-          </div>
+          </div> -->
           <!-- hero slider section -->
           <section class="w-full md:pt-6 md:pb-2 relative">
             <!-- slider wrapper -->
@@ -699,8 +764,8 @@
             </div>
           </section>
 
-          <!-- top sell -->
-          <section class="w-full py-4 mb-4">
+          <!-- flash deal -->
+          <section class="w-full mb-4">
             <div class="relative py-4 z-[1]">
               <!-- section header -->
               <div class="flex justify-between items-center py-2 mb-2">
@@ -714,17 +779,261 @@
                 </h3>
               </div>
               <!-- section content -->
-              <div class="px-4">
-                <div class="flex flex-col gap-4">
-                  <div class="bg-blue-700 w-full aspect-[2/1] rounded-lg">
-                    <p>Daftar!</p>
-                    <p>Ingin dapat harga lebih murah?</p>
+              <div
+                class="md:grid md:grid-cols-[1fr_280px] md:mb-24 flex flex-col-reverse gap-6 md:gap-0"
+              >
+                <div class="w-full md:h-80 md:mb-4">
+                  <!-- flash deal big banner & text -->
+                  <div
+                    class="w-full h-full rounded-lg px-4 md:pl-12 md:px-0 relative mb-4 md:mb-0"
+                  >
+                    <!-- image banner -->
+                    <div class="w-full h-full md:rounded-2xl overflow-hidden">
+                      <div
+                        class="w-full h-full overflow-hidden rounded-t-lg md:rounded-xl"
+                      >
+                        <img
+                          src="/assets/img/baner-2.JPG"
+                          alt=""
+                          class="w-full h-full object-cover object-top-right"
+                        />
+                      </div>
+                      <!-- <div
+                        class="absolute w-[60%] -top-12 md:-top-20 right-0 h-[calc(100%+32px)] md:h-[calc(100%+80px)] z-10"
+                      >
+                        <img
+                          src="/assets/img/banner/valoran.webp"
+                          alt=""
+                          class="w-full h-full object-cover object-top"
+                        />
+                      </div> -->
+                    </div>
+                    <!-- baner info -->
+                    <div
+                      class="w-full h-full overflow-hidden rounded-b-lg md:rounded-l-xl md:absolute md:top-0 md:left-12"
+                    >
+                      <div
+                        class="flex flex-row md:flex-col md:justify-center bg-gradient-to-r from-10% from-slate-950 via-60% via-background/50 to-80% to-white/10 md:w-[35%] md:h-full p-4 md:rounded-l-2xl backdrop-blur-sm"
+                      >
+                        <div class="w-1/2 md:w-full md:mb-4">
+                          <button
+                            class="flex items-center px-2 py-0.5 md:py-2 rounded-lg bg-button text-background gap-2 mb-2"
+                          >
+                            <img
+                              src="/assets/img/topup.svg"
+                              alt="top-up"
+                              class="h-3 md:h-4"
+                            />
+                            <span
+                              class="text-[10px] leading-none md:text-[1.3vw]"
+                              >Top up</span
+                            >
+                          </button>
+                          <p class="text-[12px] md:text-[1.2vw]">
+                            Top Up Valorant Point
+                          </p>
+                        </div>
+                        <div class="w-1/2 md:w-full">
+                          <span
+                            class="text-xl font-bold py-0.5 px-2 tracking-wider bg-button rounded-lg text-black md:text-[2.5vw]"
+                          >
+                            BONUS S.D
+                          </span>
+                          <div class="flex mt-2 gap-2 md:mt-6">
+                            <p class="text-5xl font-black md:text-[6vw]">10</p>
+                            <div>
+                              <p
+                                class="leading-none text-3xl font-bold md:text-[3vw]"
+                              >
+                                RB
+                              </p>
+                              <p class="text-[6px] md:text-[0.8vw]">
+                                Valoran Point
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="bg-teal-300">gambar besar</div>
+
+                  <!-- list content container -->
+                  <div
+                    class="md:absolute md:bottom-0 md:left-0 md:pl-8 w-full overflow-hidden"
+                  >
+                    <div
+                      class="w-full flex flex-row items-center justify-start flex-nowrap overflow-x-auto scrollbar-hide"
+                    >
+                      <!-- list content -->
+                      <a
+                        href="#"
+                        class="h-24 aspect-[3/1] bg-background/80 ml-4 p-2 flex items-center gap-3 rounded-lg"
+                      >
+                        <div
+                          class="h-full aspect-[1.6/1] overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src="/assets/img/baner-2.JPG"
+                            alt=""
+                            class="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        <div>
+                          <p>Valorant Point</p>
+                          <p class="text-sm">VP</p>
+                        </div>
+                      </a>
+
+                      <!-- list content 2-->
+                      <a
+                        href="#"
+                        class="h-24 aspect-[3/1] ml-4 p-2 flex items-center gap-3 rounded-lg"
+                      >
+                        <div
+                          class="h-full aspect-[1.6/1] overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src="/assets/img/baner-2.JPG"
+                            alt=""
+                            class="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        <div>
+                          <p>Genshin Impact</p>
+                          <p class="text-sm font-thin">Genshin Impact</p>
+                        </div>
+                      </a>
+                      <!-- list content 3-->
+                      <a
+                        href="#"
+                        class="h-24 aspect-[3/1] ml-4 p-2 flex items-center gap-3 rounded-lg"
+                      >
+                        <div
+                          class="h-full aspect-[1.6/1] overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src="/assets/img/baner-2.JPG"
+                            alt=""
+                            class="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        <div>
+                          <p>Genshin Impact</p>
+                          <p class="text-sm font-thin">Genshin Impact</p>
+                        </div>
+                      </a>
+                      <!-- list content 4-->
+                      <a
+                        href="#"
+                        class="h-24 aspect-[3/1] ml-4 p-2 flex items-center gap-3 rounded-lg"
+                      >
+                        <div
+                          class="h-full aspect-[1.6/1] overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src="/assets/img/baner-2.JPG"
+                            alt=""
+                            class="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        <div>
+                          <p>Genshin Impact</p>
+                          <p class="text-sm font-thin">Genshin Impact</p>
+                        </div>
+                      </a>
+                      <!-- list content 5-->
+                      <a
+                        href="#"
+                        class="h-24 aspect-[3/1] ml-4 p-2 flex items-center gap-3 rounded-lg"
+                      >
+                        <div
+                          class="h-full aspect-[1.6/1] overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src="/assets/img/baner-2.JPG"
+                            alt=""
+                            class="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        <div>
+                          <p>Genshin Impact</p>
+                          <p class="text-sm font-thin">Genshin Impact</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- end list content container -->
+                </div>
+                <!-- membership promo -->
+                <div class="px-4 md:pr-12">
+                  <div
+                    class="bg-slate-500/30 w-full aspect-[2/1] p-4 rounded-lg relative backdrop-blur-md md:h-[25vw]"
+                  >
+                    <p class="text-2xl font-bold mb-3 md:mb-2 md:text-[1.5vw]">
+                      Daftar!
+                    </p>
+                    <p class="mb-3 md:text-[1vw]">
+                      Ingin dapat harga lebih murah?
+                    </p>
+                    <h6 class="text-5xl font-bold mb-3 md:text-[2.7vw]">
+                      JOIN RESELLER!
+                    </h6>
+                    <!-- avatar groups -->
+                    <div class="flex -space-x-4 mb-3">
+                      <div
+                        class="w-10 h-10 overflow-hidden rounded-full bg-background"
+                      >
+                        <img src="/assets/img/banner/avatar.webp" alt="" />
+                      </div>
+                      <div
+                        class="w-10 h-10 overflow-hidden rounded-full bg-bg-2"
+                      >
+                        <img src="/assets/img/banner/avatar2.jpg" alt="" />
+                      </div>
+                      <div
+                        class="w-10 h-10 overflow-hidden rounded-full bg-background"
+                      >
+                        <img src="/assets/img/banner/avatar.webp" alt="" />
+                      </div>
+                      <div
+                        class="w-10 h-10 overflow-hidden rounded-full bg-bg-2"
+                      >
+                        <img src="/assets/img/banner/avatar2.jpg" alt="" />
+                      </div>
+                    </div>
+                    <p class="mb-10 md:text-[1vw]">
+                      Sudah lebih dari 100++ bergabung bersama kami
+                    </p>
+                    <button
+                      class="absolute bottom-0 left-0 w-full rounded-b-lg bg-button py-3 text-xl md:text-[1.2vw]"
+                    >
+                      Hubungi sekarang juga!
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
+
+          <!-- best seller -->
+          <section class="w-full mb-4">
+            <div class="py-4">
+              <!-- section header -->
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="pl-4 md:pl-12 flex items-center space-x-3">
+                  <img
+                    src="/assets/img/flame.png"
+                    alt="icon gift-box"
+                    class="h-6"
+                  />
+                  <span class="md:text-xl font-bold">Flash Deal</span>
+                </h3>
+              </div>
+              <div class="flex flex-row flex-nowrap"></div>
+            </div>
+          </section>
+
+          <section class="mb-[200px]"></section>
         </main>
         <!-- end main -->
         <footer class="w-full pl-0 lg:pl-64 h-[300px]">footer</footer>
