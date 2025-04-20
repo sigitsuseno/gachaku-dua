@@ -4,39 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
-    <link href="/assets/css/output.css" rel="stylesheet" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <style></style>
+    <link
+      rel="stylesheet"
+      href="https://sigitsuseno.github.io/gachaku-dua/assets/fontawesome/css/all.css"
+    />
+    <link
+      href="https://sigitsuseno.github.io/gachaku-dua/assets/css/output.css"
+      rel="stylesheet"
+    />
   </head>
+
   <body class="bg-background text-white">
-    <div id="app" x-data="app()">
-      <!-- app wrapper -->
+    <div id="app">
       <div class="relative flex flex-col">
         <!-- header -->
-        <header
-          class="fixed w-full h-20 md:h-24 px-4 bg-background z-20"
-          x-cloak
-        >
+        <header class="fixed w-full h-20 md:h-24 px-4 bg-background z-20">
           <div
             class="relative w-full h-20 md:h-24 grid grid-cols-[120px_1fr] lg:grid-cols-[280px_1fr] content-center"
           >
-            <!-- Logo dan konten header lainnya... -->
+            <!-- Logo  -->
             <a href="/header.html" class="w-full flex items-center">
               <img
-                src="/assets/img/gachaku.svg"
+                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/gachaku.svg"
                 alt="gachaku"
                 class="hidden lg:block h-[40px] object-contain"
               />
               <img
-                src="/assets/img/m-gacha.svg"
+                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/m-gacha.svg"
                 alt="gachaku mini"
                 class="h-12 lg:hidden"
               />
             </a>
+
+            <!-- header Menu -->
             <div class="w-full flex justify-end space-x-2">
               <div class="md:w-[calc(100%-180px)] lg:w-[calc(100%-280px)]">
                 <!-- Search -->
@@ -44,15 +44,16 @@
                   data-search
                   class="w-full md:w-[80%] xl:w-[500px] 2xl:w-[600px]"
                 >
-                  <button
-                    class="btn-rounded md:hidden flex justify-center items-center"
+                  <!-- button search in header -->
+                  <!-- <button
+                    class="btn-rounded md:hidden justify-center items-center"
                   >
-                    <img src="/assets/img/search.svg" alt="" class="h-5" />
-                  </button>
+                    <img src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg" alt="" class="h-5" />
+                  </button> -->
 
                   <div
                     data-searchBar
-                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-50"
+                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-10"
                   >
                     <div class="flex justify-between items-center">
                       <button
@@ -69,7 +70,7 @@
                           class="absolute top-1/2 -translate-1/2 left-6"
                         >
                           <img
-                            src="/assets/img/search.svg"
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg"
                             alt=""
                             class="h-5"
                           />
@@ -84,7 +85,11 @@
                           data-clear-search
                           class="absolute right-3 top-1/2 -translate-1/2 hidden text-gray-400 hover:text-white"
                         >
-                          <img src="/assets/img/x.svg" alt="" class="h-3" />
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/x.svg"
+                            alt=""
+                            class="h-3"
+                          />
                         </button>
                       </div>
                     </div>
@@ -158,100 +163,34 @@
                   <button
                     class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
                   >
-                    <img src="/assets/img/cart.svg" alt="" />
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/cart.svg"
+                      alt=""
+                    />
                   </button>
 
                   <!-- message -->
                   <button
                     class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
                   >
-                    <img src="/assets/img/bell.svg" alt="" />
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/bell.svg"
+                      alt=""
+                    />
                   </button>
                   <!-- User Dropdown Component -->
                   <div class="relative">
                     <!-- Login Button -->
                     <button
-                      @click="showLoginModal = true"
                       class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
-                      x-show="!isLoggedIn"
                     >
-                      <span class="p-3 hidden lg:block">Sign In</span>
+                      <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
                       <img
-                        src="/assets/img/login.svg"
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/login.svg"
                         alt=""
                         class="lg:hidden"
                       />
                     </button>
-
-                    <!-- User Avatar -->
-                    <button
-                      @click="userDropdownOpen = !userDropdownOpen"
-                      class="w-10 h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center shadow-md shadow-active transition-all duration-200"
-                      x-show="isLoggedIn"
-                    >
-                      <img
-                        src="/assets/img/user.svg"
-                        alt="User"
-                        class="w-6 h-6"
-                      />
-                    </button>
-
-                    <!-- User Dropdown Menu -->
-                    <div
-                      x-show="isLoggedIn && userDropdownOpen"
-                      @click.away="userDropdownOpen = false"
-                      x-transition:enter="transition ease-out duration-200"
-                      x-transition:enter-start="opacity-0 scale-95"
-                      x-transition:enter-end="opacity-100 scale-100"
-                      x-transition:leave="transition ease-in duration-75"
-                      x-transition:leave-start="opacity-100 scale-100"
-                      x-transition:leave-end="opacity-0 scale-95"
-                      class="absolute right-0 mt-2 w-64 bg-card-bg2 rounded-lg shadow-lg z-50 overflow-hidden"
-                    >
-                      <div class="p-4 border-b border-border">
-                        <div class="flex items-center space-x-3">
-                          <img
-                            src="/assets/img/user.svg"
-                            alt="User"
-                            class="w-10 h-10 rounded-full"
-                          />
-                          <div>
-                            <h3 class="font-bold">Joni Putin</h3>
-                            <p class="text-sm text-gray-300">
-                              john@example.com
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="py-1">
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-bg-2 transition-colors duration-200"
-                        >
-                          <i class="fas fa-user mr-2"></i> Profile
-                        </a>
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-bg-2 transition-colors duration-200"
-                        >
-                          <i class="fas fa-cog mr-2"></i> Settings
-                        </a>
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-bg-2 transition-colors duration-200"
-                        >
-                          <i class="fas fa-history mr-2"></i> Order History
-                        </a>
-                      </div>
-                      <div class="py-1 border-t border-border">
-                        <button
-                          @click="logout()"
-                          class="w-full text-left px-4 py-2 hover:bg-bg-2 transition-colors duration-200"
-                        >
-                          <i class="fas fa-sign-out-alt mr-2"></i> Sign Out
-                        </button>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -259,124 +198,217 @@
           </div>
         </header>
         <!-- end header -->
-
-        <!-- replacer or preload -->
-        <div class="w-full h-20 md:h-24">header replace</div>
-        <!-- end replacer or preload -->
-
+        <!-- menu mobile bottom -->
+        <div class="w-full h-20 md:h-24">
+          <div class="fixed md:hidden bottom-0 left-0 z-20 w-full">
+            <div
+              class="h-14 grid grid-cols-5 bg-background border border-active/30"
+            >
+              <button><i class="fa-solid fa-house"></i></button>
+              <button>
+                <i class="fa-regular fa-flag"></i>
+              </button>
+              <button data-btn-search class="flex items-center justify-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-button flex items-center justify-center"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                </div>
+              </button>
+              <button>4</button>
+              <button data-btn-showbar>
+                <div class="">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
         <!-- sidebar -->
         <aside
-          class="fixed hidden md:block w-64 md:w-20 lg:w-64 h-screen bg-background z-40 md:top-24 md:left-0 py-4"
+          data-sidebar
+          class="fixed -translate-x-72 md:-translate-x-0 md:block w-20 h-screen bg-background z-40 top-20 md:top-24 md:left-0 py-4 transition-all duration-300"
         >
           <!-- sidebar menu -->
-          <div class="p-4 relative w-full h-[calc(100vh-96px)]">
-            <div class="mb-3">
-              <div class="space-y-2">
+          <div data-sb-menu class="p-4 relative w-full h-[calc(100vh-102px)]">
+            <div
+              class="absolute -top-1 right-6 transition-all duration-300 z-10"
+            >
+              <button
+                data-sb-button
+                class="w-8 h-4 bg-amber-200/20 rounded-full ring-1 ring-button/50 cursor-pointer hidden"
+              >
+                <div class="w-4 h-4 rounded-full bg-background"></div>
+              </button>
+            </div>
+            <div class="mb-3 re">
+              <div class="space-y-2 pt-4">
                 <a
                   href="#"
-                  class="w-full h-10 flex flex-row justify-center items-center bg-card-bg2 rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active shadow shadow-cyan-300/10"
+                  class="w-full h-10 flex flex-row items-center bg-card-bg2 rounded-lg justify-start px-3 space-x-3 hover:bg-active shadow shadow-cyan-300/10"
                 >
-                  <img src="/assets/img/home.svg" alt="" class="h-6" />
-                  <span class="hidden lg:block">Home</span>
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/home.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Home</span
+                  >
                 </a>
                 <a
                   href="#"
-                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
-                  <img src="/assets/img/games.svg" alt="" class="h-6" />
-                  <span class="hidden lg:block">Top Up Games</span>
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/games.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Top Up Games</span
+                  >
                 </a>
                 <a
                   href="#"
-                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
-                  <img src="/assets/img/ticket.svg" alt="" class="h-6" />
-                  <span class="hidden lg:block">Voucher</span>
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/ticket.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Voucher</span
+                  >
                 </a>
                 <a
                   href="#"
-                  class="w-full h-10 flex flex-row justify-center items-center rounded-lg lg:justify-start lg:px-3 lg:space-x-3 hover:bg-active"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
-                  <img src="/assets/img/history.svg" alt="" class="h-6" />
-                  <span class="hidden lg:block">Transaction History</span>
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/wallet.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Wallet</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/history.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Transaction History</span
+                  >
                 </a>
               </div>
               <!-- live support -->
-              <div class="absolute w-full h-auto bottom-8 left-0 p-4 lg:px-6">
-                <!-- for screen min-1024 -->
-                <div class="hidden lg:block">
+              <div
+                class="absolute w-full h-[200px] bottom-8 left-0 p-4 lg:px-6"
+              >
+                <div
+                  data-support
+                  class="scale-0 h-0 delay-0 transition-all origin-top duration-300"
+                >
                   <div class="mb-3">
                     <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
                       <img
-                        src="/assets/img/contact.svg"
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/contact.svg"
                         alt="hubungi gachaku"
                         class="w-6 h-6 object-contain"
                       />
-                      <h3 class="hidden lg:block font-bold tracking-wide">
+                      <h3 class="ganti font-bold tracking-wide">
                         Live Support
                       </h3>
-                      <p class="hidden lg:block font-light text-[8.5px]">
+                      <p class="ganti font-light text-[8.5px]">
                         we will help you with your complaint
                       </p>
                     </div>
                     <button
-                      class="hidden lg:block w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
+                      class="ganti w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
                     >
                       Chat now
                     </button>
                   </div>
                   <!-- media sosial -->
 
-                  <div class="grid grid-cols-5 gap-3">
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/youtube.svg"
-                        alt="gachaku youtube"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/instagram.svg"
-                        alt="gachaku instagram"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/facebook.svg"
-                        alt="gachaku facebook"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/telegram.svg"
-                        alt="gachaku telegram"
-                        class="h-5"
-                    /></a>
-                    <a
-                      href="#"
-                      class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
-                      ><img
-                        src="/assets/img/discord.svg"
-                        alt="gachaku discord"
-                        class="h-5"
-                    /></a>
+                  <div>
+                    <div data-medsos class="grid grid-cols-5 gap-3">
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/youtube.svg"
+                          alt="gachaku youtube"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/instagram.svg"
+                          alt="gachaku instagram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/facebook.svg"
+                          alt="gachaku facebook"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/telegram.svg"
+                          alt="gachaku telegram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/discord.svg"
+                          alt="gachaku discord"
+                          class="h-5"
+                      /></a>
+                    </div>
                   </div>
                 </div>
 
                 <!-- for mobile -->
-                <div class="lg:hidden space-y-3 relative">
+                <div
+                  data-support-mobile
+                  class="space-y-3 relative scale-100 transition-transform delay-200 duration-300 mt-20"
+                >
                   <button
                     class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
                   >
-                    <img src="/assets/img/contact.svg" alt="chat gachaku" />
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/contact.svg"
+                      alt="chat gachaku"
+                    />
                   </button>
 
                   <!-- dropup chat -->
@@ -385,7 +417,7 @@
                     class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
                   >
                     <img
-                      src="/assets/img/medsos.svg"
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/medsos.svg"
                       alt="mediasosial gachaku"
                     />
                   </button>
@@ -394,22 +426,24 @@
             </div>
             <!-- corner -->
             <div
-              class="hidden md:block corner bg-background absolute -top-4 md:right-[-40px]"
+              class="md:block corner bg-background absolute -top-4 md:right-[-40px]"
             ></div>
           </div>
         </aside>
-        <!-- end sidebar -->
 
         <!-- main -->
-        <main class="relative w-full h-full pl-0 md:pl-20 lg:pl-64">
-          <div class="absolute w-">
+        <main
+          data-main
+          class="relative w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <!-- <main class="relative w-full h-full pl-0 md:pl-64">
+          <div class="absolute top-0 left-0 w-full">
             <img
-              src="/assets/img/bg/bg-mask.svg"
+              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/bg-mask.svg"
               alt=""
-              class="w-full h-full object-cover object-top-right"
+              class="w-full object-top-left"
             />
-          </div>
-
+          </div> -->
           <!-- hero slider section -->
           <section class="w-full md:pt-6 md:pb-2 relative">
             <!-- slider wrapper -->
@@ -432,40 +466,68 @@
                 <!-- end information -->
 
                 <!-- slider image -->
-                <div
-                  class="w-full h-full flex justify-start items-center flex-nowrap overflow-x-hidden"
+                <swiper-container
+                  class="mySwiper w-full h-full flex justify-start items-center flex-nowrap overflow-x-hidden"
+                  space-between="30"
+                  slides-per-view="auto"
+                  pagination="true"
+                  pagination-clickable="true"
+                  loop="true"
                 >
                   <!-- image -->
-                  <div class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2">
+                  <swiper-slide
+                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
+                  >
                     <div
                       class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
                     >
                       <img
-                        src="/assets/img/banner/banner-1.JPG"
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/banner-1.JPG"
                         alt="test"
                         class="w-full h-full"
                       />
                     </div>
-                  </div>
-                  <div class="w-[60%] aspect-[16/9] shrink-0 p-2">
-                    <div class="bg-amber-300 w-full h-full rounded-3xl">
-                      test
+                  </swiper-slide>
+                  <swiper-slide
+                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
+                  >
+                    <div
+                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/banner-1.JPG"
+                        alt="test"
+                        class="w-full h-full"
+                      />
                     </div>
-                  </div>
-                  <div class="w-[60%] aspect-[16/9] shrink-0 p-2">
-                    <div class="bg-pink-300 w-full h-full rounded-3xl">
-                      test
+                  </swiper-slide>
+                  <swiper-slide
+                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
+                  >
+                    <div
+                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/banner-1.JPG"
+                        alt="test"
+                        class="w-full h-full"
+                      />
                     </div>
-                  </div>
-                  <div class="w-[60%] aspect-[16/9] shrink-0 p-2">
-                    <div class="bg-sky-300 w-full h-full rounded-3xl">test</div>
-                  </div>
-                  <div class="w-[60%] aspect-[16/9] shrink-0 p-2">
-                    <div class="bg-green-300 w-full h-full rounded-3xl">
-                      test
+                  </swiper-slide>
+                  <swiper-slide
+                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
+                  >
+                    <div
+                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/banner-1.JPG"
+                        alt="test"
+                        class="w-full h-full"
+                      />
                     </div>
-                  </div>
-                </div>
+                  </swiper-slide>
+                </swiper-container>
                 <!-- end slider image -->
               </div>
               <!-- end slider content -->
@@ -477,13 +539,17 @@
                   <button
                     class="w-8 h-full md:bg-button rounded-lg hover:bg-button-hover md:w-8 md:h-8 flex items-center justify-center"
                   >
-                    <img src="/assets/img/left.svg" alt="" class="h-8 md:h-4" />
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/left.svg"
+                      alt=""
+                      class="h-8 md:h-4"
+                    />
                   </button>
                   <button
                     class="w-8 h-full md:bg-button rounded-lg hover:bg-button-hover md:w-8 md:h-8 flex items-center justify-center"
                   >
                     <img
-                      src="/assets/img/rignt.svg"
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/rignt.svg"
                       alt=""
                       class="h-8 md:h-4"
                     />
@@ -508,122 +574,2004 @@
             </div>
             <!-- end slider wrapper -->
           </section>
-        </main>
-        <!-- end main -->
 
-        <!-- footer -->
-        <!-- end footer -->
-      </div>
-      <!-- end app wrapper -->
+          <!-- promo -->
 
-      <!-- Login Modal -->
-      <div
-        x-show="showLoginModal"
-        class="fixed inset-0 z-[100] overflow-y-auto"
-        style="background-color: rgba(0, 0, 0, 0.5)"
-      >
-        <div
-          class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-        >
-          <!-- Background overlay -->
-          <div
-            x-show="showLoginModal"
-            @click="showLoginModal = false"
-            x-transition:enter="ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-            class="fixed inset-0 transition-opacity"
-            aria-hidden="true"
-          ></div>
-
-          <!-- Modal content -->
-          <div
-            x-show="showLoginModal"
-            x-transition:enter="ease-out duration-300"
-            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            class="inline-block align-bottom bg-background rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-          >
-            <div class="px-6 py-6">
-              <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold">Sign In</h3>
-                <button
-                  @click="showLoginModal = false"
-                  class="text-gray-400 hover:text-white"
-                >
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-
-              <div class="space-y-4">
-                <div>
-                  <label for="email" class="block text-sm font-medium mb-1"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    x-model="loginForm.email"
-                    class="w-full bg-bg-2 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-button"
-                    placeholder="your@email.com"
+          <section class="w-full md:px-12 py-4 mb-4">
+            <div class="bg-trans-bg rounded-xl p-4 shadow shadow-button/20">
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="flex items-center space-x-3">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/gift-box.png"
+                    alt="icon gift-box"
+                    class="h-6"
                   />
-                </div>
-
-                <div>
-                  <label for="password" class="block text-sm font-medium mb-1"
-                    >Password</label
+                  <span class="md:text-xl font-bold">Free Voucher For You</span>
+                </h3>
+                <div class="flex gap-3">
+                  <button
+                    class="w-8 h-8 rounded-full border-2 border-bg-2 flex items-center justify-center"
                   >
-                  <input
-                    type="password"
-                    id="password"
-                    x-model="loginForm.password"
-                    class="w-full bg-bg-2 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-button"
-                    placeholder="••••••••"
-                  />
-                </div>
-
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      x-model="loginForm.remember"
-                      class="h-4 w-4 text-button focus:ring-button border-border rounded"
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/left.svg"
+                      alt=""
+                      class="h-3"
                     />
-                    <label for="remember" class="ml-2 block text-sm"
-                      >Remember me</label
-                    >
-                  </div>
-                  <a href="#" class="text-sm text-button hover:underline"
-                    >Forgot password?</a
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded-full border-2 border-bg-2 flex items-center justify-center"
                   >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/rignt.svg"
+                      alt=""
+                      class="h-3"
+                    />
+                  </button>
                 </div>
+              </div>
+              <div class="relative">
+                <div class="flex overflow-x-auto scrollbar-hide gap-4">
+                  <!-- Voucher 1 -->
+                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
+                    <div
+                      class="bg-blue-900 rounded-xl relative overflow-hidden p-4"
+                    >
+                      <div
+                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.5),transparent_60%)]"
+                      ></div>
+                      <div
+                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.5),transparent_60%)]"
+                      ></div>
+                      <h4
+                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                      >
+                        GIFT VOUCHER
+                      </h4>
+                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/tiket.svg"
+                          alt=""
+                          class="w-full h-full"
+                        />
+                        <div
+                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
+                        >
+                          <div
+                            class="flex flex-col items-center justify-center leading-none"
+                          >
+                            <div
+                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
+                            >
+                              DISCOUNT
+                            </div>
+                            <p
+                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
+                            >
+                              50%
+                            </p>
+                          </div>
+                          <div class="border-l border-dashed">
+                            <div
+                              class="relative text-[8px] w-full h-full flex justify-center items-center"
+                            >
+                              <div class="font-light rotate-270">
+                                <h6
+                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
+                                >
+                                  4565822121455
+                                </h6>
+                                <span
+                                  class="font-code text-[6vw] md:text-lg m-auto"
+                                  >4565822121455</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="py-2">
+                      <h4 class="text-xl">Gift Voucher</h4>
+                      <p class="text-sm font-thin">
+                        Discount Up to 50% - Apr 03 at 10:00 PM
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end voucher 1 -->
 
-                <button
-                  @click="login()"
-                  class="w-full bg-button hover:bg-button-hover text-white py-2 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Sign In
-                </button>
+                  <!-- Voucher 2 -->
+                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
+                    <div
+                      class="bg-green-300 rounded-xl relative overflow-hidden p-4"
+                    >
+                      <div
+                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),transparent_60%)]"
+                      ></div>
+                      <div
+                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),transparent_60%)]"
+                      ></div>
+                      <h4
+                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                      >
+                        GIFT VOUCHER
+                      </h4>
+                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/tiket.svg"
+                          alt=""
+                          class="w-full h-full"
+                        />
+                        <div
+                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
+                        >
+                          <div
+                            class="flex flex-col items-center justify-center leading-none"
+                          >
+                            <div
+                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
+                            >
+                              DISCOUNT
+                            </div>
+                            <p
+                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
+                            >
+                              50%
+                            </p>
+                          </div>
+                          <div class="border-l border-dashed">
+                            <div
+                              class="relative text-[8px] w-full h-full flex justify-center items-center"
+                            >
+                              <div class="font-light rotate-270">
+                                <h6
+                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
+                                >
+                                  4565822121455
+                                </h6>
+                                <span
+                                  class="font-code text-[6vw] md:text-lg m-auto"
+                                  >4565822121455</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="py-2">
+                      <h4 class="text-xl">Gift Voucher</h4>
+                      <p class="text-sm font-thin">
+                        Discount Up to 50% - Apr 03 at 10:00 PM
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end voucher 2 -->
 
-                <div class="text-center text-sm">
-                  Don't have an account?
-                  <a href="#" class="text-button hover:underline">Sign up</a>
+                  <!-- Voucher 3 -->
+                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
+                    <div
+                      class="bg-pink-500 rounded-xl relative overflow-hidden p-4"
+                    >
+                      <div
+                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,165,0,0.7),transparent_60%)]"
+                      ></div>
+                      <div
+                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,165,0,0.7),transparent_60%)]"
+                      ></div>
+                      <h4
+                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                      >
+                        GIFT VOUCHER
+                      </h4>
+                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/tiket.svg"
+                          alt=""
+                          class="w-full h-full"
+                        />
+                        <div
+                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
+                        >
+                          <div
+                            class="flex flex-col items-center justify-center leading-none"
+                          >
+                            <div
+                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
+                            >
+                              DISCOUNT
+                            </div>
+                            <p
+                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
+                            >
+                              50%
+                            </p>
+                          </div>
+                          <div class="border-l border-dashed">
+                            <div
+                              class="relative text-[8px] w-full h-full flex justify-center items-center"
+                            >
+                              <div class="font-light rotate-270">
+                                <h6
+                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
+                                >
+                                  4565822121455
+                                </h6>
+                                <span
+                                  class="font-code text-[6vw] md:text-lg m-auto"
+                                  >4565822121455</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="py-2">
+                      <h4 class="text-xl">Gift Voucher</h4>
+                      <p class="text-sm font-thin">
+                        Discount Up to 50% - Apr 03 at 10:00 PM
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end voucher 3 -->
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+
+          <!-- flash deal -->
+          <section class="w-full mb-4">
+            <div class="relative py-4 z-[1]">
+              <!-- section header -->
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="pl-4 md:pl-12 flex items-center space-x-3">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/flame.png"
+                    alt="icon gift-box"
+                    class="h-6"
+                  />
+                  <span class="md:text-xl font-bold">Flash Deal</span>
+                </h3>
+              </div>
+              <!-- section content -->
+              <div class="w-full">
+                <div
+                  class="w-full grid grid-rows-[auto_auto_auto] md:grid-rows-[auto_auto] gap-4 md:grid-cols-[1fr_1fr_280px] xl:grid-cols-[1fr_1fr_320px] 2xl:grid-cols-[1fr_1fr_380px]"
+                >
+                  <!-- Promo join reseller -->
+                  <div
+                    class="w-full order-3 md:order-none md:col-start-3 md:row-start-1 md:pr-12 px-4 md:px-0"
+                  >
+                    <div
+                      class="rounded-lg xl:rounded-2xl bg-background/50 backdrop-blur-md md:h-[304px] xl:h-[320px] 2xl:h-[380px]"
+                    >
+                      <div class="w-full p-4">
+                        <p class="text-2xl font-bold mb-3 xl:text-3xl">
+                          Daftar!
+                        </p>
+                        <p class="mb-3 md:text-sm xl:text-base">
+                          Ingin dapat harga lebih murah?
+                        </p>
+                        <h6
+                          class="text-5xl font-bold mb-3 md:text-2xl xl:text-3xl 2xl:text-5xl"
+                        >
+                          JOIN RESELLER!
+                        </h6>
+                        <!-- avatar groups -->
+                        <div class="flex -space-x-4 mb-3">
+                          <div
+                            class="w-10 h-10 overflow-hidden rounded-full bg-background"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            class="w-10 h-10 overflow-hidden rounded-full bg-bg-2"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar2.jpg"
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            class="w-10 h-10 overflow-hidden rounded-full bg-background"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            class="w-10 h-10 overflow-hidden rounded-full bg-bg-2"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar2.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <p class="mb-10 md:text-sm xl:text-base">
+                          Sudah lebih dari 100++ bergabung bersama kami
+                        </p>
+                        <button
+                          class="absolute bottom-0 left-0 w-full rounded-b-lg bg-button py-3 text-xl md:text-[1.2vw] xl:rounded-b-xl cursor-pointer"
+                        >
+                          Hubungi sekarang juga!
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Banner flash deal -->
+                  <div
+                    class="w-full order-1 px-4 md:order-none md:col-span-2 md:row-start-1 md:pl-12 md:px-0"
+                  >
+                    <div
+                      class="relative bg-background rounded-lg xl:rounded-2xl overflow-hidden w-full md:h-[304px] xl:h-[320px] 2xl:h-[380px]"
+                    >
+                      <div
+                        class="w-full aspect-[16/9] md:h-48 lg:h-full overflow-hidden"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="lg:absolute lg:top-0 lg:left-0 lg:h-full">
+                        <div
+                          class="flex flex-row backdrop-blur-sm p-4 gap-3 md:justify-center bg-gradient-to-r from-10% from-slate-950 via-60% via-background/50 to-80% to-white/10 lg:flex-col lg:h-full xl:w-60 xl:p-6 2xl:w-[250px]"
+                        >
+                          <div class="w-1/2 md:w-full md:mb-4">
+                            <button
+                              class="flex items-center px-2 py-0.5 md:py-2 rounded-lg bg-button text-black gap-2 mb-2"
+                            >
+                              <img
+                                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/topup.svg"
+                                alt="top-up"
+                                class="h-3 md:h-4 xl:h-6"
+                              />
+                              <span
+                                class="text-[10px] leading-none md:text-sm xl:text-2xl"
+                                >Top up</span
+                              >
+                            </button>
+                            <p class="text-[12px] md:text-sm xl:text-base">
+                              Top Up Valorant Point
+                            </p>
+                          </div>
+                          <div class="w-1/2 md:w-full">
+                            <span
+                              class="text-xl font-bold py-0.5 px-2 tracking-wider bg-button rounded-lg text-black md:text-xl xl:text-3xl"
+                            >
+                              BONUS S.D
+                            </span>
+                            <div class="flex mt-2 gap-2 xl:mt-6">
+                              <p
+                                class="text-5xl font-black md:text-5xl xl:text-7xl"
+                              >
+                                10
+                              </p>
+                              <div>
+                                <p
+                                  class="leading-none text-3xl font-bold md:text-2xl xl:text-4xl"
+                                >
+                                  RB
+                                </p>
+                                <p class="text-[8px] md:text-sm xl:text-base">
+                                  Valoran Point
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- list Flash Deal -->
+                  <div
+                    class="w-full order-2 md:order-none md:col-span-3 md:row-start-2 md:pl-8 overflow-hidden"
+                  >
+                    <div class="pl-0 md:pl-4 w-full">
+                      <div
+                        class="pl-4 md:pl-0 flex gap-4 overflow-x-auto scrollbar-hide"
+                      >
+                        <!-- list items -->
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2 flex items-center gap-3"
+                        >
+                          <div
+                            class="w-[45%] h-full overflow-hidden rounded-lg"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <h5>Valorant Point</h5>
+                            <p>VP</p>
+                          </div>
+                        </div>
+                        <!-- end list items -->
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                        <div
+                          class="min-w-80 h-28 aspect-[3/1] bg-active rounded-xl p-2"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Best Seller -->
+          <section class="w-full mb-4">
+            <div class="py-4">
+              <!-- section header -->
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="pl-4 md:pl-12 flex items-center space-x-3">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/flame.png"
+                    alt="icon gift-box"
+                    class="h-6"
+                  />
+                  <span class="md:text-xl font-bold">Top-Up Best Seller</span>
+                </h3>
+              </div>
+              <!-- section content -->
+              <div class="w-full overflow-hidden">
+                <div
+                  class="w-full flex flex-nowrap gap-4 overflow-x-auto scrollbar-hide md:pl-12"
+                >
+                  <!-- Item 1 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/mlbb.JPG"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Mobile Legend
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Diamond</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Genshin Impact
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/undown.jpg"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Garena Undawn
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Montly Membership</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 4 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/tof.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Tower of Fantasy
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end section content -->
+            </div>
+          </section>
+
+          <!-- New Game -->
+          <section class="w-full mb-4">
+            <div class="py-4">
+              <!-- section header -->
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="pl-4 md:pl-12 flex items-center space-x-3">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/flame.png"
+                    alt="icon gift-box"
+                    class="h-6"
+                  />
+                  <span class="md:text-xl font-bold"
+                    >New Top-Up Available
+                  </span>
+                </h3>
+              </div>
+              <!-- section content -->
+              <div class="w-full overflow-hidden">
+                <div
+                  class="w-full flex flex-nowrap gap-4 overflow-x-auto scrollbar-hide md:pl-12"
+                >
+                  <!-- Item 3 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/undown.jpg"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Garena Undawn
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Montly Membership</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 4 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/tof.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Tower of Fantasy
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 1 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/mlbb.JPG"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Mobile Legend
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Diamond</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Genshin Impact
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end section content -->
+            </div>
+          </section>
+
+          <!-- Request Game -->
+          <section class="w-full mb-4">
+            <div class="py-4">
+              <!-- section header -->
+              <div class="flex justify-between items-center py-2 mb-2">
+                <h3 class="pl-4 md:pl-12 flex items-center space-x-3">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/flame.png"
+                    alt="icon gift-box"
+                    class="h-6"
+                  />
+                  <span class="md:text-xl font-bold">Request Top-Up Game </span>
+                </h3>
+              </div>
+              <!-- section content -->
+              <div class="w-full overflow-hidden">
+                <div
+                  class="w-full flex flex-nowrap gap-4 overflow-x-auto scrollbar-hide md:pl-12"
+                >
+                  <!-- Item 4 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/tof.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Tower of Fantasy
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 1 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/mlbb.JPG"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Mobile Legend
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Diamond</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Genshin Impact
+                        </h6>
+                        <span class="text-3xl font-bold text-white">Gold</span>
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="h-48 aspect-[16/9] pl-4 md:pl-0 group">
+                    <a
+                      href="#"
+                      class="w-full h-full rounded-xl overflow-hidden relative block"
+                    >
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/undown.jpg"
+                        alt=""
+                        class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300"
+                      />
+
+                      <!-- diskripsi -->
+                      <div
+                        class="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center bg-indigo-400/20 backdrop-blur-sm space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
+                      >
+                        <h6 class="text-white font-bold text-lg">
+                          Garena Undawn
+                        </h6>
+                        <span class="text-3xl font-bold text-white"
+                          >Montly Membership</span
+                        >
+                        <div class="flex -space-x-4">
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-red-300"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-yellow-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-indigo-600"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div
+                            class="w-8 h-8 rounded-full overflow-hidden bg-zinc-500"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p class="text-sm text-white font-medium">
+                          Penjualan 5000++
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end section content -->
+            </div>
+          </section>
+
+          <section class="w-full mb-4">
+            <div class="py-4">
+              <!-- section tab panel -->
+              <div class="flex space-x-4 font-light text-sm px-4 md:px-12">
+                <button
+                  class="all px-4 py-2 bg-button rounded-full border border-white hover:bg-button"
+                >
+                  All
+                </button>
+                <button
+                  class="px-4 py-2 rounded-full border border-white/10 hover:bg-button"
+                >
+                  Games
+                </button>
+                <button
+                  class="px-4 py-2 rounded-full border border-white/10 hover:bg-button"
+                >
+                  Entertainmen
+                </button>
+                <button
+                  class="px-4 py-2 rounded-full border border-white/10 hover:bg-button"
+                >
+                  Voucher
+                </button>
+              </div>
+              <!-- result section tab panel -->
+              <div>
+                <div class="all mb-4">
+                  <!-- result title -->
+                  <div
+                    class="px-4 md:px-12 py-6 flex items-center justify-between gap-3 mt-4"
+                  >
+                    <div>
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/joystick.png"
+                        alt=""
+                        class="h-6"
+                      />
+                      <h5 class="font-semibold tracking-widest">Games</h5>
+                    </div>
+                    <div>
+                      <button class="bg-background px-4 py-2">View More</button>
+                    </div>
+                  </div>
+                  <!-- result content -->
+                  <div class="px-4 md:px-12">
+                    <div
+                      class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+                    >
+                      <!-- items 1 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="entertainment mb-4">
+                  <!-- result title -->
+                  <div class="px-4 md:px-12 py-6 flex gap-3 mt-4">
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/television.png"
+                      alt=""
+                      class="h-6"
+                    />
+                    <h5 class="font-semibold tracking-widest">Entertainment</h5>
+                  </div>
+                  <!-- result content -->
+                  <div class="px-4 md:px-12">
+                    <div
+                      class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+                    >
+                      <!-- items 1 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="voucher mb-4">
+                  <!-- result title -->
+                  <div class="px-4 md:px-12 py-6 flex gap-3 mt-4">
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/voucher.png"
+                      alt=""
+                      class="h-6"
+                    />
+                    <h5 class="font-semibold tracking-widest">Voucher</h5>
+                  </div>
+                  <!-- result content -->
+                  <div class="px-4 md:px-12">
+                    <div
+                      class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+                    >
+                      <!-- items 1 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/gi.webp"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                      <!-- items 2 -->
+                      <a
+                        href="#"
+                        class="w-full aspect-[1/1.25] overflow-hidden rounded-xl relative"
+                      >
+                        <img
+                          src="https://placehold.co/200x300"
+                          alt=""
+                          class="w-full h-full object-cover hover:scale-125 transition-transform duration-200"
+                        />
+                        <div
+                          class="absolute left-0 bottom-0 h-[25%] bg-indigo-950/80 w-full flex flex-col items-center justify-center backdrop-blur-sm outline-1 outline-indigo-950"
+                        >
+                          <h5>Genshin Impact</h5>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- end main -->
+        <footer class="w-full pl-0 lg:pl-64 h-[300px]">footer</footer>
       </div>
-      <!-- end Login Modal -->
     </div>
-    <!-- end id app -->
-    <script src="/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://sigitsuseno.github.io/gachaku-dua/assets/js/main.js"></script>
   </body>
 </html>
