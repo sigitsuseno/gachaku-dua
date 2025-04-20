@@ -1,8 +1,9 @@
 // search
 const search = document.querySelector("[data-search]");
+const btnSearch = document.querySelector("[data-btn-search]");
 if (search) {
-  const btnSearch = search.querySelector("button");
   const searchTab = search.querySelector("[data-searchBar]");
+  // const btnSearch = search.querySelector("button");
   const searchInput = searchTab.querySelector("input");
   const backBtn = searchTab.querySelector("[data-back-btn]");
   const resultSearch = search.querySelector("[data-result-search]");
@@ -347,4 +348,245 @@ document.addEventListener("alpine:init", () => {
       localStorage.removeItem("isLoggedIn");
     },
   }));
+});
+
+// const sidebar = document.querySelector("[data-sidebar]");
+// if (sidebar) {
+//   const toggleSidebar = sidebar.querySelector("[data-sb-button]");
+//   const sbMenu = sidebar.querySelector("[data-sb-menu]");
+//   const support = sidebar.querySelector("[data-support]");
+//   const supMobile = sidebar.querySelector("[data-support-mobile]");
+//   const main = document.querySelector("[data-main]");
+//   const showBar = document.querySelector("[data-btn-showbar]");
+//   const sbNames = sbMenu.querySelectorAll("div div a span");
+
+//   if (toggleSidebar && sbMenu) {
+//     const clickBesarKecil = () => {
+//       const isExpanded = sidebar.classList.contains("w-64");
+//       const btnPosition = sidebar.querySelector("[data-sb-menu] div");
+
+//       // button position
+
+//       if (isExpanded) {
+//         btnPosition.classList.replace("right-4", "right-6");
+//         toggleSidebar.classList.remove("justify-end");
+//         toggleSidebar.classList.remove("bg-button");
+//       } else {
+//         btnPosition.classList.replace("right-6", "right-4");
+//         toggleSidebar.classList.add("justify-end");
+//         toggleSidebar.classList.add("bg-button");
+//       }
+
+//       // sidebar wide
+//       sidebar.classList.replace(
+//         isExpanded ? "w-64" : "w-20",
+//         isExpanded ? "w-20" : "w-64"
+//       );
+
+//       // hide/show menu text
+//       sbNames.forEach((sbname) => {
+//         if (isExpanded) {
+//           sbname.classList.replace("scale-100", "scale-0");
+//           sbname.classList.replace("delay-200", "delay-0");
+//         } else {
+//           sbname.classList.replace("scale-0", "scale-100");
+//           sbname.classList.replace("delay-0", "delay-200");
+//         }
+//       });
+
+//       // hide/show support
+//       if (isExpanded) {
+//         support.classList.replace("scale-100", "scale-0");
+//         support.classList.replace("h-auto", "h-0");
+//         supMobile.classList.replace("scale-0", "scale-100");
+//         support.classList.replace("delay-200", "delay-0");
+//       } else {
+//         support.classList.replace("scale-0", "scale-100");
+//         support.classList.replace("h-0", "h-auto");
+//         supMobile.classList.replace("scale-100", "scale-0");
+//         support.classList.replace("delay-0", "delay-200");
+//       }
+//       if (isExpanded) {
+//         main.classList.replace("md:pl-64", "md:pl-20");
+//       } else {
+//         main.classList.replace("md:pl-20", "md:pl-64");
+//       }
+//     };
+//     toggleSidebar.addEventListener("click", clickBesarKecil);
+//     function mouseOver() {
+//       console.log("yey");
+
+//       clickBesarKecil();
+//       stopPropagation();
+//       // sidebar.removeEventListener("mouseover", mouseOver);
+//     }
+//     function mouseLeave() {
+//       console.log("yey");
+
+//       clickBesarKecil();
+//       // sidebar.removeEventListener("mouseleave", mouseLeave);
+//     }
+//     sidebar.addEventListener("mouseover", mouseOver);
+//     sidebar.addEventListener("mouseleave", mouseLeave);
+//   }
+
+//   if (showBar) {
+//     showBar.onclick = () => {
+//       const btnPosition = sidebar.querySelector("[data-sb-menu] div");
+//       console.log("test");
+//       if (sidebar.classList.contains("-translate-x-72")) {
+//         sidebar.classList.remove("-translate-x-72");
+//         sidebar.classList.replace("w-20", "w-64");
+//         sidebar.classList.replace("top-24", "top-20");
+//         // hide/show menu text
+//         const sbNames = sbMenu.querySelectorAll("div div a span");
+//         sbNames.forEach((sbname) => {
+//           console.log(sbname);
+//           if (sbname.classList.contains("scale-100")) {
+//             sbname.classList.replace("scale-100", "scale-0");
+//             sbname.classList.replace("delay-200", "delay-0");
+//           } else {
+//             sbname.classList.replace("scale-0", "scale-100");
+//             sbname.classList.replace("delay-0", "delay-200");
+//           }
+//         });
+//         sbPosi;
+//       } else {
+//         sidebar.classList.add("-translate-x-72");
+//         sidebar.classList.replace("w-64", "w-20");
+//         sidebar.classList.replace("top-24", "top-20");
+//         // hide/show menu text
+//         const sbNames = sbMenu.querySelectorAll("div div a span");
+//         sbNames.forEach((sbname) => {
+//           console.log(sbname);
+//           if (sbname.classList.contains("scale-100")) {
+//             sbname.classList.replace("scale-100", "scale-0");
+//             sbname.classList.replace("delay-200", "delay-0");
+//           } else {
+//             sbname.classList.replace("scale-0", "scale-100");
+//             sbname.classList.replace("delay-0", "delay-200");
+//           }
+//         });
+//       }
+//     };
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector("[data-sidebar]");
+  if (!sidebar) return;
+
+  // Cache DOM elements
+  const toggleSidebar = sidebar.querySelector("[data-sb-button]");
+  const sbMenu = sidebar.querySelector("[data-sb-menu]");
+  const support = sidebar.querySelector("[data-support]");
+  const supMobile = sidebar.querySelector("[data-support-mobile]");
+  const main = document.querySelector("[data-main]");
+  const showBar = document.querySelector("[data-btn-showbar]");
+
+  if (!toggleSidebar || !sbMenu) return;
+
+  const sbNames = sbMenu.querySelectorAll("div div a span");
+  const btnPosition = sidebar.querySelector("[data-sb-menu] div");
+
+  // Main toggle function
+  const toggleSidebarState = () => {
+    const isExpanded = sidebar.classList.contains("w-64");
+
+    // Toggle button position and styles
+    btnPosition.classList.toggle("right-4", !isExpanded);
+    btnPosition.classList.toggle("right-6", isExpanded);
+    toggleSidebar.classList.toggle("justify-end", !isExpanded);
+    toggleSidebar.classList.toggle("bg-button", !isExpanded);
+
+    // Toggle sidebar width
+    sidebar.classList.toggle("w-64", !isExpanded);
+    sidebar.classList.toggle("w-20", isExpanded);
+
+    // Toggle menu text visibility
+    sbNames.forEach((sbname) => {
+      sbname.classList.toggle("scale-100", !isExpanded);
+      sbname.classList.toggle("scale-0", isExpanded);
+      sbname.classList.toggle("delay-200", !isExpanded);
+      sbname.classList.toggle("delay-0", isExpanded);
+    });
+
+    // Toggle support section
+    support.classList.toggle("scale-100", !isExpanded);
+    support.classList.toggle("scale-0", isExpanded);
+    support.classList.toggle("h-auto", !isExpanded);
+    support.classList.toggle("h-0", isExpanded);
+    supMobile.classList.toggle("scale-100", isExpanded);
+    supMobile.classList.toggle("scale-0", !isExpanded);
+    support.classList.toggle("delay-200", !isExpanded);
+    support.classList.toggle("delay-0", isExpanded);
+
+    // Toggle main content padding
+    main.classList.toggle("md:pl-64", !isExpanded);
+    main.classList.toggle("md:pl-20", isExpanded);
+  };
+
+  // Mobile show/hide function
+  const toggleMobileSidebar = () => {
+    const isHidden = sidebar.classList.contains("-translate-x-72");
+
+    sidebar.classList.toggle("-translate-x-72", !isHidden);
+    sidebar.classList.toggle("top-20", true);
+
+    if (isHidden) {
+      sidebar.classList.replace("w-20", "w-64");
+    } else {
+      sidebar.classList.replace("w-64", "w-20");
+    }
+
+    // Toggle menu text visibility
+    sbNames.forEach((sbname) => {
+      const shouldShow = isHidden;
+      sbname.classList.toggle("scale-100", shouldShow);
+      sbname.classList.toggle("scale-0", !shouldShow);
+      sbname.classList.toggle("delay-200", shouldShow);
+      sbname.classList.toggle("delay-0", !shouldShow);
+    });
+
+    if (support.classList.contains("scale-100")) {
+      support.classList.replace("scale-100", "scale-0");
+      support.classList.replace("h-auto", "h-0");
+      supMobile.classList.replace("scale-0", "scale-100");
+    } else {
+      support.classList.replace("scale-0", "scale-100");
+      support.classList.replace("h-0", "h-auto");
+      supMobile.classList.replace("scale-100", "scale-0");
+    }
+  };
+
+  // Event listeners
+  toggleSidebar.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleSidebarState();
+  });
+
+  // Only add hover events for desktop
+  if (window.innerWidth > 768) {
+    let hoverTimeout;
+
+    const handleHover = (shouldExpand) => {
+      clearTimeout(hoverTimeout);
+      hoverTimeout = setTimeout(() => {
+        const currentState = sidebar.classList.contains("w-64");
+        if (currentState !== shouldExpand) {
+          toggleSidebarState();
+        }
+      }, 200);
+    };
+
+    sidebar.addEventListener("mouseenter", () => handleHover(true));
+    sidebar.addEventListener("mouseleave", () => handleHover(false));
+  }
+
+  if (showBar) {
+    showBar.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMobileSidebar();
+    });
+  }
 });
