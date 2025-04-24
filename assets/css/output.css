@@ -890,6 +890,9 @@
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
   }
@@ -1012,6 +1015,9 @@
   }
   .h-\[40px\] {
     height: 40px;
+  }
+  .h-\[80vh\] {
+    height: 80vh;
   }
   .h-\[200px\] {
     height: 200px;
@@ -1901,6 +1907,9 @@
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
+  }
+  .pb-24 {
+    padding-bottom: calc(var(--spacing) * 24);
   }
   .pb-\[96px\] {
     padding-bottom: 96px;
