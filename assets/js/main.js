@@ -742,21 +742,3 @@ if (buy_option) {
     window.addEventListener("resize", setTesteHeight);
   });
 }
-
-document.querySelectorAll(".toggle-password").forEach((button) => {
-  button.addEventListener("click", function () {
-    const targetId = this.getAttribute("data-target");
-    const input = document.getElementById(targetId);
-    const icons = this.querySelectorAll(".eye-icon");
-
-    if (input.type === "password") {
-      input.type = "text";
-      icons[0].classList.add("hidden");
-      icons[1].classList.remove("hidden");
-    } else {
-      input.type = "password";
-      icons[0].classList.remove("hidden");
-      icons[1].classList.add("hidden");
-    }
-  });
-});

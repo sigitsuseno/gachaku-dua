@@ -15,9 +15,11 @@
       >
         <div class="max-w-5xl h-screen mx-auto flex items-center justify-start">
           <div
-            class="w-full flex flex-col md:grid md:grid-cols-[1fr_400px] px-4 md:px-0 gap-4"
+            class="w-full flex flex-col md:grid md:grid-cols-[1fr_400px] px-4 md:px-8 gap-8"
           >
-            <div class="w-full flex items-center-justify-center">
+            <div
+              class="w-full h-full items-center justify-center hidden md:flex"
+            >
               <div
                 class="w-full h-fit aspect-[16/9] rounded-xl overflow-hidden"
               >
@@ -29,7 +31,9 @@
               </div>
             </div>
 
-            <div class="w-full flex flex-col justify-center lg:px-4">
+            <div
+              class="max-w-[350px] lg:w-full mx-auto flex flex-col justify-center"
+            >
               <div class="mb-4">
                 <h1 class="text-4xl font-bold">Daftar Akun!</h1>
                 <p class="text-sm font-thin">
@@ -65,9 +69,7 @@
                   >
                 </div>
                 <div class="mb-3">
-                  <label for="ho_hp" class="text-sm pb-2"
-                    >Nomor WhatsApp (Optional)</label
-                  >
+                  <label for="ho_hp" class="text-sm pb-2">Nomor WhatsApp</label>
                   <div class="relative">
                     <!-- Custom Select Flag Container -->
                     <div class="absolute top-0 left-0 h-11 w-24">
@@ -182,48 +184,67 @@
                       class="bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
                       placeholder="*******"
                     />
-                    <div class="absolute top-2 right-2">
-                      <button class="hidden cursor-pointer">
-                        <i class="fa-regular fa-eye text-xs"></i>
-                      </button>
-                      <button class="cursor-pointer">
-                        <i class="fa-regular fa-eye-slash text-xs"></i>
+                    <div
+                      class="absolute top-1/2 right-3 transform -translate-y-1/2"
+                    >
+                      <button
+                        type="button"
+                        class="toggle-password text-gray-400 hover:text-white transition-colors"
+                        data-target="password"
+                      >
+                        <span class="text-xs block eye-icon">
+                          <i class="fa-regular fa-eye-slash"></i
+                        ></span>
+                        <span class="text-xs hidden eye-icon">
+                          <i class="fa-regular fa-eye"></i
+                        ></span>
                       </button>
                     </div>
                   </div>
-                  <span class="text-xs text-red-500"
+                  <span id="password-error" class="text-xs text-red-500 hidden"
                     >* Password tidak cocok</span
                   >
                 </div>
                 <div class="mb-3">
-                  <label for="password_confirmation" class="text-sm pb-2"
+                  <label for="password_confirmation" class="text-sm pb-2 block"
                     >Password Confirmation</label
                   >
                   <div class="relative">
                     <input
                       type="password"
                       id="password_confirmation"
-                      class="bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                      class="bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm pr-10"
                       placeholder="*******"
                     />
-                    <div class="absolute top-2 right-2">
-                      <button class="hidden cursor-pointer">
-                        <i class="fa-regular fa-eye text-xs"></i>
-                      </button>
-                      <button class="cursor-pointer">
-                        <i class="fa-regular fa-eye-slash text-xs"></i>
+                    <div
+                      class="absolute top-1/2 right-3 transform -translate-y-1/2"
+                    >
+                      <button
+                        type="button"
+                        class="toggle-password text-gray-400 hover:text-white transition-colors"
+                        data-target="password_confirmation"
+                      >
+                        <span class="text-xs block eye-icon">
+                          <i class="fa-regular fa-eye-slash"></i
+                        ></span>
+                        <span class="text-xs hidden eye-icon">
+                          <i class="fa-regular fa-eye"></i
+                        ></span>
                       </button>
                     </div>
                   </div>
-                  <span class="text-xs text-red-500"
+                  <span id="password-error" class="text-xs text-red-500 hidden"
                     >* Password tidak cocok</span
                   >
                 </div>
-                <button
-                  class="w-full h-10 outline outline-button rounded-xl flex gap-4 items-center justify-center hover:bg-button transition-colors duration-200"
-                >
-                  Daftar
-                </button>
+
+                <div class="w-full py-4">
+                  <button
+                    class="w-full h-10 outline outline-button rounded-xl flex gap-4 items-center justify-center hover:bg-button transition-colors duration-200"
+                  >
+                    Daftar
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -232,5 +253,39 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="/assets/js/main.js"></script>
+
+    <script>
+      document.querySelectorAll(".toggle-password").forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetId = this.getAttribute("data-target");
+          const input = document.getElementById(targetId);
+          const icons = this.querySelectorAll(".eye-icon");
+
+          if (input.type === "password") {
+            input.type = "text";
+            icons[0].classList.add("hidden");
+            icons[1].classList.remove("hidden");
+          } else {
+            input.type = "password";
+            icons[0].classList.remove("hidden");
+            icons[1].classList.add("hidden");
+          }
+        });
+        function validatePassword() {
+          const password = document.getElementById("password").value;
+          const confirmPassword = document.getElementById(
+            "password_confirmation"
+          ).value;
+          const errorElement = document.getElementById("password-error");
+
+          // Only show error if confirmation field has content and doesn't match
+          if (confirmPassword.length > 0 && password !== confirmPassword) {
+            errorElement.classList.remove("hidden");
+          } else {
+            errorElement.classList.add("hidden");
+          }
+        }
+      });
+    </script>
   </body>
 </html>
