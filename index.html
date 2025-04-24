@@ -146,26 +146,39 @@
                 </div>
                 <!-- end search -->
               </div>
-              <!-- Bagian User Dropdown -->
+
               <div class="md:w-[270px] lg:w-80 flex justify-end">
                 <div class="flex space-x-2">
-                  <!-- cart -->
-                  <button
-                    class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                  <!-- bahasa -->
+                  <select
+                    id="countries"
+                    class="bg-bg-2 col-start-1 row-start-1 appearance-none p-2 rounded-full w-10 md:w-12 h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active text-center"
                   >
-                    <img src="/assets/img/cart.svg" alt="" />
-                  </button>
+                    <option value="US" class="bg-background outline-0">
+                      ID
+                    </option>
+                    <option value="CA" class="bg-background outline-0">
+                      EN
+                    </option>
+                  </select>
 
-                  <!-- message -->
-                  <button
-                    class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
-                  >
-                    <img src="/assets/img/bell.svg" alt="" />
-                  </button>
-                  <!-- User Dropdown Component -->
+                  <!-- cart -->
+                  <div class="relative">
+                    <button
+                      class="relative w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                    >
+                      <img src="/assets/img/cart.svg" alt="" />
+                      <span
+                        class="absolute top-0 right-0 w-4 h-4 text-xs bg-button rounded-full"
+                        >3</span
+                      >
+                    </button>
+                  </div>
+
                   <div class="relative">
                     <!-- Login Button -->
-                    <button
+                    <a
+                      href="login-form"
                       class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
                     >
                       <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
@@ -174,7 +187,7 @@
                         alt=""
                         class="lg:hidden"
                       />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,36 @@
 
   <body class="bg-background text-white">
     <div id="app">
-      <div class="fixex top-0 left-0 min-h-screen w-full"></div>
+      <div
+        class="fixex top-0 left-0 min-h-screen w-full bg-[url('/assets/img/bg/bg-mask.svg')]"
+      >
+        <div class="max-w-5xl h-screen mx-auto flex items-center justify-start">
+          <div
+            class="w-full flex flex-col md:grid md:grid-cols-[1fr_400px] px-4 md:px-0 gap-4"
+          >
+            <div class="w-full aspect-[16/9] rounded-xl overflow-hidden">
+              <img
+                src="/assets/img/banner/banner-1.JPG"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-full">
+              <div class="mb-3">
+                <label for="acc_id" class="text-sm pb-2"
+                  >Riot ID #Tagline</label
+                >
+                <input
+                  type="text"
+                  id="acc_id"
+                  class="h-10 bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                  placeholder="Input your Riot ID#Tagline (gachaku#123)"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="/assets/js/main.js"></script>
