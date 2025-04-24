@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://sigitsuseno.github.io/gachaku-dua/assets/fontawesome/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://sigitsuseno.github.io/gachaku-dua/assets/boxicons/css/boxicons.min.css"
+    />
+    <link
+      href="https://sigitsuseno.github.io/gachaku-dua/assets/css/output.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-background text-white">
+    <div id="app">
+      <div class="relative flex flex-col">
+        <!-- header -->
+        <header class="fixed w-full h-20 md:h-24 px-4 bg-background z-20">
+          <div
+            class="relative w-full h-20 md:h-24 grid grid-cols-[120px_1fr] lg:grid-cols-[280px_1fr] content-center"
+          >
+            <!-- Logo  -->
+            <a href="/header.html" class="w-full flex items-center">
+              <img
+                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/gachaku.svg"
+                alt="gachaku"
+                class="hidden lg:block h-[40px] object-contain"
+              />
+              <img
+                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/m-gacha.svg"
+                alt="gachaku mini"
+                class="h-12 lg:hidden"
+              />
+            </a>
+
+            <!-- header Menu -->
+            <div class="w-full flex justify-end space-x-2">
+              <div class="md:w-[calc(100%-180px)] lg:w-[calc(100%-280px)]">
+                <!-- Search -->
+                <div
+                  data-search
+                  class="w-full md:w-[80%] xl:w-[500px] 2xl:w-[600px]"
+                >
+                  <!-- button search in header -->
+                  <!-- <button
+                    class="btn-rounded md:hidden justify-center items-center"
+                  >
+                    <img src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg" alt="" class="h-5" />
+                  </button> -->
+
+                  <div
+                    data-searchBar
+                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-10"
+                  >
+                    <div class="flex justify-between items-center">
+                      <button
+                        data-back-btn
+                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-bg-2 hover:bg-button mt-6 lg:mt-0 md:hidden"
+                      >
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </button>
+                      <div
+                        class="relative w-[calc(100%-58px)] md:w-full mt-6 md:mt-0"
+                      >
+                        <label
+                          for="header-search"
+                          class="absolute top-1/2 -translate-1/2 left-6"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg"
+                            alt=""
+                            class="h-5"
+                          />
+                        </label>
+                        <input
+                          type="text"
+                          id="header-search"
+                          class="bg-bg-2 py-2 pl-12 pr-10 rounded-lg w-full h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active"
+                          placeholder="Search Game, Voucher, etc.."
+                        />
+                        <button
+                          data-clear-search
+                          class="absolute right-3 top-1/2 -translate-1/2 hidden text-gray-400 hover:text-white"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/x.svg"
+                            alt=""
+                            class="h-3"
+                          />
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- search result -->
+                    <div
+                      id="search-result"
+                      data-result-search
+                      class="hidden absolute top-[80px] lg:top-[50px] left-0 z-k0 w-full p-4 rounded-lg flex-col items-start justify-start space-y-3 md:shadow-md md:shadow-button-bg overflow-y-auto max-h-[calc(100vh-100px)] bg-background"
+                    >
+                      <!-- prosessing -->
+                      <button
+                        type="button"
+                        class="bg-button flex gap-3 p-2 rounded-lg"
+                        disabled
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="animate-spin text-white"
+                        >
+                          <path
+                            fill="#ffffff"
+                            d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                            opacity=".25"
+                          />
+                          <path
+                            fill="#ffffff"
+                            d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+                          />
+                        </svg>
+                        Processing…
+                      </button>
+                      <a
+                        href="#"
+                        class="flex space-x-3 p-2 border border-border bg-bg-2 rounded-lg w-full"
+                      >
+                        <div class="w-28 h-auto overflow-hidden rounded-lg">
+                          <img
+                            src="https://placehold.co/100x50"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h3 class="mb-1 text-xl text-button font-bold">
+                            Mobile Legend
+                          </h3>
+                          <p class="text-sm">
+                            Nikmati
+                            <span class="bg-pink-300 py-0.5 px-3 rounded-md"
+                              >Promo Off 20%</span
+                            >
+                            <strong>Top Up</strong> sebagai member
+                            <strong>Gachaku</strong>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- panel hasil pencarian -->
+                </div>
+                <!-- end search -->
+              </div>
+              <!-- Bagian User Dropdown -->
+              <div class="md:w-[270px] lg:w-80 flex justify-end">
+                <div class="flex space-x-2">
+                  <!-- cart -->
+                  <button
+                    class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/cart.svg"
+                      alt=""
+                    />
+                  </button>
+
+                  <!-- message -->
+                  <button
+                    class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/bell.svg"
+                      alt=""
+                    />
+                  </button>
+                  <!-- User Dropdown Component -->
+                  <div class="relative">
+                    <!-- Login Button -->
+                    <button
+                      class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
+                    >
+                      <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/login.svg"
+                        alt=""
+                        class="lg:hidden"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- end header -->
+
+        <!-- menu mobile bottom -->
+        <div class="w-full h-20 md:h-24">
+          <div class="fixed md:hidden bottom-0 left-0 z-20 w-full">
+            <div
+              class="h-14 grid grid-cols-5 bg-background border border-active/30"
+            >
+              <button><i class="fa-solid fa-house"></i></button>
+              <button>
+                <i class="fa-regular fa-flag"></i>
+              </button>
+              <button data-btn-search class="flex items-center justify-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-button flex items-center justify-center"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/search.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                </div>
+              </button>
+              <button>4</button>
+              <button data-btn-showbar>
+                <div class="">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- menu mobile bottom -->
+
+        <!-- sidebar -->
+        <aside
+          data-sidebar
+          class="fixed -translate-x-72 md:-translate-x-0 md:block w-20 h-screen bg-background z-40 top-20 md:top-24 md:left-0 py-4 transition-all duration-300"
+        >
+          <!-- sidebar menu -->
+          <div data-sb-menu class="p-4 relative w-full h-[calc(100vh-102px)]">
+            <div
+              class="absolute -top-1 right-6 transition-all duration-300 z-10"
+            >
+              <button
+                data-sb-button
+                class="w-8 h-4 bg-amber-200/20 rounded-full ring-1 ring-button/50 cursor-pointer hidden"
+              >
+                <div class="w-4 h-4 rounded-full bg-background"></div>
+              </button>
+            </div>
+            <div class="mb-3 re">
+              <div class="space-y-2 pt-4">
+                <a
+                  href="index.html"
+                  class="w-full h-10 flex flex-row items-center bg-card-bg2 rounded-lg justify-start px-3 space-x-3 hover:bg-active shadow shadow-cyan-300/10"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/home.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Home</span
+                  >
+                </a>
+                <a
+                  href="topup.html"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/games.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Top Up Games</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/ticket.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Voucher</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/wallet.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Wallet</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/history.svg"
+                    alt=""
+                    class="h-6"
+                  />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Transaction History</span
+                  >
+                </a>
+              </div>
+              <!-- live support -->
+              <div
+                class="absolute w-full h-[200px] bottom-8 left-0 p-4 lg:px-6"
+              >
+                <div
+                  data-support
+                  class="scale-0 h-0 delay-0 transition-all origin-top duration-300"
+                >
+                  <div class="mb-3">
+                    <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
+                      <img
+                        src="https://sigitsuseno.github.io/gachaku-dua/assets/img/contact.svg"
+                        alt="hubungi gachaku"
+                        class="w-6 h-6 object-contain"
+                      />
+                      <h3 class="ganti font-bold tracking-wide">
+                        Live Support
+                      </h3>
+                      <p class="ganti font-light text-[8.5px]">
+                        we will help you with your complaint
+                      </p>
+                    </div>
+                    <button
+                      class="ganti w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
+                    >
+                      Chat now
+                    </button>
+                  </div>
+                  <!-- media sosial -->
+
+                  <div>
+                    <div data-medsos class="grid grid-cols-5 gap-3">
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/youtube.svg"
+                          alt="gachaku youtube"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/instagram.svg"
+                          alt="gachaku instagram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/facebook.svg"
+                          alt="gachaku facebook"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/telegram.svg"
+                          alt="gachaku telegram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/discord.svg"
+                          alt="gachaku discord"
+                          class="h-5"
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- for mobile -->
+                <div
+                  data-support-mobile
+                  class="space-y-3 relative scale-100 transition-transform delay-200 duration-300 mt-20"
+                >
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/contact.svg"
+                      alt="chat gachaku"
+                    />
+                  </button>
+
+                  <!-- dropup chat -->
+
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/medsos.svg"
+                      alt="mediasosial gachaku"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- corner -->
+            <div
+              class="md:block corner bg-background absolute -top-4 md:right-[-40px]"
+            ></div>
+          </div>
+        </aside>
+
+        <!-- main -->
+        <main
+          data-main
+          class="relative w-full h-full pl-0 md:pl-20 bg-[url('https://sigitsuseno.github.io/gachaku-dua/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <!-- breadcrums -->
+
+          <div class="px-4 md:px-12 py-4">
+            <div class="flex py-4" aria-label="Breadcrumb">
+              <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                  <a href="#" class="text-gray-400">Home</a>
+                </li>
+                <li class="text-gray-400">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li>
+                  <a href="#" class="">Valorant</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <!-- buying detail -->
+          <section class="w-full px-4 md:px-12">
+            <div class="grid grid-rows-[auto_1fr] lg:grid-cols-[35%_65%]">
+              <!-- item detail -->
+              <div id="item_detail" class="bg-card-bg mb-6 lg:mr-4 rounded-xl">
+                <div class="w-full p-4 space-y-4">
+                  <div class="w-full aspect-[16/9] overflow-hidden rounded-lg">
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h2 class="lg:text-lg xl:text-2xl 2xl:test-4xl">
+                    VALORANT - RIOT GAMES
+                  </h2>
+                  <p class="text-xs font-light">
+                    Step into Riot Games latest tactical FPS, where sklill meets
+                    strategy. In Valorant, it's not just about pulling the
+                    triger - it's about thinking outside the box. Team up in 5v5
+                    matches and use your unique abilities and sharp insticts to
+                    outsmart the enemy and secure victory
+                  </p>
+                  <div
+                    class="flex flex-wrap justify-start gap-4 text-xs xl:text-base"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-white bg-bg-3 py-2 px-2 lg:px-2 rounded-full"
+                    >
+                      <i class="fa-solid fa-sack-dollar text-orange-400"></i>
+                      <span>3.1rb Sold</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-2 bg-bg-3 py-2 px-2 lg:px-4 rounded-full"
+                    >
+                      <i class="fa-solid fa-star text-yellow-400"></i>
+                      <span>2.1rb Reviews</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-2 bg-bg-3 py-2 px-2 lg:px-4 rounded-full"
+                    >
+                      <i class="bx bx-check-shield text-xl text-green-700"></i>
+                      <span>Trusted Seller</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-2 bg-bg-3 py-2 px-2 lg:px-4 rounded-full"
+                    >
+                      <i class="fa-solid fa-truck-fast text-indigo-400"></i>
+                      <span>Instant Delivery</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- buy option -->
+              <div class="mb-4 lg:row-span-2">
+                <div id="buy_option">
+                  <!-- account information -->
+                  <div class="p-4 xl:p-6 bg-card-bg rounded-xl mb-6">
+                    <!-- title -->
+                    <div
+                      class="flex justify-between pb-4 border-b border-white/10"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                        >
+                          <i class="bx bxs-shopping-bags"></i>
+                        </div>
+
+                        <h3 class="text-lg">Account Information</h3>
+                      </div>
+
+                      <div
+                        class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                      >
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    <!-- content -->
+                    <div class="pt-4">
+                      <div class="mb-3">
+                        <label for="acc_id" class="text-sm pb-2"
+                          >Riot ID #Tagline</label
+                        >
+                        <input
+                          type="text"
+                          id="acc_id"
+                          class="h-10 bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                          placeholder="Input your Riot ID#Tagline (gachaku#123)"
+                        />
+                      </div>
+                      <p class="text-xs italic">
+                        Untuk menemukan Riot ID Anda, buka halaman profil akun
+                        dan salin Riot ID+Tag menggunakan tombol yang tersedia
+                        disamping Riot ID. (Contoh: gachaku#123)
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- detail product -->
+                  <div class="p-4 xl:p-6 bg-card-bg rounded-xl mb-6">
+                    <!-- title -->
+                    <div
+                      class="flex justify-between pb-4 border-b border-white/10"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                        >
+                          <i class="bx bxs-shopping-bags"></i>
+                        </div>
+
+                        <h3 class="text-lg">Detail Product</h3>
+                      </div>
+
+                      <div
+                        class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                      >
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    <!-- content -->
+                    <div>
+                      <!-- top up product -->
+                      <div class="mb-4">
+                        <h4 class="py-4">Select Top-up Product</h4>
+                        <div class="flex flex-row items-center flex-wrap gap-4">
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 flex items-center justify-start gap-3 px-4 rounded-xl cursor-pointer bg-bg-3"
+                          >
+                            <div
+                              class="w-6 h-6 flex justify-center items-center overflow-hidden"
+                            >
+                              <img
+                                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/v-joki.JPG"
+                                alt=""
+                                class="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span class="text-xs xl:text-sm 2xl:text-base"
+                              >Joki Valorant</span
+                            >
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 flex items-center justify-start gap-3 px-4 rounded-xl cursor-pointer bg-active outline outline-button/50"
+                          >
+                            <div
+                              class="w-6 h-6 flex justify-center items-center overflow-hidden"
+                            >
+                              <img
+                                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/v-joki.webp"
+                                alt=""
+                                class="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span class="text-xs xl:text-sm 2xl:text-base"
+                              >Valorant</span
+                            >
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 flex items-center justify-start gap-3 px-4 rounded-xl cursor-pointer bg-bg-3"
+                          >
+                            <div
+                              class="w-6 h-6 flex justify-center items-center overflow-hidden"
+                            >
+                              <img
+                                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/v-voucher.JPG"
+                                alt=""
+                                class="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span class="text-xs xl:text-sm 2xl:text-base"
+                              >Voucher Valorant</span
+                            >
+                          </button>
+                          <!-- end list topup product -->
+                        </div>
+                      </div>
+
+                      <!-- top up category -->
+                      <div class="mb-4">
+                        <h4 class="py-4">Select Top-up Category</h4>
+                        <div class="flex flex-row items-center flex-wrap gap-4">
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 flex items-center justify-start gap-3 px-4 rounded-xl cursor-pointer bg-active outline outline-button/50"
+                          >
+                            <div
+                              class="w-6 h-6 flex justify-center items-center overflow-hidden"
+                            >
+                              <img
+                                src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/v-point.JPG"
+                                alt=""
+                                class="w-full h-full object-contain"
+                              />
+                            </div>
+                            <span class="text-xs xl:text-sm 2xl:text-base"
+                              >Point</span
+                            >
+                          </button>
+                          <!-- end list topup product -->
+                        </div>
+                      </div>
+
+                      <!-- top up item -->
+                      <div class="mb-4">
+                        <h4 class="py-4">Select Top-up Item</h4>
+                        <div class="grid grid-cols-3 2xl:grid-cols-4 gap-4">
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-active outline outline-button/50 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              475 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 57.543
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-bg-3 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              1000 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 118.543
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-bg-3 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              2050 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 227.575
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-bg-3 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              3660 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 399.715
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-bg-3 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              5350 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 574.398
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="h-12 rounded-lg flex flex-col items-center justify-center hover:bg-active cursor-pointer bg-bg-3 xl:flex-row"
+                          >
+                            <div
+                              class="text-sm 2xl:text-base xl:w-1/2 xl:text-center xl:border-r xl:border-button/50"
+                            >
+                              11000 Points
+                            </div>
+                            <div
+                              class="text-xs xl:text-sm 2xl:text-base xl:w-1/2"
+                            >
+                              Rp. 1.129.270
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end top up product -->
+                  </div>
+
+                  <!-- payment method -->
+                  <div class="p-4 xl:p-6 bg-card-bg rounded-xl mb-6">
+                    <!-- title -->
+                    <div
+                      class="flex justify-between pb-4 border-b border-white/10"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                        >
+                          <i class="bx bxs-shopping-bags"></i>
+                        </div>
+
+                        <h3 class="text-lg">Payment Method</h3>
+                      </div>
+
+                      <div
+                        class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                      >
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    <!-- content -->
+                    <div>
+                      <!-- top up product -->
+                      <div class="mb-4">
+                        <div
+                          class="flex flex-row items-center flex-wrap gap-3 md:gap-4 py-4"
+                        >
+                          <!-- list topup product -->
+                          <button
+                            class="w-40 h-12 flex items-center justify-center px-4 rounded-xl cursor-pointer bg-bg-3 hover:bg-active"
+                          >
+                            <div class="text-xs xl:text-sm 2xl:text-base">
+                              E-Wallet Payments
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="w-40 h-12 flex items-center justify-center px-4 rounded-xl cursor-pointer bg-active outline outline-button/50 hover:bg-active"
+                          >
+                            <div class="text-xs xl:text-sm 2xl:text-base">
+                              Bank Payment
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                          <!-- list topup product -->
+                          <button
+                            class="w-40 h-12 flex items-center justify-center px-4 rounded-xl cursor-pointer bg-bg-3 hover:bg-active"
+                          >
+                            <div class="text-xs xl:text-sm 2xl:text-base">
+                              Retail Payment
+                            </div>
+                          </button>
+                          <!-- end list topup product -->
+                        </div>
+
+                        <!-- top up product -->
+                        <div class="mb-4">
+                          <h4 class="py-4">Select Bank</h4>
+                          <div
+                            class="flex flex-row items-center flex-wrap gap-4"
+                          >
+                            <!-- list topup product -->
+                            <button
+                              class="h-12 flex flex-row space-x-2 text-xs xl:text-sm 2xl:text-base items-center px-4 bg-bg-3 rounded-xl hover:bg-active cursor-pointer"
+                            >
+                              <div class="w-10 h-7 rounded-md bg-white/50 p-1">
+                                <img
+                                  src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/bca.svg"
+                                  alt=""
+                                  class="w-full h-full object-cover"
+                                />
+                              </div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">BCA</div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">Rp. 57.543</div>
+                            </button>
+                            <!-- end list topup product -->
+
+                            <!-- list topup product -->
+                            <button
+                              class="h-12 flex flex-row space-x-2 text-xs xl:text-sm 2xl:text-base items-center px-4 bg-bg-3 rounded-xl hover:bg-active cursor-pointer"
+                            >
+                              <div class="w-10 h-7 rounded-md bg-white/50 p-1">
+                                <img
+                                  src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/mandiri.svg"
+                                  alt=""
+                                  class="w-full h-full object-contain"
+                                />
+                              </div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">MANDIRI</div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">Rp. 57.543</div>
+                            </button>
+                            <!-- end list topup product -->
+                            <!-- list topup product -->
+                            <button
+                              class="h-12 flex flex-row space-x-2 text-xs xl:text-sm 2xl:text-base items-center px-4 bg-bg-3 rounded-xl hover:bg-active cursor-pointer"
+                            >
+                              <div class="w-10 h-7 rounded-md bg-white/50 p-1">
+                                <img
+                                  src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/BNI_logo.svg"
+                                  alt=""
+                                  class="w-full h-full object-contain"
+                                />
+                              </div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">BNI</div>
+                              <div class="text-button/50">|</div>
+                              <div class="text-center">Rp. 57.543</div>
+                            </button>
+                            <!-- end list topup product -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end top up product -->
+                  </div>
+
+                  <!-- email & whatsapp -->
+                  <div class="p-4 xl:p-6 bg-card-bg rounded-xl">
+                    <!-- title -->
+                    <div
+                      class="flex justify-between pb-4 border-b border-white/10"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                        >
+                          <i class="bx bxs-shopping-bags"></i>
+                        </div>
+
+                        <h3 class="text-lg">Email & Nomor WhatsApp</h3>
+                      </div>
+
+                      <div
+                        class="h-8 w-8 flex justify-center items-center rounded-full bg-card-bg text-xs hover:bg-active"
+                      >
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    <!-- content -->
+                    <div class="pt-4">
+                      <div class="mb-3">
+                        <label for="email" class="text-sm pb-2"
+                          >Email (Optional)</label
+                        >
+                        <input
+                          type="email"
+                          id="email"
+                          class="h-10 bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                          placeholder="Input your email"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="ho_hp" class="text-sm pb-2"
+                          >Nomor WhatsApp (Optional)</label
+                        >
+                        <div class="relative">
+                          <!-- Custom Select Flag Container -->
+                          <div class="absolute top-0 left-0 h-12 w-24">
+                            <!-- Selected Value Display -->
+                            <div
+                              id="selected-flag"
+                              class="h-full w-full flex items-center cursor-pointer select-none"
+                            >
+                              <div class="flex gap-3 px-4 items-center w-full">
+                                <img
+                                  src="https://flagcdn.com/w20/id.png"
+                                  alt="indonesia"
+                                  class="w-5 h-3.5"
+                                />
+                                <span
+                                  class="pl-3 border-l border-gray-500/50 text-sm"
+                                  >+62</span
+                                >
+                              </div>
+                            </div>
+
+                            <!-- Dropdown Options -->
+                            <div
+                              id="flag-options"
+                              class="custom-select-options mt-1"
+                            >
+                              <div class="py-1">
+                                <!-- Indonesia -->
+                                <div
+                                  class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                  data-value="+62"
+                                  data-flag="id"
+                                >
+                                  <img
+                                    src="https://flagcdn.com/w20/id.png"
+                                    alt="Indonesia"
+                                    class="w-5 h-3.5 mr-3"
+                                  />
+                                  <span class="text-sm">+62</span>
+                                </div>
+
+                                <!-- Malaysia -->
+                                <div
+                                  class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                  data-value="+60"
+                                  data-flag="my"
+                                >
+                                  <img
+                                    src="https://flagcdn.com/w20/my.png"
+                                    alt="Malaysia"
+                                    class="w-5 h-3.5 mr-3"
+                                  />
+                                  <span class="text-sm">+60</span>
+                                </div>
+
+                                <!-- Singapore -->
+                                <div
+                                  class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                  data-value="+65"
+                                  data-flag="sg"
+                                >
+                                  <img
+                                    src="https://flagcdn.com/w20/sg.png"
+                                    alt="Singapore"
+                                    class="w-5 h-3.5 mr-3"
+                                  />
+                                  <span class="text-sm">+65</span>
+                                </div>
+
+                                <!-- USA -->
+                                <div
+                                  class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                  data-value="+1"
+                                  data-flag="us"
+                                >
+                                  <img
+                                    src="https://flagcdn.com/w20/us.png"
+                                    alt="USA"
+                                    class="w-5 h-3.5 mr-3"
+                                  />
+                                  <span class="text-sm">+1</span>
+                                </div>
+
+                                <!-- UK -->
+                                <div
+                                  class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                  data-value="+44"
+                                  data-flag="gb"
+                                >
+                                  <img
+                                    src="https://flagcdn.com/w20/gb.png"
+                                    alt="UK"
+                                    class="w-5 h-3.5 mr-3"
+                                  />
+                                  <span class="text-sm">+44</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Phone Number Input -->
+                          <input
+                            type="text"
+                            id="ho_hp"
+                            class="h-10 bg-gray-800 w-full pl-24 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                            placeholder="856758666777"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- how to buy -->
+              <div class="mb-4 lg:mr-4 h-auto">
+                <div id="how_to" class="bg-card-bg p-4 rounded-lg mb-6">
+                  <div
+                    class="flex items-center justify-between border-b border-white/20 pb-4"
+                  >
+                    <h4 class="w-100% flex items-center gap-3">
+                      <i class="bx bx-alarm-exclamation text-lg"></i>
+                      <span>How to Buy Valorant Point </span>
+                    </h4>
+                    <div
+                      class="h-6 w-6 flex justify-center items-center rounded-full bg-card-bg2 text-xs"
+                    >
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                  <div class="pt-4 prose text-xs text-gray-400">
+                    <ol>
+                      <li>Enter your Riot ID (e.g., username#123).</li>
+                      <li>
+                        Select the amount of Valorant Points you want to
+                        purchase.
+                      </li>
+                      <li>Choose your payment method.</li>
+                      <li>Enter additional info (if required)</li>
+                      <li>Complete the payment as instructed.</li>
+                      <li>VP will automatically delivered to your account.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div id="teste" class="bg-card-bg p-4 rounded-lg mb-4">
+                  <div class="text-sm flex justify-between mb-4">
+                    <p>
+                      Rewiews
+                      <i class="fa-solid fa-star text-yellow-400"></i> 5.0
+                    </p>
+                    <p>Based on 2.1rb ratings</p>
+                  </div>
+                  <div
+                    class="space-y-4 h-[calc(100%-48px)] overflow-y-auto scrollbar-hide"
+                  >
+                    <!-- Testimonial 1 -->
+                    <div
+                      class="p-4 bg-black/80 rounded-lg text-xs xl:text-sm w-full space-y-3"
+                    >
+                      <p class="italic">
+                        "Prosesnya cepat banget! Ga sampai 5 menit saldo game
+                        aku langsung masuk. Harganya juga lebih murah dibanding
+                        tempat lain. Bakal langganan terus nih!"
+                      </p>
+                      <div class="text-yellow-400 flex gap-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-6 h-6 xl:w-8 xl:h-8 rounded-full overflow-hidden bg-white/20"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                            alt="Andi"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium text-sm 2xl:text-base">Andi</p>
+                          <p class="text-xs text-gray-300 hidden">
+                            Pengguna Mobile Legends
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div
+                      class="p-4 bg-black/80 rounded-lg text-xs xl:text-sm w-full space-y-3"
+                    >
+                      <p class="italic">
+                        "CS-nya ramah dan responsif! Pas ada kendala langsung
+                        dibantu sampai selesai. Bonus vouchernya juga lumayan
+                        buat beli skin favorit."
+                      </p>
+                      <div class="text-yellow-400 flex gap-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-6 h-6 xl:w-8 xl:h-8 rounded-full overflow-hidden bg-white/20"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar2.jpg"
+                            alt="Siska"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium text-sm 2xl:text-base">Siska</p>
+                          <p class="text-xs text-gray-300 hidden">
+                            Pengguna PUBG Mobile
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div
+                      class="p-4 bg-black/80 rounded-lg text-xs xl:text-sm w-full space-y-3"
+                    >
+                      <p class="italic">
+                        "Top up Genshin Impact lebih hemat 15% dibanding
+                        e-commerce besar! Proses instan dan dapat genesis
+                        crystal tanpa delay."
+                      </p>
+                      <div class="text-yellow-400 flex gap-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-6 h-6 xl:w-8 xl:h-8 rounded-full overflow-hidden bg-white/20"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar.webp"
+                            alt="Rizal"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium text-sm 2xl:text-base">Rizal</p>
+                          <p class="text-xs text-gray-300 hidden">
+                            Pengguna Genshin Impact
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div
+                      class="p-4 bg-black/80 rounded-lg text-xs xl:text-sm w-full space-y-3"
+                    >
+                      <p class="italic">
+                        "Pertama kali coba langsung jatuh cinta! Prosesnya
+                        gampang banget dan harganya kompetitif. Sekarang jadi
+                        tempat langganan top up game keluarga."
+                      </p>
+                      <div class="text-yellow-400 flex gap-3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-6 h-6 xl:w-8 xl:h-8 rounded-full overflow-hidden bg-white/20"
+                        >
+                          <img
+                            src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/avatar2.jpg"
+                            alt="Dewi"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium text-sm 2xl:text-base">Dewi</p>
+                          <p class="text-xs text-gray-300 hidden">
+                            Pengguna Valorant
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section class="w-full mb-4">
+            <div class="px-4 py-4 md:px-12">
+              <div>
+                <!-- section title title -->
+                <div class="flex items-center justify-between gap-3 my-4">
+                  <div class="flex gap-2">
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/joystick.png"
+                      alt=""
+                      class="h-6"
+                    />
+                    <h5 class="font-semibold tracking-wider">
+                      <span class="hidden md:block"
+                        >Frequenty Asked Questions</span
+                      >
+                      <span class="md:hidden">F.A.Q</span>
+                    </h5>
+                  </div>
+                  <div>
+                    <button
+                      class="bg-background px-4 py-2 rounded-lg outline outline-white/10 hover:bg-black/20"
+                    >
+                      View More
+                    </button>
+                  </div>
+                </div>
+                <div class="bg-background rounded-xl py-4">
+                  <div class="w-full px-4">
+                    <ul id="faq" class="space-y-4">
+                      <!-- FAQ Item 1 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Bagaimana cara melakukan top up di website ini?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 translate-[-50%] transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Caranya sangat mudah! Pilih game yang ingin Anda
+                              top up, masukkan ID game dan server, pilih nominal
+                              top up, lalu lakukan pembayaran. Setelah
+                              pembayaran berhasil, saldo akan langsung masuk ke
+                              akun game Anda dalam waktu 1-5 menit.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 2 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Metode pembayaran apa saja yang tersedia?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Kami menyediakan berbagai metode pembayaran
+                              termasuk transfer bank (BCA, BRI, Mandiri, BNI),
+                              e-wallet (DANA, OVO, GoPay, ShopeePay), QRIS,
+                              serta convenience store (Alfamart, Indomaret).
+                              Pembayaran via cryptocurrency juga tersedia.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 3 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Berapa lama proses top up biasanya?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Proses top up biasanya memakan waktu 1-5 menit
+                              setelah pembayaran berhasil. Namun untuk beberapa
+                              game tertentu atau saat server game sedang sibuk,
+                              mungkin membutuhkan waktu hingga 30 menit. Jika
+                              lebih dari 1 jam belum masuk, silakan hubungi CS
+                              kami.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 4 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Bagaimana jika saldo tidak masuk ke akun game saya?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Pastikan Anda telah memasukkan ID game dan server
+                              dengan benar. Jika saldo belum masuk setelah 1
+                              jam, silakan hubungi Customer Service kami via
+                              WhatsApp/Live Chat dengan menyertakan bukti
+                              pembayaran dan detail transaksi. Kami akan
+                              memprosesnya segera.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 5 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Apakah ada biaya tambahan untuk top up?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Tidak ada biaya tambahan sama sekali! Harga yang
+                              tertera sudah final. Namun beberapa metode
+                              pembayaran mungkin memiliki biaya administrasi
+                              dari pihak bank/e-wallet (biasanya
+                              Rp1.000-Rp5.000) tergantung kebijakan
+                              masing-masing provider pembayaran.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 6 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Bisakah saya membatalkan transaksi yang sudah
+                            dibayar?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Transaksi yang sudah dibayar tidak dapat
+                              dibatalkan karena proses top up bersifat instan.
+                              Namun jika terjadi kesalahan input ID game atau
+                              nominal, Anda bisa menghubungi CS kami dalam waktu
+                              30 menit setelah pembayaran untuk dilakukan
+                              pengecekan.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 7 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Apakah website ini aman untuk transaksi?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Sangat aman! Kami menggunakan enkripsi SSL 256-bit
+                              untuk semua transaksi dan tidak menyimpan data
+                              pembayaran Anda. Website kami juga sudah
+                              terverifikasi sebagai merchant resmi oleh berbagai
+                              publisher game besar seperti Moonton, Garena, dan
+                              Mihoyo.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- FAQ Item 8 -->
+                      <li
+                        class="w-full rounded-xl border border-white/10 overflow-hidden"
+                      >
+                        <button
+                          class="faq-toggle w-full text-left px-4 py-4 flex justify-between items-center cursor-pointer group outline outline-white/10"
+                        >
+                          <h4
+                            class="w-[calc(100%-48px)] text-sm md:text-lg tracking-wide font-semibold text-white group-hover:text-blue-300 transition-colors"
+                          >
+                            Jam operasional layanan customer service?
+                          </h4>
+                          <div
+                            class="w-6 h-6 rounded-full outline outline-white/40 flex justify-center items-center transition-transform duration-300"
+                          >
+                            <div class="relative w-3 h-3">
+                              <span
+                                class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                              <span
+                                class="absolute top-1/2 left-1/2 w-0.5 h-full bg-slate-300 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                              ></span>
+                            </div>
+                          </div>
+                        </button>
+                        <div
+                          class="faq-content px-4 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+                        >
+                          <div class="pt-4">
+                            <p class="text-sm text-slate-300 md:text-base">
+                              Customer Service kami siap membantu 24 jam setiap
+                              hari melalui Live Chat di website. Untuk respon
+                              lebih cepat, Anda bisa menghubungi via WhatsApp
+                              (08.00-24.00 WIB) atau email (respon dalam 1x24
+                              jam). Di luar jam tersebut, tim support tetap
+                              memantau pesan penting.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- trending news -->
+          <section class="w-full mb-4">
+            <div class="px-4 md:px-12">
+              <div
+                class="flex flex-col lg:grid lg:grid-cols-[66.5%_31.9%] lg:grid-rows-[auto] gap-4"
+              >
+                <div class="w-full aspect-[16/9] rounded-xl lg:row-span-2">
+                  <div
+                    class="h-full w-full rounded-xl overflow-hidden relative"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                    <div
+                      class="absolute bottom-0 left-0 w-full h-[40%] flex items-center justify-start gap-3"
+                    >
+                      <div
+                        class="h-full aspect-[2/3] rounded-tr-2xl bg-red-400 p-1"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran.webp"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="w-10/12 pr-4 xl:space-y-2">
+                        <h4
+                          class="text-[14px] lg:text-xl xl:text-2xl 2xl:text-4xl font-bold"
+                        >
+                          Master Toronto: Live audience and ticket sale
+                          information
+                        </h4>
+                        <p
+                          class="text-[8px] md:text-[10px] lg:text-sm xl:text-base 2xl:text-lg font-thin"
+                        >
+                          We're excited to announce that tickets for VALORANT
+                          Masters Toronto will go on sale Thuesday, March 25 at
+                          7 AM PT / 10 AM ET / 3 PM CET!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-full aspect-[16/9] rounded-xl order-1 lg:order-none"
+                >
+                  <div
+                    class="h-full w-full rounded-xl overflow-hidden relative"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                    <div
+                      class="absolute bottom-0 left-0 w-full h-[40%] flex items-center justify-start gap-3"
+                    >
+                      <div
+                        class="h-full aspect-[2/3] rounded-tr-2xl bg-red-400 p-1"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran.webp"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="w-10/12 pr-4 xl:space-y-2">
+                        <h4
+                          class="text-[14px] lg:text-base 2xl:text-lg leading-5"
+                        >
+                          Master Toronto: Live audience and ticket sale
+                          information
+                        </h4>
+                        <p
+                          class="lg:hidden text-[8px] md:text-[10px] lg:text-sm xl:text-base 2xl:text-lg font-thin"
+                        >
+                          We're excited to announce that tickets for VALORANT
+                          Masters Toronto will go on sale Thuesday, March 25 at
+                          7 AM PT / 10 AM ET / 3 PM CET!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-full aspect-[16/9] rounded-xl order-2 lg:order-none"
+                >
+                  <div
+                    class="h-full w-full rounded-xl overflow-hidden relative"
+                  >
+                    <img
+                      src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                    <div
+                      class="absolute bottom-0 left-0 w-full h-[40%] flex items-center justify-start gap-3"
+                    >
+                      <div
+                        class="h-full aspect-[2/3] rounded-tr-2xl bg-red-400 p-1"
+                      >
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran.webp"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="w-10/12 pr-4 xl:space-y-2">
+                        <h4
+                          class="text-[14px] lg:text-base 2xl:text-lg leading-5"
+                        >
+                          Master Toronto: Live audience and ticket sale
+                          information
+                        </h4>
+                        <p
+                          class="lg:hidden text-[8px] md:text-[10px] lg:text-sm xl:text-base 2xl:text-lg font-thin"
+                        >
+                          We're excited to announce that tickets for VALORANT
+                          Masters Toronto will go on sale Thuesday, March 25 at
+                          7 AM PT / 10 AM ET / 3 PM CET!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- add to cart bottom -->
+          <div
+            id="addToCart"
+            class="fixed bottom-16 md:bottom-6 w-full left-0 z-10 pl-0 md:pl-20 transition-all duration-300"
+          >
+            <div class="w-full px-4 md:px-12">
+              <div
+                class="bg-addtocart border border-button/50 rounded-lg p-2 w-full"
+              >
+                <div
+                  class="relative flex flex-col lg:flex-row justify-between gap-3 xl:px-6 2xl:px-12"
+                >
+                  <div
+                    class="flex items-center justify-between gap-4 lg:w-[calc(100%-340px)] lg:justify-start lg:gap-6"
+                  >
+                    <!-- item -->
+                    <div class="flex gap-2">
+                      <div class="h-12 w-16 rounded-md overflow-hidden">
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/banner/valoran-bg.png"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h5 class="text-base">Valorant (Point)</h5>
+                        <div class="flex gap-2 items-center">
+                          <div
+                            class="w-5 h-5 rounded-full overflow-hidden bg-button p-[5px]"
+                          >
+                            <img
+                              src="https://sigitsuseno.github.io/gachaku-dua/assets/img/icon/v-point.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span class="text-sm">425 POINT</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- jumlah pembelian -->
+                    <div class="relative">
+                      <button
+                        class="absolute w-8 h-8 top-0 left-0 text-lg cursor-pointer decrement-btn"
+                        onclick="decrementValue()"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        id="quantity-input"
+                        class="w-24 px-8 py-1 bg-active outline outline-button rounded-lg text-center"
+                        value="1"
+                        min="1"
+                        readonly
+                      />
+                      <button
+                        class="absolute w-8 h-8 top-0 right-0 text-lg cursor-pointer increment-btn"
+                        onclick="incrementValue()"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <!-- harga -->
+                    <div
+                      class="absolute bottom-11 left-0 flex justify-between w-full items-center md:static md:flex-col md:w-auto"
+                    >
+                      <p>Total Amount</p>
+                      <p class="text-lg">Rp. <span>57.000</span></p>
+                    </div>
+                  </div>
+                  <div class="w-full h-6 md:hidden"></div>
+                  <!-- add to cart button -->
+                  <div
+                    class="flex gap-3 w-full justify-end items-center lg:justify-end lg:w-auto"
+                  >
+                    <button
+                      class="w-1/2 text-sm h-8 lg:h-10 lg:w-40 xl:w-48 bg-card-bg2 outline outline-button p-1 lg:p-2 rounded-lg"
+                    >
+                      <div class="flex gap-3 items-center justify-center">
+                        <img
+                          src="https://sigitsuseno.github.io/gachaku-dua/assets/img/cart.svg"
+                          alt=""
+                          class="h-4"
+                        />
+                        <span>Add to Cart</span>
+                      </div>
+                    </button>
+                    <button
+                      class="w-1/2 text-sm h-8 lg:h-10 lg:w-40 xl:w-48 bg-button p-1 lg:p-2 rounded-lg"
+                    >
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end add to cart bottom -->
+        </main>
+        <!-- end main -->
+
+        <!-- footer -->
+        <footer
+          id="footer"
+          class="w-full h-full pl-0 md:pl-20 bg-[url('https://sigitsuseno.github.io/gachaku-dua/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <div class="w-full px-4 md:px-12 pb-[96px] md:pb-8">
+            <div
+              class="text-center w-full pt-12 border-t border-white/20 text-3xl lg:text-5xl font-semibold tracking-wider space-y-2"
+            >
+              <p>CHEAP TOP UP</p>
+              <p>AND RELIABLE</p>
+              <div class="flex justify-center gap-3">
+                <span>ONLY IN </span>
+                <div class="-rotate-6">
+                  <img
+                    src="https://sigitsuseno.github.io/gachaku-dua/assets/img/gachaku.svg"
+                    alt=""
+                    class="h-8"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex justify-between items-center mt-8">
+              <div>
+                <img
+                  src="https://sigitsuseno.github.io/gachaku-dua/assets/img/gachaku.svg"
+                  alt=""
+                  class="h-6"
+                />
+              </div>
+              <div class="text-[12px]">
+                <p class="text-white/50">Contact Us :</p>
+                <p>info@gachaku.com</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end footer -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://sigitsuseno.github.io/gachaku-dua/assets/js/main.js"></script>
+  </body>
+</html>
