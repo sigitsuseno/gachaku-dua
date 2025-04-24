@@ -149,6 +149,19 @@
 
               <div class="md:w-[270px] lg:w-80 flex justify-end">
                 <div class="flex space-x-2">
+                  <!-- bahasa -->
+                  <select
+                    id="countries"
+                    class="bg-bg-2 col-start-1 row-start-1 appearance-none p-2 rounded-full w-10 md:w-12 h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active text-center"
+                  >
+                    <option value="US" class="bg-background outline-0">
+                      ID
+                    </option>
+                    <option value="CA" class="bg-background outline-0">
+                      EN
+                    </option>
+                  </select>
+
                   <!-- cart -->
                   <div class="relative">
                     <button
@@ -162,16 +175,10 @@
                     </button>
                   </div>
 
-                  <!-- message -->
-                  <button
-                    class="w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
-                  >
-                    <img src="/assets/img/bell.svg" alt="" />
-                  </button>
-                  <!-- User Dropdown Component -->
                   <div class="relative">
                     <!-- Login Button -->
-                    <button
+                    <a
+                      href="login-form"
                       class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
                     >
                       <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
@@ -180,7 +187,7 @@
                         alt=""
                         class="lg:hidden"
                       />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -407,383 +414,78 @@
               class="w-full object-top-left"
             />
           </div> -->
-          <!-- hero slider section -->
-          <section class="w-full md:pt-6 md:pb-2 relative">
-            <!-- slider wrapper -->
-            <div class="relative py-2">
-              <!-- slider content -->
-              <div
-                class="flex flex-col-reverse md:grid md:grid-cols-[calc(48px+18vw)_1fr] items-center"
-              >
-                <!-- information -->
-                <div
-                  class="w-full pl-4 pr-4 md:pl-12 md:pr-4 text-center md:text-left"
-                >
-                  <h2 class="text-lg md:text-[2.4vw]">
-                    Quick, Save, and Easy Game Top-Up!
-                  </h2>
-                  <p class="text-[10px] md:text-[1vw]">
-                    Fast, Convenient, and affordable top-up for gamer worldwide
-                  </p>
-                </div>
-                <!-- end information -->
 
-                <!-- slider image -->
-                <swiper-container
-                  class="mySwiper w-full h-full flex justify-start items-center flex-nowrap overflow-x-hidden"
-                  space-between="30"
-                  slides-per-view="auto"
-                  pagination="true"
-                  pagination-clickable="true"
-                  loop="true"
-                >
-                  <!-- image -->
-                  <swiper-slide
-                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
-                  >
+          <!-- free Detail keranjang -->
+          <section class="w-full md:px-12 py-4 mb-4">
+            <div
+              class="flex flex-col justify-start items-start md:flex-row gap-4 p-4 md:p-0"
+            >
+              <div class="bg-bg-3 w-full md:w-2/3">besar</div>
+              <div class="w-full md:w-1/3">
+                <!-- kode promo -->
+                <div class="bg-bg-3 p-4 rounded-xl w-full">
+                  <!-- judul -->
+                  <div class="flex">
                     <div
-                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
+                      class="w-full flex gap-3 items-center border-b border-button/10 pb-4"
                     >
                       <img
-                        src="/assets/img/banner/banner-1.JPG"
-                        alt="test"
-                        class="w-full h-full"
+                        src="/assets/img/n-icon/Ticket2.svg"
+                        alt=""
+                        class="h-4"
                       />
+                      <h3>Voucher Code</h3>
                     </div>
-                  </swiper-slide>
-                  <swiper-slide
-                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
-                  >
-                    <div
-                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
+                  </div>
+                  <!-- isi -->
+                  <div class="pt-2">
+                    <label for="voucher_code" class="text-xs md:text-sm"
+                      >Enter Your Voucher Code</label
                     >
-                      <img
-                        src="/assets/img/banner/banner-1.JPG"
-                        alt="test"
-                        class="w-full h-full"
-                      />
-                    </div>
-                  </swiper-slide>
-                  <swiper-slide
-                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
-                  >
-                    <div
-                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
-                    >
-                      <img
-                        src="/assets/img/banner/banner-1.JPG"
-                        alt="test"
-                        class="w-full h-full"
-                      />
-                    </div>
-                  </swiper-slide>
-                  <swiper-slide
-                    class="w-full md:w-[80%] aspect-[16/9] shrink-0 p-2"
-                  >
-                    <div
-                      class="bg-amber-300 w-full h-full rounded-3xl overflow-hidden"
-                    >
-                      <img
-                        src="/assets/img/banner/banner-1.JPG"
-                        alt="test"
-                        class="w-full h-full"
-                      />
-                    </div>
-                  </swiper-slide>
-                </swiper-container>
-                <!-- end slider image -->
-              </div>
-              <!-- end slider content -->
-              <div class="md:grid md:grid-cols-[calc(48px+18vw)_1fr]">
-                <!-- slider navigation -->
-                <div
-                  class="absolute w-full aspect-[16/9] top-2 flex justify-between md:justify-start items-center gap-4 md:pl-12 md:w-full md:static md:aspect-auto"
-                >
-                  <button
-                    class="w-8 h-full md:bg-button rounded-lg hover:bg-button-hover md:w-8 md:h-8 flex items-center justify-center"
-                  >
-                    <img src="/assets/img/left.svg" alt="" class="h-8 md:h-4" />
-                  </button>
-                  <button
-                    class="w-8 h-full md:bg-button rounded-lg hover:bg-button-hover md:w-8 md:h-8 flex items-center justify-center"
+                    <input
+                      id="voucher_code"
+                      type="text"
+                      class="bg-bg-2 py-2 px-4 rounded-lg w-full h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active placeholder:text-xs"
+                      placeholder="Voucher code (e.g. ABCD1234)"
+                    />
+                    <p class="text-xs mt-4">
+                      You can find a variety of voucher codes
+                      <a href="#" class="text-button underline">here.</a>
+                    </p>
+                  </div>
+                </div>
+                <!-- order summary -->
+
+                <div class="bg-bg-3 p-4 rounded-xl w-full mt-4 shadow-sm">
+                  <!-- Header -->
+                  <div
+                    class="flex items-center gap-3 border-b border-button/10 pb-4"
                   >
                     <img
-                      src="/assets/img/rignt.svg"
-                      alt=""
-                      class="h-8 md:h-4"
+                      src="/assets/img/n-icon/Ticket2.svg"
+                      alt="Ticket icon"
+                      class="w-4 h-4"
+                      aria-hidden="true"
                     />
-                  </button>
-                </div>
-                <!-- end slider navigation -->
-
-                <!-- pagination -->
-
-                <div
-                  class="w-full md:w-[80%] h-8 flex justify-center items-center space-x-1"
-                >
-                  <a class="block w-4 lg:w-6 h-1.5 bg-button rounded-full"></a>
-                  <a class="block w-4 lg:w-6 h-1.5 bg-button rounded-full"></a>
-                  <a class="block w-4 lg:w-6 h-1.5 bg-button rounded-full"></a>
-                  <a class="block w-4 lg:w-6 h-1.5 bg-button rounded-full"></a>
-                  <a class="block w-4 lg:w-6 h-1.5 bg-button rounded-full"></a>
-                </div>
-
-                <!-- end pagination -->
-              </div>
-            </div>
-            <!-- end slider wrapper -->
-          </section>
-
-          <!-- free foucher -->
-
-          <section class="w-full md:px-12 py-4 mb-4">
-            <div class="bg-trans-bg rounded-xl p-4 shadow shadow-button/20">
-              <div class="flex justify-between items-center py-2 mb-2">
-                <h3 class="flex items-center space-x-3">
-                  <img
-                    src="/assets/img/gift-box.png"
-                    alt="icon gift-box"
-                    class="h-6"
-                  />
-                  <span class="md:text-xl font-bold">Free Voucher For You</span>
-                </h3>
-                <div class="flex gap-3">
-                  <button
-                    class="w-8 h-8 rounded-full border-2 border-bg-2 flex items-center justify-center"
-                  >
-                    <img src="/assets/img/left.svg" alt="" class="h-3" />
-                  </button>
-                  <button
-                    class="w-8 h-8 rounded-full border-2 border-bg-2 flex items-center justify-center"
-                  >
-                    <img src="/assets/img/rignt.svg" alt="" class="h-3" />
-                  </button>
-                </div>
-              </div>
-              <div class="relative">
-                <div class="flex overflow-x-auto scrollbar-hide gap-4">
-                  <!-- Voucher 1 -->
-                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
-                    <div
-                      class="bg-blue-900 rounded-xl relative overflow-hidden p-4"
+                    <h3 class="font-semibold">Order Summary</h3>
+                  </div>
+                  <!-- Content -->
+                  <div class="w-full pt-4">
+                    <button
+                      class="relative w-full p-1 rounded-xl overflow-hidden bg-active"
                     >
                       <div
-                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.5),transparent_60%)]"
-                      ></div>
-                      <div
-                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.5),transparent_60%)]"
-                      ></div>
-                      <h4
-                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                        class="w-full h-10 bg-button flex items-center justify-center rounded-lg box a"
                       >
-                        GIFT VOUCHER
-                      </h4>
-                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
-                        <img
-                          src="/assets/img/tiket.svg"
-                          alt=""
-                          class="w-full h-full"
-                        />
-                        <div
-                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
-                        >
-                          <div
-                            class="flex flex-col items-center justify-center leading-none"
-                          >
-                            <div
-                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
-                            >
-                              DISCOUNT
-                            </div>
-                            <p
-                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
-                            >
-                              50%
-                            </p>
-                          </div>
-                          <div class="border-l border-dashed">
-                            <div
-                              class="relative text-[8px] w-full h-full flex justify-center items-center"
-                            >
-                              <div class="font-light rotate-270">
-                                <h6
-                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
-                                >
-                                  4565822121455
-                                </h6>
-                                <span
-                                  class="font-code text-[6vw] md:text-lg m-auto"
-                                  >4565822121455</span
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        test
                       </div>
-                    </div>
-                    <div class="py-2">
-                      <h4 class="text-xl">Gift Voucher</h4>
-                      <p class="text-sm font-thin">
-                        Discount Up to 50% - Apr 03 at 10:00 PM
-                      </p>
-                    </div>
+                      <div class="animasi"></div>
+                    </button>
                   </div>
-                  <!-- end voucher 1 -->
-
-                  <!-- Voucher 2 -->
-                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
-                    <div
-                      class="bg-green-300 rounded-xl relative overflow-hidden p-4"
-                    >
-                      <div
-                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),transparent_60%)]"
-                      ></div>
-                      <div
-                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),transparent_60%)]"
-                      ></div>
-                      <h4
-                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
-                      >
-                        GIFT VOUCHER
-                      </h4>
-                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
-                        <img
-                          src="/assets/img/tiket.svg"
-                          alt=""
-                          class="w-full h-full"
-                        />
-                        <div
-                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
-                        >
-                          <div
-                            class="flex flex-col items-center justify-center leading-none"
-                          >
-                            <div
-                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
-                            >
-                              DISCOUNT
-                            </div>
-                            <p
-                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
-                            >
-                              50%
-                            </p>
-                          </div>
-                          <div class="border-l border-dashed">
-                            <div
-                              class="relative text-[8px] w-full h-full flex justify-center items-center"
-                            >
-                              <div class="font-light rotate-270">
-                                <h6
-                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
-                                >
-                                  4565822121455
-                                </h6>
-                                <span
-                                  class="font-code text-[6vw] md:text-lg m-auto"
-                                  >4565822121455</span
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="py-2">
-                      <h4 class="text-xl">Gift Voucher</h4>
-                      <p class="text-sm font-thin">
-                        Discount Up to 50% - Apr 03 at 10:00 PM
-                      </p>
-                    </div>
-                  </div>
-                  <!-- end voucher 2 -->
-
-                  <!-- Voucher 3 -->
-                  <div class="flex-shrink-0 w-[90%] md:w-[250px] xl:w-80">
-                    <div
-                      class="bg-pink-500 rounded-xl relative overflow-hidden p-4"
-                    >
-                      <div
-                        class="absolute -top-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,165,0,0.7),transparent_60%)]"
-                      ></div>
-                      <div
-                        class="absolute -bottom-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,165,0,0.7),transparent_60%)]"
-                      ></div>
-                      <h4
-                        class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
-                      >
-                        GIFT VOUCHER
-                      </h4>
-                      <div class="w-[80%] aspect-[2/1] mx-auto relative">
-                        <img
-                          src="/assets/img/tiket.svg"
-                          alt=""
-                          class="w-full h-full"
-                        />
-                        <div
-                          class="absolute w-full h-full top-0 left-0 grid grid-cols-[1fr_30%] text-cyan-800"
-                        >
-                          <div
-                            class="flex flex-col items-center justify-center leading-none"
-                          >
-                            <div
-                              class="font-bold tracking-widest text-[3.5vw] md:text-[1.5vw]"
-                            >
-                              DISCOUNT
-                            </div>
-                            <p
-                              class="font-extrabold text-[9vw] md:text-[3.5vw]"
-                            >
-                              50%
-                            </p>
-                          </div>
-                          <div class="border-l border-dashed">
-                            <div
-                              class="relative text-[8px] w-full h-full flex justify-center items-center"
-                            >
-                              <div class="font-light rotate-270">
-                                <h6
-                                  class="md:text-[0.3vw] text-[1.5vw] -mb-[10%] md:-mb-2"
-                                >
-                                  4565822121455
-                                </h6>
-                                <span
-                                  class="font-code text-[6vw] md:text-lg m-auto"
-                                  >4565822121455</span
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="py-2">
-                      <h4 class="text-xl">Gift Voucher</h4>
-                      <p class="text-sm font-thin">
-                        Discount Up to 50% - Apr 03 at 10:00 PM
-                      </p>
-                    </div>
-                  </div>
-                  <!-- end voucher 3 -->
                 </div>
               </div>
             </div>
           </section>
-
-          <div
-            class="w-full flex flex-col items-center justify-center space-y-4 px-4"
-          >
-            <button class="w-full p-[3px] rounded-xl relative overflow-hidden">
-              <div class="w-full py-2 px-4 bg-amber-600 rounded-lg">test</div>
-              <div
-                class="absolute top-1/2 left-1/2 translate-[-50%] w-full aspect-square bg-gradient-to-b from-40% from-amber-500 to-50% to-transparent animate-spin -z-10"
-              ></div>
-            </button>
-
-            <button class="w-full h-12 bg-red-300 rounded-xl after">
-              test
-            </button>
-          </div>
         </main>
         <!-- end main -->
         <footer class="w-full pl-0 lg:pl-64 h-[300px]">footer</footer>

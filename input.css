@@ -164,3 +164,46 @@
 .custom-select-options.show {
   display: block;
 }
+
+.animasi {
+  width: 100px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: -20px;
+    top: 0px;
+    /* rotate: 0deg; */
+  }
+  25% {
+    background-color: yellow;
+    left: 96%;
+    top: 0px;
+    /* rotate: 90deg; */
+  }
+  50% {
+    background-color: blue;
+    left: 96%;
+    top: 40px;
+    /* rotate: 180deg; */
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 40px;
+    /* rotate: 270deg; */
+  }
+  100% {
+    background-color: red;
+    left: -20px;
+    top: 0px;
+    /* rotate: 360deg; */
+  }
+}
