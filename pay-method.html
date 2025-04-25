@@ -421,322 +421,76 @@
                       <div
                         class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
                       >
-                        <img src="/assets/img/cart.svg" alt="" class="h-4" />
+                        <img src="/assets/img/wallet.svg" alt="" class="h-4" />
                       </div>
                       <h5 class="font-semibold tracking-wider">
-                        <span>Shoping Cart</span>
+                        <span>Choose Payment Method</span>
                       </h5>
                     </div>
-                    <div class="text-sm"><span>4</span> Item Selected</div>
                   </div>
-                  <!-- list belanja -->
-                  <div class="w-full overflow-y-auto custom-scrollbar">
-                    <table class="w-full leading-normal text-sm mb-2">
-                      <thead
-                        class="text-sm text-left border-b border-button/10"
-                      >
-                        <tr>
-                          <th
-                            scope="col"
-                            class="px-4 py-2 uppercase tracking-wider"
-                          >
-                            Product
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-4 py-2 uppercase tracking-wider"
-                          >
-                            Quantity
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-4 py-2 uppercase tracking-wider"
-                          >
-                            Price
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-4 py-2 uppercase tracking-wider"
-                          >
-                            ...
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <!-- loop -->
-                        <!-- item 1 -->
-                        <tr
-                          class="hover:bg-gray-100/10 hover:cursor-pointer border-b border-button/10"
+                  <!-- my wallet -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <div class="flex gap-4">
+                      <label for="my_wallet" class="flex gap-2">
+                        <input
+                          type="checkbox"
+                          checked
+                          class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+                          id="check"
+                        />
+                        <span>My Wallet</span>
+                        <div
+                          class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center p-[5px]"
                         >
-                          <td class="px-4 py-4 text-sm min-w-56">
-                            <div
-                              class="w-full flex gap-2 items-center justify-start"
-                            >
-                              <div class="w-16 h-10 rounded-lg overflow-hidden">
-                                <img
-                                  src="/assets/img/banner/valoran-bg.png"
-                                  alt=""
-                                  class="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h4>Valoran (Points)</h4>
-                                <div class="flex items-center gap-2">
-                                  <div
-                                    class="h-5 w-5 rounded-full overflow-hidden bg-button flex items-center justify-center gap-2"
-                                  >
-                                    <img
-                                      src="/assets/img/icon/v-point2.svg"
-                                      alt=""
-                                      class="h-3 w-3"
-                                    />
-                                  </div>
-                                  <div>475 Point</div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="min-w-24 px-4 py-2">
-                            <!-- jumlah pembelian -->
-                            <div class="relative w-24">
-                              <button
-                                class="absolute w-8 h-8 top-0 left-0 text-lg cursor-pointer decrement-btn"
-                                onclick="decrementValue()"
-                              >
-                                -
-                              </button>
-                              <input
-                                type="text"
-                                id="quantity-input"
-                                class="w-24 h-8 px-8 py-1 bg-active outline outline-button rounded-lg text-center"
-                                value="1"
-                                min="1"
-                                readonly
-                              />
-                              <button
-                                class="absolute w-8 h-8 top-0 right-0 text-lg cursor-pointer increment-btn"
-                                onclick="incrementValue()"
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4 min-w-36">
-                            <div class="flex items-center justify-between">
-                              <span>Rp.</span><span>57.500</span>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4">
-                            <button
-                              class="w-8 h-8 rounded-lg hover:bg-background cursor-pointer"
-                            >
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <!-- item 2 -->
-                        <tr
-                          class="hover:bg-gray-100/10 hover:cursor-pointer border-b border-button/10"
+                          <img
+                            src="/assets/img/wallet-blu.svg"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- E-wallet Payment -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <div class="inline-flex items-center">
+                      <label class="flex items-center cursor-pointer relative">
+                        <input
+                          type="checkbox"
+                          checked
+                          class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+                          id="check"
+                        />
+                        <span
+                          class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                         >
-                          <td class="px-4 py-4 text-sm min-w-56">
-                            <div
-                              class="w-full flex gap-2 items-center justify-start"
-                            >
-                              <div class="w-16 h-10 rounded-lg overflow-hidden">
-                                <img
-                                  src="/assets/img/banner/valoran-bg.png"
-                                  alt=""
-                                  class="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h4>Valoran (Points)</h4>
-                                <div class="flex items-center gap-2">
-                                  <div
-                                    class="h-5 w-5 rounded-full overflow-hidden bg-button flex items-center justify-center gap-2"
-                                  >
-                                    <img
-                                      src="/assets/img/icon/v-point2.svg"
-                                      alt=""
-                                      class="h-3 w-3"
-                                    />
-                                  </div>
-                                  <div>1000 Point</div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="min-w-24 px-4 py-2">
-                            <!-- jumlah pembelian -->
-                            <div class="relative w-24">
-                              <button
-                                class="absolute w-8 h-8 top-0 left-0 text-lg cursor-pointer decrement-btn"
-                                onclick="decrementValue()"
-                              >
-                                -
-                              </button>
-                              <input
-                                type="text"
-                                id="quantity-input"
-                                class="w-24 h-8 px-8 py-1 bg-active outline outline-button rounded-lg text-center"
-                                value="1"
-                                min="1"
-                                readonly
-                              />
-                              <button
-                                class="absolute w-8 h-8 top-0 right-0 text-lg cursor-pointer increment-btn"
-                                onclick="incrementValue()"
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4 min-w-36">
-                            <div class="flex items-center justify-between">
-                              <span>Rp.</span><span>116.000</span>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4">
-                            <button
-                              class="w-8 h-8 rounded-lg hover:bg-background cursor-pointer"
-                            >
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <!-- item 3 -->
-                        <tr
-                          class="hover:bg-gray-100/10 hover:cursor-pointer border-b border-button/10"
-                        >
-                          <td class="px-4 py-4 text-sm min-w-56">
-                            <div
-                              class="w-full flex gap-2 items-center justify-start"
-                            >
-                              <div class="w-16 h-10 rounded-lg overflow-hidden">
-                                <img
-                                  src="/assets/img/banner/valoran-bg.png"
-                                  alt=""
-                                  class="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h4>Steam Wallet</h4>
-                                <div class="flex items-center gap-2">
-                                  <div>Rp. 250.000</div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="min-w-24 px-4 py-2">
-                            <!-- jumlah pembelian -->
-                            <div class="relative w-24">
-                              <button
-                                class="absolute w-8 h-8 top-0 left-0 text-lg cursor-pointer decrement-btn"
-                                onclick="decrementValue()"
-                              >
-                                -
-                              </button>
-                              <input
-                                type="text"
-                                id="quantity-input"
-                                class="w-24 h-8 px-8 py-1 bg-active outline outline-button rounded-lg text-center"
-                                value="1"
-                                min="1"
-                                readonly
-                              />
-                              <button
-                                class="absolute w-8 h-8 top-0 right-0 text-lg cursor-pointer increment-btn"
-                                onclick="incrementValue()"
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4 min-w-36">
-                            <div class="flex items-center justify-between">
-                              <span>Rp.</span><span>250.000</span>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4">
-                            <button
-                              class="w-8 h-8 rounded-lg hover:bg-background cursor-pointer"
-                            >
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <!-- item 4 -->
-                        <tr
-                          class="hover:bg-gray-100/10 hover:cursor-pointer border-b border-button/10"
-                        >
-                          <td class="px-4 py-4 text-sm min-w-56">
-                            <div
-                              class="w-full flex gap-2 items-center justify-start"
-                            >
-                              <div class="w-16 h-10 rounded-lg overflow-hidden">
-                                <img
-                                  src="/assets/img/banner/valoran-bg.png"
-                                  alt=""
-                                  class="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div>
-                                <h4>Mobile Legend</h4>
-                                <div class="flex items-center gap-2">
-                                  <div
-                                    class="h-5 w-5 rounded-full overflow-hidden bg-button flex items-center justify-center gap-2"
-                                  >
-                                    <img
-                                      src="/assets/img/icon/v-point2.svg"
-                                      alt=""
-                                      class="h-3 w-3"
-                                    />
-                                  </div>
-                                  <div>475 Point</div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="min-w-24 px-4 py-2">
-                            <!-- jumlah pembelian -->
-                            <div class="relative w-24">
-                              <button
-                                class="absolute w-8 h-8 top-0 left-0 text-lg cursor-pointer decrement-btn"
-                                onclick="decrementValue()"
-                              >
-                                -
-                              </button>
-                              <input
-                                type="text"
-                                id="quantity-input"
-                                class="w-24 h-8 px-8 py-1 bg-active outline outline-button rounded-lg text-center"
-                                value="1"
-                                min="1"
-                                readonly
-                              />
-                              <button
-                                class="absolute w-8 h-8 top-0 right-0 text-lg cursor-pointer increment-btn"
-                                onclick="incrementValue()"
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4 min-w-36">
-                            <div class="flex items-center justify-between">
-                              <span>Rp.</span><span>57.500</span>
-                            </div>
-                          </td>
-                          <td class="px-4 py-4">
-                            <button
-                              class="w-8 h-8 rounded-lg hover:bg-background cursor-pointer"
-                            >
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- Bank Payment -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    test
                   </div>
                 </div>
               </div>
