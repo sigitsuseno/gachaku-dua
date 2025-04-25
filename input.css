@@ -121,6 +121,24 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #6ddcf07e;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3ea2ca;
+  opacity: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6ddcf0;
+  opacity: 1;
+}
 
 .tiket {
   width: 200px;
@@ -166,44 +184,145 @@
 }
 
 .animasi {
-  width: 100px;
+  width: 100%;
   height: 20px;
-  background-color: red;
+  background: #40e5ff;
+  background: linear-gradient(
+    180deg,
+    rgba(64, 229, 255, 1) 0%,
+    rgba(64, 229, 255, 1) 35%,
+    rgba(237, 221, 83, 0) 79%
+  );
   position: absolute;
   animation-name: example;
   animation-duration: 4s;
+
   animation-iteration-count: infinite;
 }
 
 @keyframes example {
   0% {
-    background-color: red;
-    left: -20px;
+    background: #40e5ff;
+    background: linear-gradient(
+      180deg,
+      rgba(64, 229, 255, 1) 0%,
+      rgba(64, 229, 255, 1) 35%,
+      rgba(237, 221, 83, 0) 79%
+    );
+    left: 0px;
     top: 0px;
+    width: 100%;
+    height: 20px;
     /* rotate: 0deg; */
   }
   25% {
-    background-color: yellow;
+    background: #40e5ff;
+    background: linear-gradient(
+      270deg,
+      rgba(64, 229, 255, 1) 0%,
+      rgba(64, 229, 255, 1) 35%,
+      rgba(237, 221, 83, 0) 79%
+    );
     left: 96%;
-    top: 0px;
-    /* rotate: 90deg; */
+    top: 30px;
+    width: 20%;
+    height: 20px;
+    /* rotate: 0deg; */
   }
   50% {
-    background-color: blue;
-    left: 96%;
-    top: 40px;
-    /* rotate: 180deg; */
+    background: #40e5ff;
+    background: linear-gradient(
+      360deg,
+      rgba(64, 229, 255, 1) 0%,
+      rgba(64, 229, 255, 1) 35%,
+      rgba(237, 221, 83, 0) 79%
+    );
+    left: 0px;
+    top: 30px;
+    width: 100%;
+    height: 20px;
+    /* rotate: 0deg; */
   }
   75% {
-    background-color: green;
-    left: 0px;
-    top: 40px;
-    /* rotate: 270deg; */
+    background: #40e5ff;
+    background: linear-gradient(
+      90deg,
+      rgba(64, 229, 255, 1) 0%,
+      rgba(64, 229, 255, 1) 35%,
+      rgba(237, 221, 83, 0) 79%
+    );
+    left: 0;
+    top: 30px;
+    width: 20%;
+    height: 30px;
   }
   100% {
-    background-color: red;
-    left: -20px;
+    background: #40e5ff;
+    background: linear-gradient(
+      180deg,
+      rgba(64, 229, 255, 1) 0%,
+      rgba(64, 229, 255, 1) 35%,
+      rgba(237, 221, 83, 0) 79%
+    );
+    left: 0px;
     top: 0px;
-    /* rotate: 360deg; */
+    width: 100%;
+    height: 20px;
+  }
+}
+
+.animasi1 {
+  width: 100%;
+  height: 38px;
+  background: #40e5ff;
+  background: radial-gradient(
+    circle,
+    rgba(64, 229, 255, 1) 0%,
+    rgba(64, 229, 255, 0.8) 55%,
+    rgba(64, 229, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: atas;
+  animation-duration: 4s;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+}
+
+@keyframes atas {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.animasi3 {
+  width: 100%;
+  height: 38px;
+  background: #40e5ff;
+  background: radial-gradient(
+    circle,
+    rgba(64, 229, 255, 1) 0%,
+    rgba(64, 229, 255, 0.8) 55%,
+    rgba(64, 229, 255, 0) 100%
+  );
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation-name: bottom;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bottom {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100%;
   }
 }
