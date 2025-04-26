@@ -61,6 +61,12 @@
   --color-star: #ffcb45;
   --color-trans-bg: #0e172480;
   --color-addtocart: #2d545f;
+  --animate-putar: putar 4s linear infinite;
+  @keyframes putar {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 @layer components {
   .btn-rounded {
@@ -333,4 +339,21 @@ input[type="checkbox"].single-select:checked {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.conic-gradient {
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(
+    from 0deg,
+    #74c8ff 0%,
+    #74c8ff 10%,
+    #ffffff00 20%,
+    #ffffff00 40%,
+    #ffffff00 60%,
+    #ffffff00 80%,
+    #74c8ff 90%,
+    #74c8ff 100%
+  );
+  border-radius: 10px;
 }
