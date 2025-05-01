@@ -47,7 +47,7 @@
 
   /* Pastikan nama warna sesuai dengan yang digunakan di Tailwind */
   --color-background: #0e1724;
-  --color-bg-2: #d9d9d933;
+  --color-bg-2: #84b3f81a;
   --color-bg-3: #213045;
 
   --color-card-bg: #162233;
@@ -356,4 +356,14 @@ input[type="checkbox"].single-select:checked {
     #74c8ff 100%
   );
   border-radius: 10px;
+}
+
+blockquote {
+  background-color: var(--color-addtocart);
+  border-inline-start-color: var(--color-button);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: white;
+  font-size: 0.8em;
+  text-transform: uppercase;
 }

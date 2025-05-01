@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
+    <link href="/assets/css/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- wrapper -->
+      <div class="w-full h-screen text-white bg-background">
+        <div class="relative top-1/2 -translate-y-1/2 max-w-5xl m-auto">
+          <div class="lg:grid lg:grid-cols-[350px_1fr] lg:gap-4">
+            <div
+              class="max-w-[350px] mx-auto h-full flex flex-col items-center lg:items-start justify-center p-4 bg-background"
+            >
+              <!-- sebelum form -->
+              <div class="mb-4">
+                <div class="w-36 py-2 mb-4">
+                  <img
+                    src="/assets/img/gachaku.svg"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <p class="text-2xl mb-4 font-semibold tracking-wider">
+                  Get what you need, <br />
+                  when you need it
+                </p>
+                <p class="font-light">Instant Top Ups. Endless Wins.</p>
+              </div>
+
+              <form class="space-y-6">
+                <div class="relative">
+                  <label for="email" class="text-xs"> Enter Your Email </label>
+                  <input
+                    id="email"
+                    type="text"
+                    class="bg-bg-3 w-full pl-12 pr-4 py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm"
+                    placeholder="paijo@gmail.com"
+                  />
+                  <div class="absolute bottom-2 left-3">
+                    <svg
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="vector"
+                        d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        id="vector_2"
+                        d="M18.7698 7.7688L13.2228 12.0551C12.5025 12.6116 11.4973 12.6116 10.777 12.0551L5.22998 7.7688"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="relative">
+                  <label for="Password" class="text-xs">
+                    Enter Your Email
+                  </label>
+                  <input
+                    id="Password"
+                    type="password"
+                    class="bg-bg-3 w-full pl-12 pr-4 py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                    placeholder="******"
+                  />
+                  <div class="absolute bottom-2 left-3">
+                    <svg
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="relative p-0.5 bg-background rounded-lg overflow-hidden"
+                >
+                  <button
+                    class="relative z-10 w-full p-2 bg-addtocart text-center rounded-lg outline outline-button/20 cursor-pointer"
+                  >
+                    Sign In
+                  </button>
+                  <div
+                    class="absolute top-1/2 left-1/2 -translate-1/2 conic-gradient motion-safe:animate-putar duration-500"
+                  ></div>
+                </div>
+              </form>
+              <div class="w-full flex text-end mt-6">
+                <a href="#" class="w-full text-sm">Forgot your Password?</a>
+              </div>
+              <div
+                class="relative flex items-center justify-center w-full py-6"
+              >
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-300/10"></div>
+                </div>
+                <span class="relative bg-background px-3 text-sm">
+                  or continue with email
+                </span>
+              </div>
+              <div class="w-full flex items-center justify-between gap-4">
+                <button
+                  class="w-full h-10 flex flex-row items-center gap-2 justify-center bg-bg-3 px-2 rounded-lg hover:bg-addtocart cursor-pointer transition-colors duration-300"
+                >
+                  <div class="w-6 h-6 overflow-hidden">
+                    <img src="/assets/img/google.svg" alt="" />
+                  </div>
+                  <span class="text-sm font-light">Sign in with Google</span>
+                </button>
+                <!-- <button
+                  class="w-full h-10 flex flex-row items-center gap-2 justify-center bg-bg-3 px-2 rounded-lg hover:bg-addtocart cursor-pointer transition-colors duration-300"
+                >
+                  <div class="w-6 h-6 overflow-hidden">
+                    <img src="/assets/img/facebook-1.svg" alt="" />
+                  </div>
+                  <span class="text-xs font-light">Sign in with Facebook</span>
+                </button> -->
+              </div>
+            </div>
+            <div class="hidden lg:block">
+              <div
+                class="w-full aspect-square bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] rounded-2xl"
+              >
+                <div>test</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
