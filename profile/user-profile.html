@@ -407,7 +407,7 @@
           class="relative w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
         >
           <!-- breadcrums -->
-          <div class="w-full md:px-12 pt-4">
+          <div class="w-full md:px-12 pt-4 2xl:max-w-[1530px] mx-auto">
             <div class="flex py-4" aria-label="Breadcrumb">
               <ol class="flex items-center space-x-2 text-sm">
                 <li>
@@ -423,7 +423,9 @@
             </div>
           </div>
           <!-- free Detail keranjang -->
-          <section class="w-full min-h-[60vh] md:px-12 pb-4 mb-4">
+          <section
+            class="w-full min-h-[60vh] md:px-12 pb-4 mb-4 2xl:max-w-[1530px] mx-auto"
+          >
             <div
               class="flex flex-col justify-start items-start lg:flex-row p-4 lg:p-0 gap-4"
             >
@@ -566,10 +568,133 @@
                     </div>
                   </div>
                 </div>
+                <!-- balance v.1 -->
+                <!-- <div class="flex-shrink-0 mt-4">
+                  <div
+                    class="bg-[#3F84D973] w-full h-full rounded-xl relative overflow-hidden p-4"
+                  >
+                    <div
+                      class="absolute -top-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="absolute -bottom-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="w-10 h-10 m-auto rounded-full bg-white/20 p-2 overflow-hidden"
+                    >
+                      <img src="/assets/img/wallet.svg" alt="" class="w-full" />
+                    </div>
+                    <h4
+                      class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                    >
+                      My Wallet
+                    </h4>
+                    <div class="relative">
+                      <div class="w-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xml:space="preserve"
+                          preserveAspectRatio="none"
+                          class="w-full h-auto"
+                          style="fill-rule: evenodd; clip-rule: evenodd"
+                          viewBox="0 0 97.94 32.1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M5.45 0l29.27 0c1.4,0 2.54,1.14 2.54,2.54l0 0.66c0,1.76 1.44,3.2 3.2,3.2l17.02 0c1.76,0 3.2,-1.44 3.2,-3.2l0 -0.66c0,-1.4 1.14,-2.54 2.54,-2.54l29.27 0c3,0 5.45,2.45 5.45,5.45l0 21.2c0,3 -2.45,5.45 -5.45,5.45l-87.04 0c-3,0 -5.45,-2.45 -5.45,-5.45l0 -21.2c0,-3 2.45,-5.45 5.45,-5.45z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="absolute bottom-4 md:bottom-8 2xl:bottom-8 lg:bottom-4 w-full px-4 flex justify-between items-center"
+                      >
+                        <div class="text-background leading-4">
+                          <div class="text-xs lg:text-sm">Wallet Balance</div>
+                          <div
+                            class="text-base font-bold md:text-xl lg:text-base xl:text-xl 2xl:text-2xl"
+                          >
+                            Rp. <span>70.000.000</span>
+                          </div>
+                        </div>
+                        <button
+                          class="p-2 bg-button rounded-xl text-xs md:text-base lg:text-sm xl:text-base 2xl:text-xl"
+                        >
+                          Add Balance
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- balance v.2 -->
+                <div class="mt-4">
+                  <div
+                    class="bg-[#3F84D973] w-full h-full rounded-xl relative overflow-hidden p-4"
+                  >
+                    <div
+                      class="absolute -top-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="absolute -bottom-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="w-10 h-10 m-auto rounded-full bg-white/20 p-2 overflow-hidden"
+                    >
+                      <img src="/assets/img/wallet.svg" alt="" class="w-full" />
+                    </div>
+                    <h4
+                      class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                    >
+                      My Wallet
+                    </h4>
+                    <div class="relative">
+                      <div
+                        class="w-full px-4 flex flex-col xl:flex-row justify-between items-center bg-white rounded-xl py-4"
+                      >
+                        <div
+                          class="text-background leading-4 text-center xl:text-start pb-4 xl:pb-0"
+                        >
+                          <div class="text-sm">Wallet Balance :</div>
+                          <div class="text-lg xl:text-2xl font-bold">
+                            Rp. <span>70.000.000</span>
+                          </div>
+                        </div>
+                        <button
+                          class="w-full xl:w-auto p-2 bg-button rounded-xl text-xs md:text-base lg:text-sm xl:text-base 2xl:text-xl"
+                        >
+                          Add Balance
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="bg-bg-3 w-full lg:w-2/3 rounded-xl pb-4">
-                <div class="px-4">
-                  <!-- transaksi -->
+              <div class="w-full lg:w-2/3 pb-4">
+                <div
+                  class="flex flex-wrap border-b border-white/20 gap-2 mb-4 text-sm"
+                >
+                  <button
+                    class="rounded-t-lg py-1 px-2 bg-white/5 hover:bg-button/10 transition-colors duration-300"
+                  >
+                    History Transaction
+                  </button>
+                  <button
+                    class="rounded-t-lg py-1 px-2 border-b-2 border-button hover:bg-button/10 transition-colors duration-300"
+                  >
+                    User Profile
+                  </button>
+                  <button
+                    class="rounded-t-lg py-1 px-2 hover:bg-button/10 transition-colors duration-300"
+                  >
+                    Security Setting
+                  </button>
+                  <button
+                    class="rounded-t-lg py-1 px-2 hover:bg-button/10 transition-colors duration-300"
+                  >
+                    Phone Number
+                  </button>
+                </div>
+                <div class="px-4 pb-4 bg-bg-3 rounded-xl">
+                  <!-- my transaction -->
                   <div>
                     <div
                       class="flex items-center justify-between gap-3 py-3 border-b border-button/10"
@@ -578,333 +703,188 @@
                         <div
                           class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
                         >
-                          <img src="/assets/img/cart.svg" alt="" class="h-4" />
+                          <img src="/assets/img/user.svg" alt="" class="h-4" />
                         </div>
                         <h5 class="font-semibold tracking-wider">
-                          <span>My Transactions</span>
+                          <span>User Profile</span>
                         </h5>
-                      </div>
-                      <div>
-                        <div class="relative">
-                          <label
-                            for="search"
-                            class="absolute left-2 top-1 text-white"
-                          >
-                            <svg
-                              class="w-5 h-5 inline mr-2"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                              />
-                            </svg>
-                          </label>
-                          <input
-                            id="search"
-                            type="text"
-                            class="w-24 h-9 md:w-36 bg-white/10 placeholder:text-sm pl-8 pr-4 py-1 rounded-lg focus:outline focus:outline-button/20 text-sm"
-                            placeholder="Search"
-                          />
-                        </div>
                       </div>
                     </div>
                     <!-- tabel transaksi -->
-                    <div class="w-full">
-                      <div class="overflow-x-auto custom-scrollbar">
-                        <table class="w-full text-sm">
-                          <thead class="text-xs text-gray-500 border-b">
-                            <tr>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>NO</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>GAME / TARGET</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>AMOUNT</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>STATUS</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>ACTION</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-gray-200/10">
-                            <!-- Sample Row 1 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">1</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    Mobile Legends (1349 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK12345678 - Apr 18 2025, 13.45
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 100.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-500"
-                                  >Processing</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-
-                            <!-- Sample Row 2 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">2</td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <div>
-                                  <div class="font-medium">
-                                    Free Fire (1000 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK87654321 - Apr 18 2025, 14.30
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 120.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500"
-                                  >Completed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-
-                            <!-- Sample Row 3 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">3</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    PUBG Mobile (UC 1000)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK13579246 - Apr 18 2025, 15.15
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 150.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-red-500/10 text-red-500"
-                                  >Failed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <!-- Pagination -->
-                      <div class="flex items-center justify-between mt-4 px-3">
-                        <div class="hidden md:block text-sm text-gray-400">
-                          Showing
-                          <span class="font-medium text-gray-200">1</span> to
-                          <span class="font-medium text-gray-200">3</span> of
-                          <span class="font-medium text-gray-200">10</span>
-                          entries
-                        </div>
-
-                        <div class="flex items-center gap-1">
-                          <select
-                            class="text-xs bg-background border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    <div class="w-full pt-2">
+                      <!-- input image -->
+                      <div class="lg:flex justify-between items-center gap-4">
+                        <!-- user image -->
+                        <div class="w-full lg:w-1/2 pb-4">
+                          <div class="text-xs mb-2">
+                            <span>Profile Picture</span>
+                          </div>
+                          <div
+                            class="w-full flex items-center justify-start gap-4"
                           >
-                            <option>5 per page</option>
-                            <option selected>10 per page</option>
-                            <option>25 per page</option>
-                            <option>50 per page</option>
-                          </select>
-
-                          <div class="flex items-center gap-1 ml-4">
+                            <div>
+                              <label for="profile_pic" class="text-xs">
+                                <div
+                                  class="prev w-20 h-20 rounded-full overflow-hidden"
+                                >
+                                  <img
+                                    src="/assets/img/banner/avatar2.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </label>
+                              <input
+                                id="profile_pic"
+                                type="file"
+                                accept="image"
+                                class="hidden"
+                              />
+                            </div>
                             <button
-                              class="p-1 rounded hover:bg-gray-700 disabled:opacity-30"
-                              disabled
+                              onclick="document.getElementById('profile_pic').click()"
+                              class="bg-button py-1 px-2 rounded-lg text-sm"
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
+                              Change Picture
                             </button>
-
+                          </div>
+                        </div>
+                        <!-- banner image -->
+                        <div class="w-full lg:w-1/2 pb-4">
+                          <div class="text-xs mb-2">
+                            <span>Banner Picture</span>
+                          </div>
+                          <div
+                            class="w-full flex items-center justify-start gap-4"
+                          >
+                            <div>
+                              <label for="profile_pic" class="text-xs">
+                                <div
+                                  class="prev w-[140px] h-20 rounded-lg overflow-hidden"
+                                >
+                                  <img
+                                    src="/assets/img/banner/valoran4.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </label>
+                              <input
+                                id="profile_pic"
+                                type="file"
+                                accept="image"
+                                class="hidden"
+                              />
+                            </div>
                             <button
-                              class="px-2 py-1 text-xs rounded bg-blue-500 text-white"
+                              onclick="document.getElementById('profile_pic').click()"
+                              class="bg-button py-1 px-2 rounded-lg text-sm"
                             >
-                              1
-                            </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              2
-                            </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              3
-                            </button>
-
-                            <button class="p-1 rounded hover:bg-gray-700">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
+                              Change Banner
                             </button>
                           </div>
                         </div>
                       </div>
+                      <!-- input text -->
+                      <form class="w-full">
+                        <div class="lg:flex justify-between items-center gap-4">
+                          <div class="w-full lg:w-1/2">
+                            <div class="relative mb-4 w-full text-gray-500">
+                              <label for="userId" class="text-xs">
+                                User ID
+                              </label>
+                              <input
+                                id="userId"
+                                type="text"
+                                class="bg-bg-2 cursor-not-allowed w-full h-10 pl-12 pr-4 text-sm py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                value="XJKLLKK"
+                                disabled
+                              />
+                              <div class="absolute bottom-2 left-3">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xml:space="preserve"
+                                  width="20px"
+                                  height="23px"
+                                  version="1.1"
+                                  style="fill-rule: evenodd; clip-rule: evenodd"
+                                  viewBox="0 0 34.63 32.63"
+                                >
+                                  <path
+                                    fill="#fff"
+                                    d="M26.09 8.77c0,4.84 -3.93,8.77 -8.77,8.77 -4.85,0 -8.77,-3.93 -8.77,-8.77 0,-4.84 3.92,-8.77 8.77,-8.77 4.84,0 8.77,3.93 8.77,8.77zm-14.57 10.85c-6.18,-0.17 -11.34,4.69 -11.52,10.87 -0.03,1.15 0.87,2.1 2.02,2.14 1.14,0.03 2.1,-0.87 2.14,-2.02 0.11,-3.88 3.35,-6.94 7.24,-6.83l11.78 0c3.95,0 7.18,2.8 7.3,6.83 0.08,2.73 4.23,2.61 4.15,-0.12 -0.18,-6.14 -5.29,-11.02 -11.46,-10.87l-11.65 0zm10.68 -10.85c0,2.69 -2.19,4.88 -4.88,4.88 -2.7,0 -4.88,-2.19 -4.88,-4.88 0,-2.7 2.18,-4.88 4.88,-4.88 2.69,0 4.88,2.18 4.88,4.88z"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="relative mb-4">
+                              <label for="email" class="text-xs">
+                                Enter Your Email
+                              </label>
+                              <input
+                                id="email"
+                                type="email"
+                                class="bg-bg-2 w-full h-10 pl-12 pr-4 text-sm py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                value="Vulanah.mari@gmail.com"
+                              />
+                              <div class="absolute bottom-2 left-3">
+                                <svg
+                                  width="24px"
+                                  height="24px"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="w-full lg:w-1/2">
+                            <div class="relative mb-4 w-full">
+                              <label for="userName" class="text-xs">
+                                Username
+                              </label>
+                              <input
+                                id="userName"
+                                type="text"
+                                class="bg-bg-2 w-full h-10 px-4 text-sm py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                value="Vulanah123"
+                                disabled
+                              />
+                            </div>
+                            <div class="relative mb-4 w-full text-gray-500">
+                              <label for="joinDate" class="text-xs">
+                                Join Date
+                              </label>
+                              <input
+                                id="joinDate"
+                                type="text"
+                                class="bg-bg-2 cursor-not-allowed w-full h-10 px-4 text-sm py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                value="04/25/2025 00:22:28"
+                                disabled
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="relative p-0.5 bg-background/10 rounded-xl overflow-hidden"
+                        >
+                          <button
+                            class="relative z-10 w-full p-2 bg-addtocart text-center rounded-lg outline outline-button/20 cursor-pointer"
+                          >
+                            Update Profile
+                          </button>
+                          <div
+                            class="absolute top-1/2 left-1/2 -translate-1/2 conic-gradient2 animate-putar"
+                          ></div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>

@@ -115,6 +115,14 @@
   width: 40px;
   clip-path: path("M0 0l36.93 0c-20.31,0 -36.93,16.62 -36.93,36.93l0 -36.93z");
 }
+.wallet-frame {
+  clip-path: path(
+    "M0.05 0 H0.95 C0.983 0 1 0.045 1 0.1 V0.9 C1 0.955 0.983 1 0.95 1 H0.05 C0.017 1 0 0.955 0 0.9 V0.1 C0 0.045 0.017 0 0.05 0 Z"
+  );
+  /* clip-path: path(
+    "M 0.05,0 0.373,0 L 0.375,0.833 L 0.375,0.1666 L 0.377,0.277 L 0.623,0.277 L 0.625,0.1666 L 0.625,0.0833 L 0.627,0 L 0.95,0 L 1,0.166 L 1,0.8333 L 0.95,1 L 0.05,1 L 0,0.8333 L 0,0.1666 L 0.05,0 Z"
+  ); */
+}
 
 [x-cloak] {
   display: none !important;
@@ -344,6 +352,22 @@ input[type="checkbox"].single-select:checked {
 .conic-gradient {
   width: 400px;
   height: 400px;
+  background: conic-gradient(
+    from 0deg,
+    #74c8ff 0%,
+    #74c8ff 10%,
+    #ffffff00 20%,
+    #ffffff00 40%,
+    #ffffff00 60%,
+    #ffffff00 80%,
+    #74c8ff 90%,
+    #74c8ff 100%
+  );
+  border-radius: 10px;
+}
+.conic-gradient2 {
+  width: 800px;
+  height: 800px;
   background: conic-gradient(
     from 0deg,
     #74c8ff 0%,
