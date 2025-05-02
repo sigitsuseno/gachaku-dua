@@ -150,7 +150,7 @@
               <div class="md:w-[270px] lg:w-80 flex justify-end">
                 <div class="flex space-x-2">
                   <!-- bahasa -->
-                  <select
+                  <!-- <select
                     id="countries"
                     class="bg-bg-2 col-start-1 row-start-1 appearance-none p-2 rounded-full w-10 md:w-12 h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active text-center"
                   >
@@ -160,7 +160,7 @@
                     <option value="CA" class="bg-background outline-0">
                       EN
                     </option>
-                  </select>
+                  </select> -->
 
                   <!-- cart -->
                   <div class="relative">
@@ -174,20 +174,35 @@
                       >
                     </button>
                   </div>
+                  <!-- pesan -->
+                  <div class="relative">
+                    <button
+                      class="relative w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                    >
+                      <img src="/assets/img/bell.svg" alt="" />
+                      <span
+                        class="absolute top-0 right-0 w-4 h-4 text-xs bg-button rounded-full"
+                        >3</span
+                      >
+                    </button>
+                  </div>
 
                   <div class="relative">
                     <!-- Login Button -->
-                    <a
-                      href="login-form"
-                      class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
+                    <button
+                      class="relative rounded-full transition-colors duration-200 flex items-center gap-3"
                     >
-                      <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
-                      <img
-                        src="/assets/img/login.svg"
-                        alt=""
-                        class="lg:hidden"
-                      />
-                    </a>
+                      <div
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden"
+                      >
+                        <img
+                          src="/assets/img/banner/avatar2.jpg"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <span>Vulanah</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -253,26 +268,7 @@
                     >Home</span
                   >
                 </a>
-                <a
-                  href="#"
-                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
-                >
-                  <img src="/assets/img/games.svg" alt="" class="h-6" />
-                  <span
-                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
-                    >Top Up Games</span
-                  >
-                </a>
-                <a
-                  href="#"
-                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
-                >
-                  <img src="/assets/img/ticket.svg" alt="" class="h-6" />
-                  <span
-                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
-                    >Voucher</span
-                  >
-                </a>
+
                 <a
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
@@ -287,10 +283,20 @@
                   href="#"
                   class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
                 >
-                  <img src="/assets/img/history.svg" alt="" class="h-6" />
+                  <img src="/assets/img/user.svg" alt="" class="h-5" />
                   <span
                     class="w-full scale-0 origin-left transition-all delay-200 duration-300"
-                    >Transaction History</span
+                    >My Account</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/money.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Afiliate Dashboard</span
                   >
                 </a>
               </div>
