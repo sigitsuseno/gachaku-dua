@@ -703,7 +703,7 @@
                   class="flex flex-wrap border-b border-white/20 gap-2 mb-4 text-sm"
                 >
                   <button
-                    class="rounded-t-lg py-1 px-2 border-b-2 border-button bg-white/5 hover:bg-button/10 transition-colors duration-300"
+                    class="rounded-t-lg py-1 px-2 bg-white/5 hover:bg-button/10 transition-colors duration-300"
                   >
                     History Transaction
                   </button>
@@ -713,7 +713,7 @@
                     User Profile
                   </button>
                   <button
-                    class="rounded-t-lg py-1 px-2 hover:bg-button/10 transition-colors duration-300"
+                    class="rounded-t-lg py-1 px-2 border-b-2 border-button hover:bg-button/10 transition-colors duration-300"
                   >
                     Security Setting
                   </button>
@@ -733,330 +733,182 @@
                         <div
                           class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
                         >
-                          <img src="/assets/img/cart.svg" alt="" class="h-4" />
-                        </div>
-                        <h5 class="font-semibold tracking-wider">
-                          <span>My Transactions</span>
-                        </h5>
-                      </div>
-                      <div>
-                        <div class="relative">
-                          <label
-                            for="search"
-                            class="absolute left-2 top-1 text-white"
-                          >
-                            <svg
-                              class="w-5 h-5 inline mr-2"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                              />
-                            </svg>
-                          </label>
-                          <input
-                            id="search"
-                            type="text"
-                            class="w-24 h-9 md:w-36 bg-white/10 placeholder:text-sm pl-8 pr-4 py-1 rounded-lg focus:outline focus:outline-button/20 text-sm"
-                            placeholder="Search"
+                          <img
+                            src="/assets/img/shield.svg"
+                            alt=""
+                            class="h-5"
                           />
                         </div>
+                        <h5 class="font-semibold tracking-wider">
+                          <span>Change Password</span>
+                        </h5>
                       </div>
                     </div>
                     <!-- tabel transaksi -->
-                    <div class="w-full">
-                      <div class="overflow-x-auto custom-scrollbar">
-                        <table class="w-full text-sm">
-                          <thead class="text-xs text-gray-500 border-b">
-                            <tr>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>NO</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
+                    <div class="w-full pt-4">
+                      <div
+                        class="lg:flex justify-between items-center gap-4 mb-4"
+                      >
+                        <div class="w-full lg:w-2/3">
+                          <div class="mb-3">
+                            <label for="ho_hp" class="text-xs pb-2"
+                              >Nomor WhatsApp (Optional)</label
+                            >
+                            <div class="relative">
+                              <!-- Custom Select Flag Container -->
+                              <div class="absolute top-0 left-0 h-12 w-24">
+                                <!-- Selected Value Display -->
+                                <div
+                                  id="selected-flag"
+                                  class="h-full w-full flex items-center cursor-pointer select-none"
+                                >
+                                  <div
+                                    class="flex gap-3 px-4 items-center w-full"
                                   >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
+                                    <img
+                                      src="https://flagcdn.com/w20/id.png"
+                                      alt="indonesia"
+                                      class="w-5 h-3.5"
+                                    />
+                                    <span
+                                      class="pl-3 border-l border-gray-500/50 text-sm"
+                                      >+62</span
                                     >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>GAME / TARGET</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>AMOUNT</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>STATUS</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>ACTION</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-gray-200/10">
-                            <!-- Sample Row 1 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">1</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    Mobile Legends (1349 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK12345678 - Apr 18 2025, 13.45
                                   </div>
                                 </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 100.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-500"
-                                  >Processing</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
 
-                            <!-- Sample Row 2 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">2</td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <div>
-                                  <div class="font-medium">
-                                    Free Fire (1000 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK87654321 - Apr 18 2025, 14.30
+                                <!-- Dropdown Options -->
+                                <div
+                                  id="flag-options"
+                                  class="custom-select-options mt-1"
+                                >
+                                  <div class="py-1">
+                                    <!-- Indonesia -->
+                                    <div
+                                      class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                      data-value="+62"
+                                      data-flag="id"
+                                    >
+                                      <img
+                                        src="https://flagcdn.com/w20/id.png"
+                                        alt="Indonesia"
+                                        class="w-5 h-3.5 mr-3"
+                                      />
+                                      <span class="text-sm">+62</span>
+                                    </div>
+
+                                    <!-- Malaysia -->
+                                    <div
+                                      class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                      data-value="+60"
+                                      data-flag="my"
+                                    >
+                                      <img
+                                        src="https://flagcdn.com/w20/my.png"
+                                        alt="Malaysia"
+                                        class="w-5 h-3.5 mr-3"
+                                      />
+                                      <span class="text-sm">+60</span>
+                                    </div>
+
+                                    <!-- Singapore -->
+                                    <div
+                                      class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                      data-value="+65"
+                                      data-flag="sg"
+                                    >
+                                      <img
+                                        src="https://flagcdn.com/w20/sg.png"
+                                        alt="Singapore"
+                                        class="w-5 h-3.5 mr-3"
+                                      />
+                                      <span class="text-sm">+65</span>
+                                    </div>
+
+                                    <!-- USA -->
+                                    <div
+                                      class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                      data-value="+1"
+                                      data-flag="us"
+                                    >
+                                      <img
+                                        src="https://flagcdn.com/w20/us.png"
+                                        alt="USA"
+                                        class="w-5 h-3.5 mr-3"
+                                      />
+                                      <span class="text-sm">+1</span>
+                                    </div>
+
+                                    <!-- UK -->
+                                    <div
+                                      class="flag-option flex items-center px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                      data-value="+44"
+                                      data-flag="gb"
+                                    >
+                                      <img
+                                        src="https://flagcdn.com/w20/gb.png"
+                                        alt="UK"
+                                        class="w-5 h-3.5 mr-3"
+                                      />
+                                      <span class="text-sm">+44</span>
+                                    </div>
                                   </div>
                                 </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 120.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500"
-                                  >Completed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
+                              </div>
 
-                            <!-- Sample Row 3 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">3</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    PUBG Mobile (UC 1000)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK13579246 - Apr 18 2025, 15.15
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 150.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-red-500/10 text-red-500"
-                                  >Failed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <!-- Pagination -->
-                      <div class="flex items-center justify-between mt-4 px-3">
-                        <div class="hidden md:block text-sm text-gray-400">
-                          Showing
-                          <span class="font-medium text-gray-200">1</span> to
-                          <span class="font-medium text-gray-200">3</span> of
-                          <span class="font-medium text-gray-200">10</span>
-                          entries
+                              <!-- Phone Number Input -->
+                              <input
+                                type="text"
+                                id="ho_hp"
+                                class="h-10 bg-gray-800 w-full pl-24 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                                placeholder="856758666777"
+                              />
+                            </div>
+                          </div>
                         </div>
-
-                        <div class="flex items-center gap-1">
-                          <select
-                            class="text-xs bg-background border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        <div class="w-full lg:w-1/3">
+                          <div class="lg:pt-3"></div>
+                          <div
+                            class="relative p-0.5 bg-background/10 rounded-xl overflow-hidden"
                           >
-                            <option>5 per page</option>
-                            <option selected>10 per page</option>
-                            <option>25 per page</option>
-                            <option>50 per page</option>
-                          </select>
-
-                          <div class="flex items-center gap-1 ml-4">
                             <button
-                              class="p-1 rounded hover:bg-gray-700 disabled:opacity-30"
-                              disabled
+                              class="relative z-10 w-full p-2 bg-addtocart text-center rounded-lg outline outline-button/20 cursor-pointer"
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
+                              Send Verification SMS/WA
                             </button>
-
+                            <div
+                              class="absolute top-1/2 left-1/2 -translate-1/2 conic-gradient2 animate-putar"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="lg:flex justify-between items-center gap-4">
+                        <div class="w-full lg:w-2/3">
+                          <div class="mb-3">
+                            <label for="acc_id" class="text-xs pb-2"
+                              >Verification Code</label
+                            >
+                            <input
+                              type="text"
+                              id="acc_id"
+                              class="h-10 bg-gray-800 w-full px-4 py-2 rounded-lg outline outline-white/20 placeholder:text-sm focus:bg-active mt-1 text-sm"
+                              placeholder="____"
+                            />
+                          </div>
+                        </div>
+                        <div class="w-full lg:w-1/3">
+                          <div class="lg:pt-3"></div>
+                          <div
+                            class="relative p-0.5 bg-background/10 rounded-xl overflow-hidden"
+                          >
                             <button
-                              class="px-2 py-1 text-xs rounded bg-blue-500 text-white"
+                              class="relative z-10 w-full p-2 bg-addtocart text-center rounded-lg outline outline-button/20 cursor-pointer"
                             >
-                              1
+                              Verify Phone Number
                             </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              2
-                            </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              3
-                            </button>
-
-                            <button class="p-1 rounded hover:bg-gray-700">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                            </button>
+                            <div
+                              class="absolute top-1/2 left-1/2 -translate-1/2 conic-gradient2 animate-putar"
+                            ></div>
                           </div>
                         </div>
                       </div>

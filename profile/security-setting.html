@@ -703,7 +703,7 @@
                   class="flex flex-wrap border-b border-white/20 gap-2 mb-4 text-sm"
                 >
                   <button
-                    class="rounded-t-lg py-1 px-2 border-b-2 border-button bg-white/5 hover:bg-button/10 transition-colors duration-300"
+                    class="rounded-t-lg py-1 px-2 bg-white/5 hover:bg-button/10 transition-colors duration-300"
                   >
                     History Transaction
                   </button>
@@ -713,7 +713,7 @@
                     User Profile
                   </button>
                   <button
-                    class="rounded-t-lg py-1 px-2 hover:bg-button/10 transition-colors duration-300"
+                    class="rounded-t-lg py-1 px-2 border-b-2 border-button hover:bg-button/10 transition-colors duration-300"
                   >
                     Security Setting
                   </button>
@@ -733,333 +733,179 @@
                         <div
                           class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
                         >
-                          <img src="/assets/img/cart.svg" alt="" class="h-4" />
-                        </div>
-                        <h5 class="font-semibold tracking-wider">
-                          <span>My Transactions</span>
-                        </h5>
-                      </div>
-                      <div>
-                        <div class="relative">
-                          <label
-                            for="search"
-                            class="absolute left-2 top-1 text-white"
-                          >
-                            <svg
-                              class="w-5 h-5 inline mr-2"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                              />
-                            </svg>
-                          </label>
-                          <input
-                            id="search"
-                            type="text"
-                            class="w-24 h-9 md:w-36 bg-white/10 placeholder:text-sm pl-8 pr-4 py-1 rounded-lg focus:outline focus:outline-button/20 text-sm"
-                            placeholder="Search"
+                          <img
+                            src="/assets/img/shield.svg"
+                            alt=""
+                            class="h-5"
                           />
                         </div>
+                        <h5 class="font-semibold tracking-wider">
+                          <span>Change Password</span>
+                        </h5>
                       </div>
                     </div>
                     <!-- tabel transaksi -->
-                    <div class="w-full">
-                      <div class="overflow-x-auto custom-scrollbar">
-                        <table class="w-full text-sm">
-                          <thead class="text-xs text-gray-500 border-b">
-                            <tr>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>NO</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>GAME / TARGET</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>AMOUNT</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>STATUS</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                              <th
-                                class="px-3 py-2 text-left text-nowrap cursor-pointer"
-                              >
-                                <div class="flex items-center gap-1">
-                                  <span>ACTION</span>
-                                  <button
-                                    class="text-gray-400 hover:text-gray-600"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="h-3 w-3"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                    >
-                                      <path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </button>
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-gray-200/10">
-                            <!-- Sample Row 1 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">1</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    Mobile Legends (1349 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK12345678 - Apr 18 2025, 13.45
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 100.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-500"
-                                  >Processing</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-
-                            <!-- Sample Row 2 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">2</td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <div>
-                                  <div class="font-medium">
-                                    Free Fire (1000 Diamond)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK87654321 - Apr 18 2025, 14.30
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 120.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500"
-                                  >Completed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-
-                            <!-- Sample Row 3 -->
-                            <tr class="w-full">
-                              <td class="px-3 py-3 whitespace-nowrap">3</td>
-                              <td class="px-3 py-3">
-                                <div>
-                                  <div class="font-medium">
-                                    PUBG Mobile (UC 1000)
-                                  </div>
-                                  <div class="text-xs text-gray-400">
-                                    #GCK13579246 - Apr 18 2025, 15.15
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                Rp 150.000
-                              </td>
-                              <td class="px-3 py-3 whitespace-nowrap">
-                                <span
-                                  class="px-2 py-1 text-xs rounded-full bg-red-500/10 text-red-500"
-                                  >Failed</span
-                                >
-                              </td>
-                              <td class="px-2 py-1">
-                                <button
-                                  class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
-                                >
-                                  Details
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <!-- Pagination -->
-                      <div class="flex items-center justify-between mt-4 px-3">
-                        <div class="hidden md:block text-sm text-gray-400">
-                          Showing
-                          <span class="font-medium text-gray-200">1</span> to
-                          <span class="font-medium text-gray-200">3</span> of
-                          <span class="font-medium text-gray-200">10</span>
-                          entries
-                        </div>
-
-                        <div class="flex items-center gap-1">
-                          <select
-                            class="text-xs bg-background border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                          >
-                            <option>5 per page</option>
-                            <option selected>10 per page</option>
-                            <option>25 per page</option>
-                            <option>50 per page</option>
-                          </select>
-
-                          <div class="flex items-center gap-1 ml-4">
-                            <button
-                              class="p-1 rounded hover:bg-gray-700 disabled:opacity-30"
-                              disabled
-                            >
+                    <div class="w-full pt-2">
+                      <!-- input text -->
+                      <form class="w-full">
+                        <div class="w-full">
+                          <div class="relative mb-4">
+                            <label for="Password" class="text-xs">
+                              Enter your current Password
+                            </label>
+                            <input
+                              id="Password"
+                              type="password"
+                              class="bg-bg-2 w-full px-12 py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                              placeholder="******"
+                            />
+                            <div class="absolute bottom-2 left-3">
                               <svg
+                                width="24px"
+                                height="24px"
+                                viewBox="0 0 24 24"
+                                fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
                               >
                                 <path
-                                  fill-rule="evenodd"
-                                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                  clip-rule="evenodd"
+                                  d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                                  stroke="currentColor"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
                                 />
                               </svg>
-                            </button>
-
-                            <button
-                              class="px-2 py-1 text-xs rounded bg-blue-500 text-white"
-                            >
-                              1
-                            </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              2
-                            </button>
-                            <button
-                              class="px-2 py-1 text-xs rounded hover:bg-gray-700"
-                            >
-                              3
-                            </button>
-
-                            <button class="p-1 rounded hover:bg-gray-700">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-4 w-4"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                  clip-rule="evenodd"
+                            </div>
+                            <div class="absolute bottom-2.5 right-3 text-white">
+                              <button class="block">
+                                <img
+                                  src="/assets/img/n-icon/Show.svg"
+                                  alt=""
+                                  class="h-5"
                                 />
-                              </svg>
-                            </button>
+                              </button>
+                              <button class="hidden">
+                                <img
+                                  src="/assets/img/n-icon/Hide.svg"
+                                  alt=""
+                                  class="h-5"
+                                />
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                        <div class="lg:flex justify-between items-center gap-4">
+                          <div class="w-full lg:w-1/2">
+                            <div class="relative mb-4">
+                              <label for="Password" class="text-xs">
+                                Enter your new Password
+                              </label>
+                              <input
+                                id="Password"
+                                type="password"
+                                class="bg-bg-2 w-full px-12 py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                placeholder="******"
+                              />
+                              <div class="absolute bottom-2 left-3">
+                                <svg
+                                  width="24px"
+                                  height="24px"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                class="absolute bottom-2.5 right-3 text-white"
+                              >
+                                <button class="block">
+                                  <img
+                                    src="/assets/img/n-icon/Show.svg"
+                                    alt=""
+                                    class="h-5"
+                                  />
+                                </button>
+                                <button class="hidden">
+                                  <img
+                                    src="/assets/img/n-icon/Hide.svg"
+                                    alt=""
+                                    class="h-5"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="w-full lg:w-1/2">
+                            <div class="relative mb-4">
+                              <label for="Password" class="text-xs">
+                                Enter your confirm Password
+                              </label>
+                              <input
+                                id="Password"
+                                type="password"
+                                class="bg-bg-2 w-full px-12 py-2 rounded-lg outline outline-white/30 focus:bg-active mt-1 placeholder:text-sm placeholder:relative placeholder:top-0.5"
+                                placeholder="******"
+                              />
+                              <div class="absolute bottom-2 left-3">
+                                <svg
+                                  width="24px"
+                                  height="24px"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                              <div
+                                class="absolute bottom-2.5 right-3 text-white"
+                              >
+                                <button class="block">
+                                  <img
+                                    src="/assets/img/n-icon/Show.svg"
+                                    alt=""
+                                    class="h-5"
+                                  />
+                                </button>
+                                <button class="hidden">
+                                  <img
+                                    src="/assets/img/n-icon/Hide.svg"
+                                    alt=""
+                                    class="h-5"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="relative p-0.5 bg-background/10 rounded-xl overflow-hidden"
+                        >
+                          <button
+                            class="relative z-10 w-full p-2 bg-addtocart text-center rounded-lg outline outline-button/20 cursor-pointer"
+                          >
+                            Update Password
+                          </button>
+                          <div
+                            class="absolute top-1/2 left-1/2 -translate-1/2 conic-gradient2 animate-putar"
+                          ></div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
