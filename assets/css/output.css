@@ -1224,6 +1224,9 @@
   .max-w-\[300px\] {
     max-width: 300px;
   }
+  .max-w-\[320px\] {
+    max-width: 320px;
+  }
   .max-w-\[350px\] {
     max-width: 350px;
   }
@@ -3749,6 +3752,11 @@
   .lg\:w-full {
     @media (width >= 64rem) {
       width: 100%;
+    }
+  }
+  .lg\:max-w-\[320px\] {
+    @media (width >= 64rem) {
+      max-width: 320px;
     }
   }
   .lg\:grid-cols-4 {
