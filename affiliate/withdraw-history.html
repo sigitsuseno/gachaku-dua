@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
+    <link href="/assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-background text-white">
+    <div id="app">
+      <div class="relative flex flex-col">
+        <!-- header -->
+        <header class="fixed w-full h-20 md:h-24 px-4 bg-background z-20">
+          <div
+            class="relative w-full h-20 md:h-24 grid grid-cols-[120px_1fr] lg:grid-cols-[280px_1fr] content-center"
+          >
+            <!-- Logo  -->
+            <a href="/header.html" class="w-full flex items-center">
+              <img
+                src="/assets/img/gachaku.svg"
+                alt="gachaku"
+                class="hidden lg:block h-[40px] object-contain"
+              />
+              <img
+                src="/assets/img/m-gacha.svg"
+                alt="gachaku mini"
+                class="h-12 lg:hidden"
+              />
+            </a>
+
+            <!-- header Menu -->
+            <div class="w-full flex justify-end space-x-2">
+              <div class="md:w-[calc(100%-180px)] lg:w-[calc(100%-280px)]">
+                <!-- Search -->
+                <div
+                  data-search
+                  class="w-full md:w-[80%] xl:w-[500px] 2xl:w-[600px]"
+                >
+                  <!-- button search in header -->
+                  <!-- <button
+                    class="btn-rounded md:hidden justify-center items-center"
+                  >
+                    <img src="/assets/img/search.svg" alt="" class="h-5" />
+                  </button> -->
+
+                  <div
+                    data-searchBar
+                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-10"
+                  >
+                    <div class="flex justify-between items-center">
+                      <button
+                        data-back-btn
+                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-bg-2 hover:bg-button mt-6 lg:mt-0 md:hidden"
+                      >
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </button>
+                      <div
+                        class="relative w-[calc(100%-58px)] md:w-full mt-6 md:mt-0"
+                      >
+                        <label
+                          for="header-search"
+                          class="absolute top-1/2 -translate-1/2 left-6"
+                        >
+                          <img
+                            src="/assets/img/search.svg"
+                            alt=""
+                            class="h-5"
+                          />
+                        </label>
+                        <input
+                          type="text"
+                          id="header-search"
+                          class="bg-bg-2 py-2 pl-12 pr-10 rounded-lg w-full h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active"
+                          placeholder="Search Game, Voucher, etc.."
+                        />
+                        <button
+                          data-clear-search
+                          class="absolute right-3 top-1/2 -translate-1/2 hidden text-gray-400 hover:text-white"
+                        >
+                          <img src="/assets/img/x.svg" alt="" class="h-3" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- search result -->
+                    <div
+                      id="search-result"
+                      data-result-search
+                      class="hidden absolute top-[80px] lg:top-[50px] left-0 z-k0 w-full p-4 rounded-lg flex-col items-start justify-start space-y-3 md:shadow-md md:shadow-button-bg overflow-y-auto max-h-[calc(100vh-100px)] bg-background"
+                    >
+                      <!-- prosessing -->
+                      <button
+                        type="button"
+                        class="bg-button flex gap-3 p-2 rounded-lg"
+                        disabled
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="animate-spin text-white"
+                        >
+                          <path
+                            fill="#ffffff"
+                            d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                            opacity=".25"
+                          />
+                          <path
+                            fill="#ffffff"
+                            d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+                          />
+                        </svg>
+                        Processing…
+                      </button>
+                      <a
+                        href="#"
+                        class="flex space-x-3 p-2 border border-border bg-bg-2 rounded-lg w-full"
+                      >
+                        <div class="w-28 h-auto overflow-hidden rounded-lg">
+                          <img
+                            src="https://placehold.co/100x50"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h3 class="mb-1 text-xl text-button font-bold">
+                            Mobile Legend
+                          </h3>
+                          <p class="text-sm">
+                            Nikmati
+                            <span class="bg-pink-300 py-0.5 px-3 rounded-md"
+                              >Promo Off 20%</span
+                            >
+                            <strong>Top Up</strong> sebagai member
+                            <strong>Gachaku</strong>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- panel hasil pencarian -->
+                </div>
+                <!-- end search -->
+              </div>
+
+              <div class="md:w-[270px] lg:w-80 flex justify-end">
+                <div class="flex space-x-2">
+                  <!-- bahasa -->
+                  <!-- <select
+                    id="countries"
+                    class="bg-bg-2 col-start-1 row-start-1 appearance-none p-2 rounded-full w-10 md:w-12 h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active text-center"
+                  >
+                    <option value="US" class="bg-background outline-0">
+                      ID
+                    </option>
+                    <option value="CA" class="bg-background outline-0">
+                      EN
+                    </option>
+                  </select> -->
+
+                  <!-- cart -->
+                  <div class="relative">
+                    <button
+                      class="relative w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                    >
+                      <img src="/assets/img/cart.svg" alt="" />
+                      <span
+                        class="absolute top-0 right-0 w-4 h-4 text-xs bg-button rounded-full"
+                        >3</span
+                      >
+                    </button>
+                  </div>
+                  <!-- pesan -->
+                  <div class="relative">
+                    <button
+                      class="relative w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                    >
+                      <img src="/assets/img/bell.svg" alt="" />
+                      <span
+                        class="absolute top-0 right-0 w-4 h-4 text-xs bg-button rounded-full"
+                        >3</span
+                      >
+                    </button>
+                  </div>
+
+                  <div class="relative">
+                    <!-- Login Button -->
+                    <button
+                      class="relative rounded-full transition-colors duration-200 flex items-center gap-3"
+                    >
+                      <div
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden"
+                      >
+                        <img
+                          src="/assets/img/banner/avatar2.jpg"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <span>Vulanah</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- end header -->
+        <!-- menu mobile bottom -->
+        <div class="w-full h-20 md:h-24">
+          <div class="fixed md:hidden bottom-0 left-0 z-20 w-full">
+            <div
+              class="h-14 grid grid-cols-5 bg-background border border-active/30"
+            >
+              <button><i class="fa-solid fa-house"></i></button>
+              <button>
+                <i class="fa-regular fa-flag"></i>
+              </button>
+              <button data-btn-search class="flex items-center justify-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-button flex items-center justify-center"
+                >
+                  <img src="/assets/img/search.svg" alt="" class="h-6" />
+                </div>
+              </button>
+              <button>4</button>
+              <button data-btn-showbar>
+                <div class="">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar -->
+        <aside
+          data-sidebar
+          class="fixed -translate-x-72 md:-translate-x-0 md:block w-20 h-screen bg-background z-40 top-20 md:top-24 md:left-0 py-4 transition-all duration-300"
+        >
+          <!-- sidebar menu -->
+          <div data-sb-menu class="p-4 relative w-full h-[calc(100vh-102px)]">
+            <div
+              class="absolute -top-1 right-6 transition-all duration-300 z-10"
+            >
+              <button
+                data-sb-button
+                class="w-8 h-4 bg-amber-200/20 rounded-full ring-1 ring-button/50 cursor-pointer hidden"
+              >
+                <div class="w-4 h-4 rounded-full bg-background"></div>
+              </button>
+            </div>
+            <div class="mb-3 re">
+              <div class="space-y-2 pt-4">
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center bg-card-bg2 rounded-lg justify-start px-3 space-x-3 hover:bg-active shadow shadow-cyan-300/10"
+                >
+                  <img src="/assets/img/home.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Home</span
+                  >
+                </a>
+
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/wallet.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Wallet</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/user.svg" alt="" class="h-5" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Account</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/money.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Afiliate Dashboard</span
+                  >
+                </a>
+              </div>
+              <!-- live support -->
+              <div
+                class="absolute w-full h-[200px] bottom-8 left-0 p-4 lg:px-6"
+              >
+                <div
+                  data-support
+                  class="scale-0 h-0 delay-0 transition-all origin-top duration-300"
+                >
+                  <div class="mb-3">
+                    <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
+                      <img
+                        src="/assets/img/contact.svg"
+                        alt="hubungi gachaku"
+                        class="w-6 h-6 object-contain"
+                      />
+                      <h3 class="ganti font-bold tracking-wide">
+                        Live Support
+                      </h3>
+                      <p class="ganti font-light text-[8.5px]">
+                        we will help you with your complaint
+                      </p>
+                    </div>
+                    <button
+                      class="ganti w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
+                    >
+                      Chat now
+                    </button>
+                  </div>
+                  <!-- media sosial -->
+
+                  <div>
+                    <div data-medsos class="grid grid-cols-5 gap-3">
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/youtube.svg"
+                          alt="gachaku youtube"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/instagram.svg"
+                          alt="gachaku instagram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/facebook.svg"
+                          alt="gachaku facebook"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/telegram.svg"
+                          alt="gachaku telegram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/discord.svg"
+                          alt="gachaku discord"
+                          class="h-5"
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- for mobile -->
+                <div
+                  data-support-mobile
+                  class="space-y-3 relative scale-100 transition-transform delay-200 duration-300 mt-20"
+                >
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img src="/assets/img/contact.svg" alt="chat gachaku" />
+                  </button>
+
+                  <!-- dropup chat -->
+
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img
+                      src="/assets/img/medsos.svg"
+                      alt="mediasosial gachaku"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- corner -->
+            <div
+              class="md:block corner bg-background absolute -top-4 md:right-[-40px]"
+            ></div>
+          </div>
+        </aside>
+
+        <!-- main -->
+        <main
+          data-main
+          class="relative w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <!-- breadcrums -->
+          <div class="w-full px-3 md:px-12 pt-4 2xl:max-w-[1530px] mx-auto">
+            <div class="flex py-4" aria-label="Breadcrumb">
+              <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                  <a href="#" class="text-gray-400">Home</a>
+                </li>
+                <li class="text-gray-400">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li>
+                  <a href="#" class="">Profile</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <!-- free Detail keranjang -->
+          <section
+            class="w-full min-h-[60vh] md:px-12 pb-4 mb-4 2xl:max-w-[1530px] mx-auto px-3"
+          >
+            <div
+              class="lg:grid lg:grid-cols-[300px_calc(100%-316px)] xl:grid-cols-[320px_calc(100%-336px)] gap-4"
+            >
+              <div class="max-w-[320px] lg:w-full mx-auto pb-4 lg:pb-0">
+                <!-- wallet -->
+                <!-- balance v.1 -->
+                <!-- <div class="flex-shrink-0 mt-4">
+                <div
+                  class="bg-[#3F84D973] w-full h-full rounded-xl relative overflow-hidden p-4"
+                >
+                  <div
+                    class="absolute -top-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                  ></div>
+                  <div
+                    class="absolute -bottom-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                  ></div>
+                  <div
+                    class="w-10 h-10 m-auto rounded-full bg-white/20 p-2 overflow-hidden"
+                  >
+                    <img src="/assets/img/wallet.svg" alt="" class="w-full" />
+                  </div>
+                  <h4
+                    class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                  >
+                    My Wallet
+                  </h4>
+                  <div class="relative">
+                    <div class="w-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xml:space="preserve"
+                        preserveAspectRatio="none"
+                        class="w-full h-auto"
+                        style="fill-rule: evenodd; clip-rule: evenodd"
+                        viewBox="0 0 97.94 32.1"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M5.45 0l29.27 0c1.4,0 2.54,1.14 2.54,2.54l0 0.66c0,1.76 1.44,3.2 3.2,3.2l17.02 0c1.76,0 3.2,-1.44 3.2,-3.2l0 -0.66c0,-1.4 1.14,-2.54 2.54,-2.54l29.27 0c3,0 5.45,2.45 5.45,5.45l0 21.2c0,3 -2.45,5.45 -5.45,5.45l-87.04 0c-3,0 -5.45,-2.45 -5.45,-5.45l0 -21.2c0,-3 2.45,-5.45 5.45,-5.45z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="absolute bottom-4 md:bottom-8 2xl:bottom-8 lg:bottom-4 w-full px-4 flex justify-between items-center"
+                    >
+                      <div class="text-background leading-4">
+                        <div class="text-xs lg:text-sm">Wallet Balance</div>
+                        <div
+                          class="text-base font-bold md:text-xl lg:text-base xl:text-xl 2xl:text-2xl"
+                        >
+                          Rp. <span>70.000.000</span>
+                        </div>
+                      </div>
+                      <button
+                        class="p-2 bg-button rounded-xl text-xs md:text-base lg:text-sm xl:text-base 2xl:text-xl"
+                      >
+                        Add Balance
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                <!-- balance v.2 -->
+                <div>
+                  <div
+                    class="bg-[#3F84D973] w-full h-full rounded-xl relative overflow-hidden p-4"
+                  >
+                    <div
+                      class="absolute -top-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="absolute -bottom-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="w-10 h-10 m-auto rounded-full bg-white/20 p-2 overflow-hidden"
+                    >
+                      <img src="/assets/img/wallet.svg" alt="" class="w-full" />
+                    </div>
+                    <h4
+                      class="text-center text-lg md:text-[1.5vw] font-bold tracking-wider p-2"
+                    >
+                      Affiliate Earnings
+                    </h4>
+                    <div class="relative">
+                      <div
+                        class="w-full px-4 flex flex-col justify-between items-center bg-white rounded-xl py-4"
+                      >
+                        <div class="text-background leading-4 text-center pb-4">
+                          <div class="text-sm">Wallet Balance :</div>
+                          <div class="text-lg xl:text-2xl font-bold">
+                            Rp. <span>70.000.000</span>
+                          </div>
+                        </div>
+                        <button
+                          class="w-full p-2 bg-button rounded-xl text-xs md:text-base lg:text-sm xl:text-base 2xl:text-xl"
+                        >
+                          Add Balance
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div
+                    class="bg-[#3F84D973] w-full h-full rounded-xl relative overflow-hidden p-4"
+                  >
+                    <div
+                      class="absolute -top-28 -left-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div
+                      class="absolute -bottom-28 -right-28 w-64 h-64 rounded-full bg-[radial-gradient(circle_at_50%_50%,#3CFF9A80,transparent_60%)]"
+                    ></div>
+                    <div class="relative space-y-4">
+                      <div class="w-full px-4 bg-gray-400/40 rounded-lg py-2">
+                        <div
+                          class="flex items-center justify-start gap-3 border-b border-white/10 pb-2"
+                        >
+                          <div
+                            class="w-8 h-8 overflow-hidden rounded-full border border-white/20 p-1"
+                          >
+                            <img
+                              src="/assets/img/n-icon/click-1.svg"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <span>Clicks</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-3">
+                          <span class="text-xl font-bold tracking-wider"
+                            >7.543</span
+                          >
+                          <div class="text-[12px] flex flex-col leading-4">
+                            <span class="font-bold text-indigo-600">+80%</span>
+                            <span>last period</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w-full px-4 bg-gray-400/40 rounded-lg py-2">
+                        <div
+                          class="flex items-center justify-start gap-3 border-b border-white/10 pb-2"
+                        >
+                          <div
+                            class="w-8 h-8 overflow-hidden rounded-full border border-white/20 p-1"
+                          >
+                            <img
+                              src="/assets/img/n-icon/coins-stacked.svg"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <span>Earnings</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-3">
+                          <span class="text-xl font-bold tracking-wider"
+                            >129</span
+                          >
+                          <div class="text-[12px] flex flex-col leading-4">
+                            <span class="font-bold text-yellow-600">+80%</span>
+                            <span>last period</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w-full px-4 bg-gray-400/40 rounded-lg py-2">
+                        <div
+                          class="flex items-center justify-start gap-3 border-b border-white/10 pb-2"
+                        >
+                          <div
+                            class="w-8 h-8 overflow-hidden rounded-full border border-white/20 p-1.5"
+                          >
+                            <img
+                              src="/assets/img/n-icon/sales-amount.svg"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <span>Revenue</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-3">
+                          <span class="text-xl font-bold tracking-wider"
+                            >7.543</span
+                          >
+                          <div class="text-[12px] flex flex-col leading-4">
+                            <span class="font-bold text-green-600">+80%</span>
+                            <span>last period</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div
+                  class="flex flex-wrap border-b border-white/20 gap-2 mb-4 text-sm"
+                >
+                  <button
+                    class="rounded-t-lg py-1 px-2 hover:bg-button/10 transition-colors duration-300"
+                  >
+                    Eearnings History
+                  </button>
+                  <button
+                    class="rounded-t-lg py-1 px-2 border-b-2 border-button bg-white/5 hover:bg-button/10 transition-colors duration-300"
+                  >
+                    Withdraw History
+                  </button>
+                </div>
+                <div class="px-4 pb-4 bg-bg-3 rounded-xl">
+                  <!-- my transaction -->
+                  <div>
+                    <div
+                      class="flex items-center justify-between gap-3 py-3 border-b border-button/10"
+                    >
+                      <div class="flex items-center justify-between gap-2">
+                        <div
+                          class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
+                        >
+                          <img
+                            src="/assets/img/n-icon/note.svg"
+                            alt=""
+                            class="h-6"
+                          />
+                        </div>
+                        <h5 class="font-semibold tracking-wider">
+                          <span>Withdrawn History</span>
+                        </h5>
+                      </div>
+                      <div>
+                        <div class="relative">
+                          <label
+                            for="search"
+                            class="absolute left-2 top-1 text-white"
+                          >
+                            <svg
+                              class="w-5 h-5 inline mr-2"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                              />
+                            </svg>
+                          </label>
+                          <input
+                            id="search"
+                            type="text"
+                            class="w-24 h-9 md:w-36 bg-white/10 placeholder:text-sm pl-8 pr-4 py-1 rounded-lg focus:outline focus:outline-button/20 text-sm"
+                            placeholder="Search"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- tabel transaksi -->
+                    <div class="w-full overflow-auto custom-scrollbar">
+                      <table class="min-w-full text-sm">
+                        <thead class="text-xs text-gray-500 border-b">
+                          <tr>
+                            <th
+                              class="px-2 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>No</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                            <th
+                              class="px-3 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>Transaction ID</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                            <th
+                              class="px-3 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>Amount Withdrawn</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                            <th
+                              class="px-3 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>Method</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                            <th
+                              class="px-3 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>Status</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                            <th
+                              class="px-3 py-2 text-left whitespace-nowrap cursor-pointer"
+                            >
+                              <div class="flex items-center gap-1">
+                                <span>Action</span>
+                                <button
+                                  class="text-gray-400 hover:text-gray-600"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200/10">
+                          <!-- Sample Row 1 -->
+                          <tr class="w-full">
+                            <td class="px-3 py-3 whitespace-nowrap">1</td>
+                            <td class="px-3 py-3">
+                              <div>
+                                <div class="font-medium">#WD2345678</div>
+                                <div class="text-xs text-gray-400">
+                                  Apr 18 2025, 13.45
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>
+                                <span>Rp.</span>
+                                <span>7.000.000</span>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>Bank Transfer</div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div class="text-yellow-500">
+                                <span>Processing</span>
+                              </div>
+                            </td>
+                            <td class="px-2 py-1">
+                              <button
+                                class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
+                              >
+                                Details
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Sample Row 1 -->
+                          <tr class="w-full">
+                            <td class="px-3 py-3 whitespace-nowrap">1</td>
+                            <td class="px-3 py-3">
+                              <div>
+                                <div class="font-medium">#WD2345678</div>
+                                <div class="text-xs text-gray-400">
+                                  Apr 18 2025, 13.45
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>
+                                <span>Rp.</span>
+                                <span>7.000.000</span>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>Bank Transfer</div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div class="text-red-500">
+                                <span>Failed</span>
+                              </div>
+                            </td>
+                            <td class="px-2 py-1">
+                              <button
+                                class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
+                              >
+                                Details
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Sample Row 1 -->
+                          <tr class="w-full">
+                            <td class="px-3 py-3 whitespace-nowrap">1</td>
+                            <td class="px-3 py-3">
+                              <div>
+                                <div class="font-medium">#WD2345678</div>
+                                <div class="text-xs text-gray-400">
+                                  Apr 18 2025, 13.45
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>
+                                <span>Rp.</span>
+                                <span>7.000.000</span>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>Bank Transfer</div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div class="text-green-500">
+                                <span>Success</span>
+                              </div>
+                            </td>
+                            <td class="px-2 py-1">
+                              <button
+                                class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
+                              >
+                                Details
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Sample Row 1 -->
+                          <tr class="w-full">
+                            <td class="px-3 py-3 whitespace-nowrap">1</td>
+                            <td class="px-3 py-3">
+                              <div>
+                                <div class="font-medium">#WD2345678</div>
+                                <div class="text-xs text-gray-400">
+                                  Apr 18 2025, 13.45
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>
+                                <span>Rp.</span>
+                                <span>7.000.000</span>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>Bank Transfer</div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div class="text-green-500">
+                                <span>Success</span>
+                              </div>
+                            </td>
+                            <td class="px-2 py-1">
+                              <button
+                                class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
+                              >
+                                Details
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Sample Row 1 -->
+                          <tr class="w-full">
+                            <td class="px-3 py-3 whitespace-nowrap">1</td>
+                            <td class="px-3 py-3">
+                              <div>
+                                <div class="font-medium">#WD2345678</div>
+                                <div class="text-xs text-gray-400">
+                                  Apr 18 2025, 13.45
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>
+                                <span>Rp.</span>
+                                <span>7.000.000</span>
+                              </div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div>Bank Transfer</div>
+                            </td>
+                            <td class="px-3 py-3 whitespace-nowrap">
+                              <div class="text-green-500">
+                                <span>Success</span>
+                              </div>
+                            </td>
+                            <td class="px-2 py-1">
+                              <button
+                                class="px-2 py-1 rounded-lg hover:bg-background cursor-pointer"
+                              >
+                                Details
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex items-center justify-between mt-4 px-3">
+                      <div class="hidden md:block text-sm text-gray-400">
+                        Showing
+                        <span class="font-medium text-gray-200">1</span> to
+                        <span class="font-medium text-gray-200">3</span> of
+                        <span class="font-medium text-gray-200">10</span>
+                        entries
+                      </div>
+
+                      <div class="flex items-center gap-1">
+                        <select
+                          class="text-xs bg-background border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        >
+                          <option>5 per page</option>
+                          <option selected>10 per page</option>
+                          <option>25 per page</option>
+                          <option>50 per page</option>
+                        </select>
+
+                        <div class="flex items-center gap-1 ml-4">
+                          <button
+                            class="p-1 rounded hover:bg-gray-700 disabled:opacity-30"
+                            disabled
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="h-4 w-4"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </button>
+
+                          <button
+                            class="px-2 py-1 text-xs rounded bg-blue-500 text-white"
+                          >
+                            1
+                          </button>
+                          <button
+                            class="px-2 py-1 text-xs rounded hover:bg-gray-700"
+                          >
+                            2
+                          </button>
+                          <button
+                            class="px-2 py-1 text-xs rounded hover:bg-gray-700"
+                          >
+                            3
+                          </button>
+
+                          <button class="p-1 rounded hover:bg-gray-700">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="h-4 w-4"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- end main -->
+        <!-- footer -->
+        <footer
+          id="footer"
+          class="w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <div class="w-full px-4 md:px-12 pb-[96px] md:pb-8">
+            <div
+              class="text-center w-full pt-12 border-t border-white/20 text-3xl lg:text-5xl font-semibold tracking-wider space-y-2"
+            >
+              <p>CHEAP TOP UP</p>
+              <p>AND RELIABLE</p>
+              <div class="flex justify-center gap-3">
+                <span>ONLY IN </span>
+                <div class="-rotate-6">
+                  <img src="/assets/img/gachaku.svg" alt="" class="h-8" />
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex justify-between items-center mt-8">
+              <div>
+                <img src="/assets/img/gachaku.svg" alt="" class="h-6" />
+              </div>
+              <div class="text-[12px]">
+                <p class="text-white/50">Contact Us :</p>
+                <p>info@gachaku.com</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end footer -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

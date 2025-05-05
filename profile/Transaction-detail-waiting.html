@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css" />
+    <link href="/assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-background text-white">
+    <div id="app">
+      <div class="relative flex flex-col">
+        <!-- header -->
+        <header class="fixed w-full h-20 md:h-24 px-4 bg-background z-20">
+          <div
+            class="relative w-full h-20 md:h-24 grid grid-cols-[120px_1fr] lg:grid-cols-[280px_1fr] content-center"
+          >
+            <!-- Logo  -->
+            <a href="/header.html" class="w-full flex items-center">
+              <img
+                src="/assets/img/gachaku.svg"
+                alt="gachaku"
+                class="hidden lg:block h-[40px] object-contain"
+              />
+              <img
+                src="/assets/img/m-gacha.svg"
+                alt="gachaku mini"
+                class="h-12 lg:hidden"
+              />
+            </a>
+
+            <!-- header Menu -->
+            <div class="w-full flex justify-end space-x-2">
+              <div class="md:w-[calc(100%-180px)] lg:w-[calc(100%-280px)]">
+                <!-- Search -->
+                <div
+                  data-search
+                  class="w-full md:w-[80%] xl:w-[500px] 2xl:w-[600px]"
+                >
+                  <!-- button search in header -->
+                  <!-- <button
+                    class="btn-rounded md:hidden justify-center items-center"
+                  >
+                    <img src="/assets/img/search.svg" alt="" class="h-5" />
+                  </button> -->
+
+                  <div
+                    data-searchBar
+                    class="hidden fixed bg-background w-full h-screen md:h-full top-0 left-0 px-4 md:block md:relative md:px-0 md:top-0 lg:bg-background z-10"
+                  >
+                    <div class="flex justify-between items-center">
+                      <button
+                        data-back-btn
+                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-bg-2 hover:bg-button mt-6 lg:mt-0 md:hidden"
+                      >
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </button>
+                      <div
+                        class="relative w-[calc(100%-58px)] md:w-full mt-6 md:mt-0"
+                      >
+                        <label
+                          for="header-search"
+                          class="absolute top-1/2 -translate-1/2 left-6"
+                        >
+                          <img
+                            src="/assets/img/search.svg"
+                            alt=""
+                            class="h-5"
+                          />
+                        </label>
+                        <input
+                          type="text"
+                          id="header-search"
+                          class="bg-bg-2 py-2 pl-12 pr-10 rounded-lg w-full h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active"
+                          placeholder="Search Game, Voucher, etc.."
+                        />
+                        <button
+                          data-clear-search
+                          class="absolute right-3 top-1/2 -translate-1/2 hidden text-gray-400 hover:text-white"
+                        >
+                          <img src="/assets/img/x.svg" alt="" class="h-3" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- search result -->
+                    <div
+                      id="search-result"
+                      data-result-search
+                      class="hidden absolute top-[80px] lg:top-[50px] left-0 z-k0 w-full p-4 rounded-lg flex-col items-start justify-start space-y-3 md:shadow-md md:shadow-button-bg overflow-y-auto max-h-[calc(100vh-100px)] bg-background"
+                    >
+                      <!-- prosessing -->
+                      <button
+                        type="button"
+                        class="bg-button flex gap-3 p-2 rounded-lg"
+                        disabled
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="animate-spin text-white"
+                        >
+                          <path
+                            fill="#ffffff"
+                            d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                            opacity=".25"
+                          />
+                          <path
+                            fill="#ffffff"
+                            d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+                          />
+                        </svg>
+                        Processing…
+                      </button>
+                      <a
+                        href="#"
+                        class="flex space-x-3 p-2 border border-border bg-bg-2 rounded-lg w-full"
+                      >
+                        <div class="w-28 h-auto overflow-hidden rounded-lg">
+                          <img
+                            src="https://placehold.co/100x50"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h3 class="mb-1 text-xl text-button font-bold">
+                            Mobile Legend
+                          </h3>
+                          <p class="text-sm">
+                            Nikmati
+                            <span class="bg-pink-300 py-0.5 px-3 rounded-md"
+                              >Promo Off 20%</span
+                            >
+                            <strong>Top Up</strong> sebagai member
+                            <strong>Gachaku</strong>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- panel hasil pencarian -->
+                </div>
+                <!-- end search -->
+              </div>
+
+              <div class="md:w-[270px] lg:w-80 flex justify-end">
+                <div class="flex space-x-2">
+                  <!-- bahasa -->
+                  <select
+                    id="countries"
+                    class="bg-bg-2 col-start-1 row-start-1 appearance-none p-2 rounded-full w-10 md:w-12 h-10 md:h-12 focus:outline focus:outline-slate-700 focus:bg-active text-center"
+                  >
+                    <option value="US" class="bg-background outline-0">
+                      ID
+                    </option>
+                    <option value="CA" class="bg-background outline-0">
+                      EN
+                    </option>
+                  </select>
+
+                  <!-- cart -->
+                  <div class="relative">
+                    <button
+                      class="relative w-10 h-10 md:w-12 md:h-12 p-3 rounded-full bg-bg-2 hover:bg-button transition-colors duration-200"
+                    >
+                      <img src="/assets/img/cart.svg" alt="" />
+                      <span
+                        class="absolute top-0 right-0 w-4 h-4 text-xs bg-button rounded-full"
+                        >3</span
+                      >
+                    </button>
+                  </div>
+
+                  <div class="relative">
+                    <!-- Login Button -->
+                    <a
+                      href="login-form"
+                      class="w-10 h-10 md:w-12 md:h-12 lg:w-auto lg:h-12 rounded-xl bg-bg-2 hover:bg-button flex items-center justify-center transition-colors duration-200"
+                    >
+                      <span class="p-3 hidden lg:block">Sign In / Sign Up</span>
+                      <img
+                        src="/assets/img/login.svg"
+                        alt=""
+                        class="lg:hidden"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- end header -->
+        <!-- menu mobile bottom -->
+        <div class="w-full h-20 md:h-24">
+          <div class="fixed md:hidden bottom-0 left-0 z-20 w-full">
+            <div
+              class="h-14 grid grid-cols-5 bg-background border border-active/30"
+            >
+              <button><i class="fa-solid fa-house"></i></button>
+              <button>
+                <i class="fa-regular fa-flag"></i>
+              </button>
+              <button data-btn-search class="flex items-center justify-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-button flex items-center justify-center"
+                >
+                  <img src="/assets/img/search.svg" alt="" class="h-6" />
+                </div>
+              </button>
+              <button>4</button>
+              <button data-btn-showbar>
+                <div class="">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="hidden">
+                  <i class="fa-solid fa-x"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar -->
+        <aside
+          data-sidebar
+          class="fixed -translate-x-72 md:-translate-x-0 md:block w-20 h-screen bg-background z-40 top-20 md:top-24 md:left-0 py-4 transition-all duration-300"
+        >
+          <!-- sidebar menu -->
+          <div data-sb-menu class="p-4 relative w-full h-[calc(100vh-102px)]">
+            <div
+              class="absolute -top-1 right-6 transition-all duration-300 z-10"
+            >
+              <button
+                data-sb-button
+                class="w-8 h-4 bg-amber-200/20 rounded-full ring-1 ring-button/50 cursor-pointer hidden"
+              >
+                <div class="w-4 h-4 rounded-full bg-background"></div>
+              </button>
+            </div>
+            <div class="mb-3 re">
+              <div class="space-y-2 pt-4">
+                <a
+                  href="index.html"
+                  class="w-full h-10 flex flex-row items-center bg-card-bg2 rounded-lg justify-start px-3 space-x-3 hover:bg-active shadow shadow-cyan-300/10"
+                >
+                  <img src="/assets/img/home.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Home</span
+                  >
+                </a>
+                <a
+                  href="topup.html"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/games.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Top Up Games</span
+                  >
+                </a>
+                <a
+                  href="detail-keranjang.html"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/ticket.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Voucher</span
+                  >
+                </a>
+                <a
+                  href="my-wallet.html"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/wallet.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >My Wallet</span
+                  >
+                </a>
+                <a
+                  href="trans-history.html"
+                  class="w-full h-10 flex flex-row items-center rounded-lg justify-start px-3 space-x-3 hover:bg-active"
+                >
+                  <img src="/assets/img/history.svg" alt="" class="h-6" />
+                  <span
+                    class="w-full scale-0 origin-left transition-all delay-200 duration-300"
+                    >Transaction History</span
+                  >
+                </a>
+              </div>
+              <!-- live support -->
+              <div
+                class="absolute w-full h-[200px] bottom-8 left-0 p-4 lg:px-6"
+              >
+                <div
+                  data-support
+                  class="scale-0 h-0 delay-0 transition-all origin-top duration-300"
+                >
+                  <div class="mb-3">
+                    <div class="p-4 rounded-t-lg bg-card-bg2 space-y-1">
+                      <img
+                        src="/assets/img/contact.svg"
+                        alt="hubungi gachaku"
+                        class="w-6 h-6 object-contain"
+                      />
+                      <h3 class="ganti font-bold tracking-wide">
+                        Live Support
+                      </h3>
+                      <p class="ganti font-light text-[8.5px]">
+                        we will help you with your complaint
+                      </p>
+                    </div>
+                    <button
+                      class="ganti w-full p-1 bg-button rounded-b-lg text-center cursor-pointer text-background hover:bg-button-hover"
+                    >
+                      Chat now
+                    </button>
+                  </div>
+                  <!-- media sosial -->
+
+                  <div>
+                    <div data-medsos class="grid grid-cols-5 gap-3">
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/youtube.svg"
+                          alt="gachaku youtube"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/instagram.svg"
+                          alt="gachaku instagram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/facebook.svg"
+                          alt="gachaku facebook"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/telegram.svg"
+                          alt="gachaku telegram"
+                          class="h-5"
+                      /></a>
+                      <a
+                        href="#"
+                        class="w-full aspect-square bg-card-bg2 rounded-lg flex items-center justify-center hover:bg-active"
+                        ><img
+                          src="/assets/img/discord.svg"
+                          alt="gachaku discord"
+                          class="h-5"
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- for mobile -->
+                <div
+                  data-support-mobile
+                  class="space-y-3 relative scale-100 transition-transform delay-200 duration-300 mt-20"
+                >
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img src="/assets/img/contact.svg" alt="chat gachaku" />
+                  </button>
+
+                  <!-- dropup chat -->
+
+                  <button
+                    class="bg-card-bg2 rounded-lg w-full aspect-square flex justify-center items-center cursor-pointer hover:bg-active"
+                  >
+                    <img
+                      src="/assets/img/medsos.svg"
+                      alt="mediasosial gachaku"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- corner -->
+            <div
+              class="md:block corner bg-background absolute -top-4 md:right-[-40px]"
+            ></div>
+          </div>
+        </aside>
+
+        <!-- main -->
+        <main
+          data-main
+          class="relative w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <!-- breadcrums -->
+          <div class="w-full md:px-12 pt-4">
+            <div class="flex py-4" aria-label="Breadcrumb">
+              <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                  <a href="#" class="text-gray-400">Home</a>
+                </li>
+                <li class="text-gray-400">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li>
+                  <a href="#" class="">Payment Methode</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <!-- free Detail keranjang -->
+          <section class="w-full md:px-12 pb-4 mb-4">
+            <div
+              class="flex flex-col justify-start items-start lg:flex-row gap-4 p-4 lg:p-0"
+            >
+              <div class="bg-bg-3 w-full lg:w-2/3 rounded-xl pb-4">
+                <div class="px-4">
+                  <!-- title title -->
+                  <div
+                    class="flex items-center justify-between gap-3 py-3 border-b border-button/10"
+                  >
+                    <div class="flex items-center justify-between gap-2">
+                      <div
+                        class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
+                      >
+                        <img src="/assets/img/wallet.svg" alt="" class="h-4" />
+                      </div>
+                      <h5 class="font-semibold tracking-wider">
+                        <span>Choose Payment Method</span>
+                      </h5>
+                    </div>
+                  </div>
+                  <!-- my wallet -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <div class="flex justify-between items-center">
+                      <!-- check box -->
+                      <div class="inline-flex items-center">
+                        <label
+                          class="flex items-center cursor-pointer relative"
+                          for="check-with-link"
+                        >
+                          <input
+                            type="radio"
+                            name="option"
+                            checked
+                            class="peer h-4 w-4 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-button/20 checked:bg-button checked:border-white/30"
+                            id="check-with-link"
+                          />
+                          <span
+                            class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="h-3 w-3"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              stroke="currentColor"
+                              stroke-width="1"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"
+                              ></path>
+                            </svg>
+                          </span>
+                        </label>
+                        <label
+                          class="cursor-pointer ml-2 text-white text-sm flex items-center gap-2"
+                          for="check-with-link"
+                        >
+                          <span>My Wallet</span>
+                          <div
+                            class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center p-[5px]"
+                          >
+                            <img
+                              src="/assets/img/wallet-blu.svg"
+                              alt=""
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- amount -->
+                      <div>Rp. <span>700.000</span></div>
+                    </div>
+                  </div>
+                  <!-- E-wallet Payment -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <!-- title title -->
+                    <div
+                      class="flex items-center justify-between gap-3 pb-4 border-b border-button/10"
+                    >
+                      <div
+                        class="w-full flex items-center justify-between gap-2"
+                      >
+                        <h5 class="font-semibold tracking-wider test-sm">
+                          <span>E-wallet Payment</span>
+                        </h5>
+                        <div
+                          class="text-white/60 w-6 h-6 rounded-full bg-blue-50/10"
+                        >
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="-4 0 30 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 18L15 12L9 6"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="pt-4 flex flex-row flex-wrap w-full items-center justify-start gap-4"
+                    >
+                      <!-- list wallet 1 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">QRIS</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/QRIS_logo.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 2 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">Shopee Pay</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/shopeepay.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 3 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">DANA</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/dana.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 4 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">OVO</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/ovo.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 5 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">Jago</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/jago.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 6 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">GoPay</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/gopay.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 7 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">DOKU</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/doku.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list wallet 8-->
+                      <div class="w-full md:w-[48%] py-3 my-1">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">QRIS</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/LinkAja.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Bank Payment -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <!-- title title -->
+                    <div
+                      class="flex items-center justify-between gap-3 pb-4 border-b border-button/10"
+                    >
+                      <div
+                        class="w-full flex items-center justify-between gap-2"
+                      >
+                        <h5 class="font-semibold tracking-wider test-sm">
+                          <span>Bank Payment</span>
+                        </h5>
+                        <div
+                          class="text-white/60 w-6 h-6 rounded-full bg-blue-50/10"
+                        >
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="-4 0 30 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 18L15 12L9 6"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="pt-4 flex flex-row flex-wrap w-full items-center justify-start gap-4"
+                    >
+                      <!-- list bank payment 1 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">Mandiri</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/mandiri.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list bank payment 2 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">BCA</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/bca.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list bank payment 3 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">BNI</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/bni.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list bank payment 4 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">BRI</span>
+                          <div class="w-11 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/bri.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Retail Payment -->
+                  <div
+                    class="w-full mt-4 p-4 border border-button/10 rounded-xl"
+                  >
+                    <!-- title title -->
+                    <div
+                      class="flex items-center justify-between gap-3 pb-4 border-b border-button/10"
+                    >
+                      <div
+                        class="w-full flex items-center justify-between gap-2"
+                      >
+                        <h5 class="font-semibold tracking-wider test-sm">
+                          <span>Retail Payment</span>
+                        </h5>
+                        <div
+                          class="text-white/60 w-6 h-6 rounded-full bg-blue-50/10"
+                        >
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="-4 0 30 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 18L15 12L9 6"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="pt-4 flex flex-row flex-wrap w-full items-center justify-start gap-4"
+                    >
+                      <!-- list retail payment 1 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">Indomaret</span>
+                          <div class="w-14 h-6 rounded-sm overflow-hidden">
+                            <img
+                              src="/assets/img/n-icon/indomaret.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                      <!-- list retail payment 2 -->
+                      <div class="w-full md:w-[45%] py-2">
+                        <label class="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="option"
+                            class="w-4 h-4 appearance-none border border-button rounded-sm checked:bg-button checked:border-button relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:text-[10px] checked:after:-translate-y-1/2"
+                          />
+                          <span class="text-sm w-24">Alfamart </span>
+                          <div
+                            class="w-14 h-6 rounded-sm overflow-hidden bg-white px-1"
+                          >
+                            <img
+                              src="/assets/img/n-icon/Alfamart_logo.svg"
+                              alt=""
+                              class="w-full h-full object-contain"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/3">
+                <!-- order summary -->
+
+                <div class="bg-bg-3 px-4 pb-4 rounded-xl w-full shadow-sm">
+                  <!-- title -->
+                  <div
+                    class="flex items-center justify-between gap-3 py-3 border-b border-button/10"
+                  >
+                    <div class="flex items-center justify-between gap-2">
+                      <div
+                        class="h-8 w-8 rounded-full bg-blue-400/10 flex items-center justify-center"
+                      >
+                        <img
+                          src="/assets/img/n-icon/Wallet.svg"
+                          alt=""
+                          class="h-4"
+                        />
+                      </div>
+                      <h5 class="font-semibold tracking-wider">
+                        <span>Payment Information</span>
+                      </h5>
+                    </div>
+                  </div>
+
+                  <!-- isi -->
+                  <div class="w-full pt-4">
+                    <table class="w-full text-sm font-light">
+                      <tbody class="w-full space-y-2">
+                        <tr class="flex justify-between">
+                          <td class="text-text-secondary">
+                            Transaction Number
+                          </td>
+                          <td class="font-thin">#GCK12345678</td>
+                        </tr>
+                        <tr class="flex justify-between">
+                          <td class="text-text-secondary">Create On</td>
+                          <td class="font-thin">16 April 2025, 14.30</td>
+                        </tr>
+                        <tr class="flex justify-between">
+                          <td class="text-text-secondary">Valid Until</td>
+                          <td class="font-thin">17 April 2025, 14.30</td>
+                        </tr>
+                        <tr class="flex justify-between">
+                          <td class="text-text-primary font-thin">
+                            Total Amount
+                          </td>
+                          <td class="text-primary font-thin">Rp 947.100</td>
+                        </tr>
+                        <tr
+                          class="flex justify-between pt-2 border-t border-button/10 mt-2"
+                        >
+                          <td class="text-text-primary font-thin">Pay With</td>
+                          <td class="text-primary font-thin">
+                            <div
+                              class="flex items-center justify-end w-full gap-2"
+                            >
+                              <span>DANA</span>
+                              <div class="w-12 h-4 overflow-hidden rounded-md">
+                                <img
+                                  src="/assets/img/n-icon/dana.svg"
+                                  alt=""
+                                  class="w-full h-full object-cover"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="w-full pt-4">
+                    <button
+                      onclick="showSuccessModal()"
+                      class="relative w-full p-0.5 rounded-xl overflow-hidden bg-active"
+                    >
+                      <div
+                        class="relative w-full h-12 bg-addtocart flex items-center justify-center rounded-xl z-10"
+                      >
+                        Continue to Payment
+                      </div>
+                      <div class="animasi1"></div>
+                      <div class="animasi3"></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modal Sukses -->
+          <div
+            id="successModal"
+            class="fixed inset-0 bg-background/50 backdrop-blur-md bg-opacity-50 flex items-center justify-center p-4 hidden z-50"
+          >
+            <div
+              class="bg-bg-3 rounded-xl shadow-xl max-w-lg w-full modal-enter py-6 relative overflow-hidden"
+            >
+              <button
+                onclick="hideSuccessModal()"
+                class="absolute top-4 right-4 p-2 rounded-md bg-bg-2 cursor-pointer z-50"
+              >
+                <img src="/assets/img/x.svg" alt="" class="h-2.5" />
+              </button>
+              <!-- Kembang Api Container -->
+              <div
+                id="fireworksContainer"
+                class="absolute inset-0 pointer-events-none"
+              ></div>
+
+              <!-- Konten Modal -->
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <!-- Lingkaran Centang -->
+                <div class="p-1 rounded-full bg-teal-800 mb-4">
+                  <div
+                    class="w-20 h-20 bg-teal-400 rounded-full flex items-center justify-center checkmark-animate"
+                  >
+                    <svg
+                      class="w-12 h-12 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="3"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="px-2">
+                  <h2 class="text-sm font-bold text-teal-400 mb-2">
+                    Transaction successfull!
+                  </h2>
+                  <p class="text-white mb-6 text-xs">
+                    Congratulations, your transaction has been completed.
+                  </p>
+                </div>
+                <div class="w-full bg-teal-400 text-black py-4 mb-4">
+                  <span>Amount</span>
+                  <h4 class="text-2xl font-bold">
+                    <span>Rp.</span> <span>574.398</span>
+                  </h4>
+                  <div class="text-xs flex items-center justify-center">
+                    Apr 18 2025, 13.45 - Transaction ID: #ORD000001
+                    <div>
+                      <svg
+                        width="20px"
+                        height="20px"
+                        viewBox="0 -0.5 25 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5H8.25005ZM9.00005 8.267H9.75006L9.75004 8.26283L9.00005 8.267ZM9.93892 5.96432L10.4722 6.49171L9.93892 5.96432ZM12.2311 5V4.24999L12.2269 4.25001L12.2311 5ZM16.269 5L16.2732 4.25H16.269V5ZM18.5612 5.96432L18.0279 6.49171V6.49171L18.5612 5.96432ZM19.5 8.267L18.75 8.26283V8.267H19.5ZM19.5 12.233H18.75L18.7501 12.2372L19.5 12.233ZM18.5612 14.5357L18.0279 14.0083L18.5612 14.5357ZM16.269 15.5V16.25L16.2732 16.25L16.269 15.5ZM16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5C15.25 15.9142 15.5858 16.25 16 16.25V14.75ZM9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5C9.75005 8.08579 9.41426 7.75 9.00005 7.75V9.25ZM8.73105 8.5V7.74999L8.72691 7.75001L8.73105 8.5ZM6.43892 9.46432L6.97218 9.99171L6.43892 9.46432ZM5.50005 11.767H6.25006L6.25004 11.7628L5.50005 11.767ZM5.50005 15.734L6.25005 15.7379V15.734H5.50005ZM8.73105 19L8.72691 19.75H8.73105V19ZM12.769 19V19.75L12.7732 19.75L12.769 19ZM15.0612 18.0357L14.5279 17.5083L15.0612 18.0357ZM16 15.733H15.25L15.2501 15.7372L16 15.733ZM16.75 15.5C16.75 15.0858 16.4143 14.75 16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5H16.75ZM9.00005 7.75C8.58584 7.75 8.25005 8.08579 8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25V7.75ZM12.7691 8.5L12.7732 7.75H12.7691V8.5ZM15.0612 9.46432L15.5944 8.93694V8.93694L15.0612 9.46432ZM16.0001 11.767L15.2501 11.7628V11.767H16.0001ZM15.2501 15.5C15.2501 15.9142 15.5858 16.25 16.0001 16.25C16.4143 16.25 16.7501 15.9142 16.7501 15.5H15.2501ZM9.75005 8.5V8.267H8.25005V8.5H9.75005ZM9.75004 8.26283C9.74636 7.60005 10.0061 6.96296 10.4722 6.49171L9.40566 5.43694C8.65985 6.19106 8.24417 7.21056 8.25006 8.27117L9.75004 8.26283ZM10.4722 6.49171C10.9382 6.02046 11.5724 5.75365 12.2352 5.74999L12.2269 4.25001C11.1663 4.25587 10.1515 4.68282 9.40566 5.43694L10.4722 6.49171ZM12.2311 5.75H16.269V4.25H12.2311V5.75ZM16.2649 5.74999C16.9277 5.75365 17.5619 6.02046 18.0279 6.49171L19.0944 5.43694C18.3486 4.68282 17.3338 4.25587 16.2732 4.25001L16.2649 5.74999ZM18.0279 6.49171C18.494 6.96296 18.7537 7.60005 18.7501 8.26283L20.25 8.27117C20.2559 7.21056 19.8402 6.19106 19.0944 5.43694L18.0279 6.49171ZM18.75 8.267V12.233H20.25V8.267H18.75ZM18.7501 12.2372C18.7537 12.8999 18.494 13.537 18.0279 14.0083L19.0944 15.0631C19.8402 14.3089 20.2559 13.2894 20.25 12.2288L18.7501 12.2372ZM18.0279 14.0083C17.5619 14.4795 16.9277 14.7463 16.2649 14.75L16.2732 16.25C17.3338 16.2441 18.3486 15.8172 19.0944 15.0631L18.0279 14.0083ZM16.269 14.75H16V16.25H16.269V14.75ZM9.00005 7.75H8.73105V9.25H9.00005V7.75ZM8.72691 7.75001C7.6663 7.75587 6.65146 8.18282 5.90566 8.93694L6.97218 9.99171C7.43824 9.52046 8.07241 9.25365 8.73519 9.24999L8.72691 7.75001ZM5.90566 8.93694C5.15985 9.69106 4.74417 10.7106 4.75006 11.7712L6.25004 11.7628C6.24636 11.1001 6.50612 10.463 6.97218 9.99171L5.90566 8.93694ZM4.75005 11.767V15.734H6.25005V11.767H4.75005ZM4.75006 15.7301C4.73847 17.9382 6.51879 19.7378 8.72691 19.75L8.7352 18.25C7.35533 18.2424 6.2428 17.1178 6.25004 15.7379L4.75006 15.7301ZM8.73105 19.75H12.769V18.25H8.73105V19.75ZM12.7732 19.75C13.8338 19.7441 14.8486 19.3172 15.5944 18.5631L14.5279 17.5083C14.0619 17.9795 13.4277 18.2463 12.7649 18.25L12.7732 19.75ZM15.5944 18.5631C16.3402 17.8089 16.7559 16.7894 16.75 15.7288L15.2501 15.7372C15.2537 16.3999 14.994 17.037 14.5279 17.5083L15.5944 18.5631ZM16.75 15.733V15.5H15.25V15.733H16.75ZM9.00005 9.25H12.7691V7.75H9.00005V9.25ZM12.7649 9.24999C13.4277 9.25365 14.0619 9.52046 14.5279 9.99171L15.5944 8.93694C14.8486 8.18282 13.8338 7.75587 12.7732 7.75001L12.7649 9.24999ZM14.5279 9.99171C14.994 10.463 15.2537 11.1001 15.2501 11.7628L16.75 11.7712C16.7559 10.7106 16.3402 9.69106 15.5944 8.93694L14.5279 9.99171ZM15.2501 11.767V15.5H16.7501V11.767H15.2501Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="max-w-80 mx-auto p-2 text-xs space-y-3">
+                  <div class="w-full border border-button/20 rounded-lg">
+                    <div class="py-3 border-b border-button/20">
+                      Payment Details
+                    </div>
+                    <table class="w-full">
+                      <tbody class="py-2">
+                        <tr>
+                          <td class="px-3 py-2 text-start">Item</td>
+                          <td class="px-3 py-2 text-end">Valoran (5350 VP)</td>
+                        </tr>
+                        <tr>
+                          <td class="px-3 py-2 text-start">User ID</td>
+                          <td class="px-3 py-2 text-end">Vulanah</td>
+                        </tr>
+                        <tr>
+                          <td class="px-3 py-2 text-start">Payment Method</td>
+                          <td
+                            class="px-3 py-2 flex justify-end items-center gap-2"
+                          >
+                            <span>BCA</span>
+                            <div class="rounded-md overflow-hidden">
+                              <img
+                                src="/assets/img/n-icon/bca.svg"
+                                alt=""
+                                class="h-5"
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="px-3 py-2 text-start">Total Amount</td>
+                          <td class="px-3 py-2 text-end">
+                            <span>Rp.</span> <span>574.398</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    class="w-full flex flex-col items-center justify-center py-2 text-xs leading-6"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full overflow-hidden bg-bg-2 flex items-center justify-center mb-3"
+                    >
+                      <img src="/assets/img/contact.svg" alt="" />
+                    </div>
+                    <p>Order Bit Recueved ?</p>
+                    <p class="text-white/30 g-2">
+                      Please reach out to our customer support team to confirm
+                      your order status.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="px-6 py-2 text-xs cursor-pointer bg-button text-white rounded-lg hover:bg-teal-400 transition"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- end main -->
+        <!-- footer -->
+        <footer
+          id="footer"
+          class="w-full h-full pl-0 md:pl-20 bg-[url('/assets/img/bg/bg-mask.svg')] bg-origin-border bg-top bg-size-[100%] transition-all duration-300"
+        >
+          <div class="w-full px-4 md:px-12 pb-[96px] md:pb-8">
+            <div
+              class="text-center w-full pt-12 border-t border-white/20 text-3xl lg:text-5xl font-semibold tracking-wider space-y-2"
+            >
+              <p>CHEAP TOP UP</p>
+              <p>AND RELIABLE</p>
+              <div class="flex justify-center gap-3">
+                <span>ONLY IN </span>
+                <div class="-rotate-6">
+                  <img src="/assets/img/gachaku.svg" alt="" class="h-8" />
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex justify-between items-center mt-8">
+              <div>
+                <img src="/assets/img/gachaku.svg" alt="" class="h-6" />
+              </div>
+              <div class="text-[12px]">
+                <p class="text-white/50">Contact Us :</p>
+                <p>info@gachaku.com</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end footer -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+      function showSuccessModal() {
+        const modal = document.getElementById("successModal");
+        modal.classList.remove("hidden");
+
+        // Buat efek kembang api
+        createFireworks();
+      }
+
+      function hideSuccessModal() {
+        const modal = document.getElementById("successModal");
+        modal.classList.add("hidden");
+
+        // Bersihkan kembang api
+        const container = document.getElementById("fireworksContainer");
+        container.innerHTML = "";
+      }
+
+      function createFireworks() {
+        const container = document.getElementById("fireworksContainer");
+        const colors = [
+          "#f87171",
+          "#60a5fa",
+          "#34d399",
+          "#fbbf24",
+          "#a78bfa",
+          "#f472b6",
+        ];
+
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.className = "firework-particle";
+
+          const angle = Math.random() * Math.PI * 2;
+          const distance = 30 + Math.random() * 100;
+          const tx = Math.cos(angle) * distance;
+          const ty = Math.sin(angle) * distance;
+
+          const color = colors[Math.floor(Math.random() * colors.length)];
+
+          particle.style.setProperty("--tx", `${tx}px`);
+          particle.style.setProperty("--ty", `${ty}px`);
+          particle.style.backgroundColor = color;
+          particle.style.left = "50%";
+          particle.style.top = "25%";
+          particle.style.animationDelay = `${Math.random() * 0.3}s`;
+
+          container.appendChild(particle);
+        }
+      }
+    </script>
+  </body>
+</html>
