@@ -101,6 +101,7 @@
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-spin: spin 1s linear infinite;
     --blur-sm: 8px;
@@ -1079,6 +1080,9 @@
   .h-\[80vh\] {
     height: 80vh;
   }
+  .h-\[90vh\] {
+    height: 90vh;
+  }
   .h-\[200px\] {
     height: 200px;
   }
@@ -1249,9 +1253,6 @@
   }
   .min-w-80 {
     min-width: calc(var(--spacing) * 80);
-  }
-  .min-w-\[300px\] {
-    min-width: 300px;
   }
   .min-w-full {
     min-width: 100%;
@@ -1795,14 +1796,8 @@
   .bg-gray-800 {
     background-color: var(--color-gray-800);
   }
-  .bg-green-100 {
-    background-color: var(--color-green-100);
-  }
   .bg-green-300 {
     background-color: var(--color-green-300);
-  }
-  .bg-green-500 {
-    background-color: var(--color-green-500);
   }
   .bg-green-500\/10 {
     background-color: color-mix(in srgb, oklch(72.3% 0.219 149.579) 10%, transparent);
@@ -1827,6 +1822,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-indigo-950) 80%, transparent);
     }
+  }
+  .bg-orange-400 {
+    background-color: var(--color-orange-400);
   }
   .bg-pink-300 {
     background-color: var(--color-pink-300);
@@ -1857,15 +1855,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-slate-500) 30%, transparent);
     }
-  }
-  .bg-teal-100 {
-    background-color: var(--color-teal-100);
-  }
-  .bg-teal-200 {
-    background-color: var(--color-teal-200);
-  }
-  .bg-teal-300 {
-    background-color: var(--color-teal-300);
   }
   .bg-teal-400 {
     background-color: var(--color-teal-400);
@@ -2311,9 +2300,6 @@
   .text-background {
     color: var(--color-background);
   }
-  .text-bg-2 {
-    color: var(--color-bg-2);
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -2341,14 +2327,8 @@
   .text-gray-500 {
     color: var(--color-gray-500);
   }
-  .text-gray-600 {
-    color: var(--color-gray-600);
-  }
   .text-gray-700 {
     color: var(--color-gray-700);
-  }
-  .text-gray-800 {
-    color: var(--color-gray-800);
   }
   .text-green-500 {
     color: var(--color-green-500);
@@ -2376,9 +2356,6 @@
   }
   .text-slate-800 {
     color: var(--color-slate-800);
-  }
-  .text-star {
-    color: var(--color-star);
   }
   .text-teal-400 {
     color: var(--color-teal-400);
@@ -2852,13 +2829,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-700);
-      }
-    }
-  }
-  .hover\:bg-green-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-green-600);
       }
     }
   }
@@ -4483,6 +4453,20 @@ blockquote {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+.xmark-animate {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
   }
 }
 @property --tw-translate-x {
